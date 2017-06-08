@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<operatorHelp lang="en_EN">
+    <operator>
+        <name>读取Inceptor(Remote)</name>
+        <synopsis>从数据仓库中读取数据</synopsis>
+        <help>从数据仓库中读取数据</help>
+        <key>remote_retrieve</key>
+    </operator>
+    <operator>
+        <name>写入Inceptor(Remote)</name>
+        <synopsis>写入数据到Inceptor中.</synopsis>
+        <key>remote_save</key>
+    </operator>
+    <operator>
+        <name>写入关系数据库(Remote)</name>
+        <synopsis>通过JDBC写入数据库</synopsis>
+        <key>remote_write_jdbc</key>
+    </operator>
+    <operator>
+        <name>写入到数据库</name>
+        <synopsis>将数据写入到数据库中的一张表中</synopsis>
+        <help>&lt;p&gt;此算子将一个 &lt;i&gt;样本集&lt;/i&gt;写入到SQL数据库. 用户可以指定数据库连接和表名.
+            请注意,如果表格不存在,将在写入的过程中创建.&lt;/p&gt; &lt;p&gt;定义必要参数的最简单方式就是配置向导.
+            最重要的参数（数据库URL和用户名）将由该向导自动确定.最后,你只需定义表的名字,我们的准备完成了.&lt;/p&gt; &lt;p&gt;
+            此算子值支持包含所有常见和特殊属性以及样本的完整样本集的写入.如果该条件不满足,在应用此算子之前执行一些如属性或样本过滤的预处理算子. &lt;/p&gt;
+        </help>
+        <key>write_database</key>
+    </operator>
+    <operator>
+        <name>写入HDFS</name>
+        <synopsis>写入数据到HDFS</synopsis>
+        <help>
+        </help>
+        <key>write_hdfs</key>
+    </operator>
+    <operator>
+        <name>更新数据库</name>
+        <synopsis>更新数据库中ID匹配的数据项</synopsis>
+        <help>&lt;p&gt; 此算子更新SQL数据库中的一个 &lt;i&gt;样本集&lt;/i&gt;
+            . 用户可以指定数据库连接,表名以及ID列名.&lt;/p&gt; &lt;p&gt;定义必要参数的最简单方式就是配置向导.
+            最重要的参数（数据库URL和用户名）将由该向导自动确定.&lt;/p&gt;
+        </help>
+    <key>update_database</key>
+  	</operator>
+  	
+  	    <operator>
+        <name>从数据库注册可视化</name>
+        <synopsis>许在样本集图视图(双击数据点)中可视化样本(属性值).数据直接来自于指定的数据库表.
+        </synopsis>
+        <help>对带有请求ID的行查询数据库表,并创建一个通用的样本可视化工具.此可视化只显示样本的属性值.添加这个算子可能对在提供绘图仪或者图元件中启用单一样本的可视化非常必要.
+            与常用的可视化相比,此版本不加载完整数据集到内存中,而简单查询数据库中的信息并直接显示单独行.</help>
+    <key>register_visualization_from_database</key>
+  </operator>
+  
+   <operator>
+        <name>流式读取数据库</name>
+        <synopsis>此操作采用增量缓存方式来从SQL数据库读取数据（推荐）</synopsis>
+        <help>&lt;p&gt;此算子读取SQL数据库中的 &lt;i&gt;样本集&lt;/i&gt;.
+            数据是从表名称参数定义的一个单独表中加载的. 请注意,列名通常是敏感的并且可能需要引用.此处数据库可能有所不同.
+            &lt;/p&gt; &lt;p&gt;定义必要参数的最简单方式就是配置向导. 最重要的参数（数据库URL和用户名）将由该向导自动确定并且它可能可以定义特殊属性（如标签或者ID）.
+            &lt;/p&gt;
+            &lt;p&gt;与将数据加载到主存的“读取数据库”算子对比,此算子将数据保留在数据库并且批量读取该数据. 这使得Midas没有限制的可以访问任意大小的数据集.
+            &lt;/p&gt; &lt;p&gt;请注意以下重要的限制和事项:
+            &lt;ul&gt; &lt;li&gt;只有表现表（无视图）才可以作为此数据缓存算子的库
+            &lt;/li&gt; &lt;li&gt;如果没有主键和索引,会自动创建名为 RM_INDEX的列并将其作为主键.
+            &lt;/li&gt; &lt;li&gt;如果主键已经在指定表中存在,会创建一个名为 RM_MAPPED_INDEX的新表来将新的索引列 RM_INDEX映射到原始主键
+            &lt;/li&gt; &lt;li&gt;用户可以自己提供 RM_INDEX主键列,但是该列需要是一个整型索引属性,并且从1顺序开始,没有任何跳过或者缺失
+            &lt;/li&gt; &lt;/ul&gt; 除了新的索引列或者映射表的创建,数据库中 &lt;em&gt;不执行写操作&lt;/em&gt;.
+            此外, &lt;em&gt;内置在缓存数据库表之上的数据集不支持所有的写入操作&lt;/em&gt;. 用户需要实现,改变,并将数据写回到数据库中的新表中.
+            如果数据集非常大,用户可以使用
+            &lt;i&gt;批处理&lt;/i&gt;算子来对更改数据任务进行分割. &lt;/p&gt;</help>
+    <key>stream_database</key>
+  </operator>
+  
+  <operator>
+        <name>读取数据库</name>
+        <synopsis>此操作从SQL数据库读取数据</synopsis>
+        <help>&lt;p&gt;此算子读取SQL数据库中的&lt;i&gt;样本集&lt;/i&gt;. 给定一个表名,SQL查询可以自动生成并将通过一个参数将结果传递给Midas或者传递给一个文件（以防长SQL语句）.
+            使用参数 &lt;b&gt;define query&lt;/b&gt;选择所需的SQL操作. 请注意,列名通常是敏感的并且可能需要引用. 此处数据库可能有所不同.&lt;/p&gt;
+            
+            &lt;p&gt;在真正给数据库发送结果前,你需要建立数据库连接.你可以在主窗体的&lt;i&gt;工具栏&lt;/i&gt;菜单里选择 &lt;i&gt;数据库连接管理...&lt;/i&gt;
+            ,者单击 &lt;b&gt;connection&lt;/b&gt; 参数下拉框右侧的按钮.窗体显示要求提供主机,端口,数据库系统,模式和用户名. &lt;i&gt;测试&lt;/i&gt;
+            按钮可以检查连接是否可用.保存新的连接后,可以从 &lt;b&gt;connection&lt;/b&gt; 参数的下拉框中选择.&lt;/p&gt;
+            
+            &lt;p&gt;&lt;br/&gt;执行算子时,查询所传递的表将被复制到您的计算集内存中. 这将使得后续算子能够快速访问数据, 因此如包含高数量随机访问的
+            &lt;a href="rm://opdoc/support_vector_machine"&gt;SVM&lt;/a&gt; 之类的学习方案都能够运行加快. I如果对主内存来说表太大,你可以使用
+            &lt;a href="rm://opdoc/stream_database"&gt;流式读取数据库&lt;/a&gt; 算子.如果所需的样本集不被缓存,它将为一些大的较慢的访问保留表的一部分.&lt;/p&gt;
+            
+            &lt;h5&gt;警告&lt;/h5&gt;
+            &lt;p&gt; 由于 &lt;code&gt;ResultSetMetaData&lt;/code&gt; java接口不提供关于字符型属性的可能值的信息,字符型值的映射内部索引将取决于它们在表中的出现顺序.
+            只有当进程被分割成一个训练进程以及一个应用或者测试进程时才可能会出现问题. 对有能力处理字符型属性的学习方案这不成问题.
+            如果一个像SVM的学习方案,使用在字符型数据上,Midas将假定字符型属性为数字型,并且为字符型值使用索引作为它们的数字值.
+            如果只有两种可能值,SVM执行良好.如果测试集在另一个进程读取,字符型值可能有不同的索引,因此训练的SVM是无效的.这对标签属性来说不是问题,
+            因为可以使用&lt;code&gt;classes&lt;/code&gt;参数指定类,因此所有的旨在使用字符型数据的学习方案都可以安全使用.&lt;/p&gt;
+            &lt;p&gt;如果你首先用 &lt;a href="rm://opdoc/append"&gt;Append&lt;/a&gt;算子连接两个&lt;i&gt;ExampleSets&lt;/i&gt;
+            样本集然后使用两个 &lt;a href="rm://opdoc/filter_examples"&gt;过滤样本&lt;/a&gt; 算子分片,可能可以避免该问题.&lt;/p&gt;</help>
+    <key>read_database</key>
+  </operator>
+  
+    <operator>
+        <name>执行SQL</name>
+        <synopsis>
+        	此操作执行任意的SQL语句
+        </synopsis>
+        <help>
+            此算子在SQL数据库中执行一个任意的SQL语句.SQL查询传递给Midas 可以通过一个参数, 或者使用一个单独的文件(在SQL语句比较长的情况下).
+            请注意,列名通常是大小写敏感的.不同数据库中SQL的行为可能有所不同.&lt;/p&gt; &lt;p&gt;
+            请注意,此算子不能用于从数据库中加载数据,而仅仅是执行SQL语句,如 CREATE 或 ADD等.为了能从数据库中加载数据,可以使用
+            &lt;i&gt;数据库样本源&lt;/i&gt; 或
+            &lt;i&gt;缓存的数据库样本源&lt;/i&gt; .&lt;/p&gt;
+        </help>
+    <key>execute_sql</key>
+    
+ 	</operator>
+ 	    <operator>
+    <name>读取Access数据库</name>
+    	<synopsis>此操作从Access数据库读取数据</synopsis>
+    	<help>
+            此算子使用 JDBC-ODBC-Bridge从Access数据库中读取数据.
+    	</help>
+    	<key>read_access</key>
+  	</operator>
+  	<operator>
+    	<name>写入到Access</name>
+    	<synopsis>此操作将数据写入到Access数据库</synopsis>
+    	<help>
+            此算子使用 JDBC-ODBC-Bridge将数据写入到 Access数据库内.
+    	</help>
+    	<key>write_access</key>
+	</operator>
+
+    <group>
+        <key>remote.data_access.database.read</key>
+        <name>读取</name>
+    </group>
+
+    <operator>
+        <name>读取关系数据库(Remote)</name>
+        <synopsis>此操作从SQL数据库中读取一个样本集.</synopsis>
+        <help>
+            此操作通过JDBC方式读取数据库.
+        </help>
+        <key>remote_read_database</key>
+    </operator>
+</operatorHelp>

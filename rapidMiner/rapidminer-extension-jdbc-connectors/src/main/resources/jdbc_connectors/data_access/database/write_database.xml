@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../documentation2html.xsl"?>
+<p1:documents xmlns:p1="http://rapid-i.com/schemas/documentation/reference/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://rapid-i.com/schemas/documentation/reference/1.0                http://rapid-i.com/schemas/documentation/reference/1.0/documentation.xsd">
+
+	<operator key="operator.jdbc_connectors:write_database" locale="en" version="5.2.000">
+		<title>Write Database</title>
+		<synopsis>This operator writes an ExampleSet to an SQL database. </synopsis>
+		<text>
+			<paragraph>The Write Database operator is used for writing an ExampleSet to the specified SQL database. You need to have at least basic understanding of databases and database connections in order to use this operator properly. Go through the parameters and the attached Example Process to understand the flow of this operator.</paragraph>
+			
+			<paragraph>The user can specify the database connection and a table name. Please note that the table will be created during writing if it does not exist. The most convenient way of defining the necessary parameters is the <em>Manage Database Connections</em> wizard. The most important parameters (database URL and user name) will be automatically determined by this wizard. At the end, you only have to define the table name. This operator only supports the writing of the complete ExampleSet consisting of all regular and special attributes and all examples. If this is not desired, perform some preprocessing operators like the Select Attributes or Filter Examples operators before applying the Write Database operator. Data from database tables can be read in RapidMiner by using the Read Database operator. </paragraph>
+		</text>
+
+		<inputPorts>
+			<port name="input">This input port expects an ExampleSet. It is output of the Retrieve operator in the attached Example Process.</port>
+		</inputPorts>
+		
+		<outputPorts>
+			<port name="through">The ExampleSet that was provided at the input port is delivered through this output port without any modifications. This is usually used to reuse the same ExampleSet in further operators of the process.</port>
+		</outputPorts>
+		<parameters>
+			<!-- description of the parameters and the corresponding values -->
+			
+
+			
+			<parameter key="define_connection" type="selection">This parameter indicates how the database connection should be specified. It gives you three options: predefined, url and jndi.</parameter>
+			
+			<parameter key="connection" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>predefined</em>. This parameter is used for connecting to the database using a predefined connection. You can have many predefined connections. You can choose one of them using the drop down box. You can add a new connection or modify previous connections using the button next to the drop down box. You may also accomplish this by clicking on <em>Manage Database Connections... </em> from the <em>Tools</em> menu in the main window. A new window appears. This window asks for several details e.g. <em>Host, Port, Database system, schema, username</em> and <em>password</em>. The <em>Test</em> button in this new window will allow you to check whether the connection can be made. Save the connection once the test is successful. After saving a new connection, it can be chosen from the drop down box of the <em>connection</em> parameter. You need to have basic understanding of databases for configuring a connection.</parameter>
+			
+			<parameter key="database_system" type="selection">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for selecting the database system in use. It can have one of the following values: MySQL, PostgreSQL, Sybase, HSQLDB, ODBC Bridge (e.g. Access), Microsoft SQL Server (JTDS), Ingres, Oracle.</parameter>
+			
+			<parameter key="database_url" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for defining the URL connection string for the database, e.g. &apos;jdbc:mysql://foo.bar:portnr/database&apos;.</parameter>
+			
+			<parameter key="username" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for specifying the username of the database. </parameter>
+			
+			<parameter key="password" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for specifying the password of the database. </parameter>
+			
+			<parameter key="jndi_name" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>jndi</em>. This parameter is used for giving the JNDI a name for a data source. </parameter>
+			
+			<parameter key="table_name">This parameter is used for selecting the required table from the specified database.  Please note that you can also write a table name here, if the table does not exist it will be created during writing.</parameter>
+						
+			<parameter key="overwrite_mode" type="selection">This parameter indicates if an existing table should be overwritten or data should be appended to the existing data. </parameter>
+
+			<parameter key="set_default_varchar_length" type="boolean">This parameter allows you to set <em>varchar</em> columns to default length. </parameter>
+
+			<parameter key="default_varchar_length" type="integer">This parameter is only available when the <em>set default varchar length</em> parameter is set to true. This parameter specifies the default length of <em>varchar</em> columns. </parameter>
+
+			<parameter key="add_generated_primary_keys" type="boolean">This parameter indicates whether a new attribute holding the auto generated primary keys should be added to the table in the database. </parameter>
+
+			<parameter key="db_key_attribute_name" type="string">This parameter is only available when the <em>add generated primary keys</em> parameter is set to true. This parameter specifies the name of the attribute for the auto generated primary keys. </parameter>
+
+			<parameter key="batch_size" type="integer">This parameter specifies the number of examples which are written at once with one single query to the database. Larger values can greatly improve the speed. However, too large values can drastically decrease the performance. Moreover, some databases have restrictions on the maximum number of values written at once. </parameter>
+			
+			</parameters>
+			
+		<relatedDocuments>
+			<!-- ... -->
+		</relatedDocuments>
+		<tutorialProcesses>
+			<tutorialProcess key="process.write_database.mysql_database" title="Writing an ExampleSet to a mySQL database">
+				<description>
+					<paragraph>The &apos;Golf&apos; data set is loaded using the Retrieve operator. The Write Database operator is used for writing this data set to a <em>mySQL</em> database. The <em>define connection</em> parameter is set to <em>predefined</em> and it is configured using the button next to the drop down box. The name of the connection is set to &apos;mySQLconn&apos;. The following values are set in the <em>connection</em> parameter&apos;s wizard: the <em>Database system</em> is set to &apos;mySQL&apos;. The <em>Host</em> is set to &apos;localhost&apos;. The <em>Port</em> is set to &apos;3306&apos;. The <em>Database scheme</em> is set to &apos;golf&apos;; this is the name of the database. The <em>User</em> is set to &apos;root&apos;. No password is provided. You will need a password if your database is password protected. Set all the values and test the connection. Make sure that the connection works.</paragraph>
+										<paragraph>The <em>table name</em> parameter is set to &apos;golf_table&apos; which is the name of the required table in the &apos;golf&apos; database. Run the process, you will see the entire &apos;golf_table&apos; in the Results Workspace. You can also check the &apos;golf&apos; database in <em>phpmyadmin</em> to see the &apos;golf_table&apos;. You can read this table from the database using the Read Database operator. Please study the <reference key="process.read_database.mysql_database">Example Process</reference> of the Read Database operator for more information.</paragraph> 
+					
+					<!-- tutorialProcess description: What is done and shown here? You can use formated text here -->
+				</description>
+
+
+<process version="5.2.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="5.2.000" expanded="true" name="Process">
+    <process expanded="true" height="405" width="614">
+      <operator activated="true" class="retrieve" compatibility="5.2.000" expanded="true" height="60" name="Golf" width="90" x="246" y="120">
+        <parameter key="repository_entry" value="//Samples/data/Golf"/>
+      </operator>
+      <operator activated="true" class="write_database" compatibility="5.2.000" expanded="true" height="60" name="Write Database" width="90" x="447" y="120">
+        <parameter key="connection" value="mySQLconn"/>
+        <parameter key="table_name" value="golf_table"/>
+        <parameter key="overwrite_mode" value="overwrite"/>
+        <parameter key="db_key_attribute_name" value="primary_key"/>
+      </operator>
+      <connect from_op="Golf" from_port="output" to_op="Write Database" to_port="input"/>
+      <connect from_op="Write Database" from_port="through" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="90"/>
+      <portSpacing port="sink_result 2" spacing="72"/>
+      <portSpacing port="sink_result 3" spacing="90"/>
+    </process>
+  </operator>
+</process>
+
+
+				<!-- Copy process from RapidMiner's XML view to here -->
+			</tutorialProcess>
+		</tutorialProcesses>
+	</operator>
+</p1:documents>

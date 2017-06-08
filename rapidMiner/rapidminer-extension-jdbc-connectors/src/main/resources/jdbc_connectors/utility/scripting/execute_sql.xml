@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../documentation2html.xsl"?>
+<p1:documents xmlns:p1="http://rapid-i.com/schemas/documentation/reference/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://rapid-i.com/schemas/documentation/reference/1.0                http://rapid-i.com/schemas/documentation/reference/1.0/documentation.xsd">
+
+	<operator key="operator.jdbc_connectors:execute_sql" locale="en" version="5.2.003">
+	
+		<title>Execute SQL</title>
+		
+<synopsis>This operator executes the specified SQL statement on the specified database.</synopsis>
+		
+		<text>
+<paragraph>The Execute SQL operator executes the specified SQL statement on the specified SQL database. The SQL query can be specified through the <em>query</em> parameter. If the SQL query is in a file then the path of that file can be specified through the <em>query file</em> parameter. Please note that this operator cannot be used for loading data from databases. It can be used for executing SQL statements like CREATE or ADD etc. In order to load data from an SQL database, please use the <reference key="operator.read_database">Read Database</reference> operator. You need to have at least a basic understanding of databases, database connections and queries in order to use this operator properly. Please go through the parameters and the attached Example Process to understand the working of this operator.</paragraph> 
+		</text>
+
+
+<differentiation>
+			<relatedDocument key="jdbc_connectors:read_database">The Read Database operator is used for loading data from a database into RapidMiner. The Execute SQL operator cannot be used for loading data from databases. It can be used for executing SQL statements like CREATE or ADD etc on the database.</relatedDocument>
+</differentiation>					
+
+
+	<inputPorts>
+			<port name="through" type="com.rapidminer.operator.IOObject">It is not compulsory to connect any object with this port. Any object connected at this port is delivered without any modifications to the output port. This operator can have multiple inputs. When one input is connected, another <em>through</em> input port becomes available which is ready to accept another input (if any). The order of inputs remains the same. The object supplied at the first <em>through</em> input port of the Execute SQL operator is available at the first <em>through</em> output port.</port>
+		</inputPorts>
+		
+		<outputPorts>
+			<port name="through" type="com.rapidminer.operator.IOObject">The objects that were given as input are passed without changing to the output through this port. It is not compulsory to connect this port to any other port; the SQL command is executed even if this port is left without connections. The Execute SQL operator can have multiple outputs. When one output is connected, another <em>through</em> output port becomes available which is ready to deliver another output (if any). The order of outputs remains the same. The object delivered at the first <em>through</em> input port of the Execute SQL operator is delivered at the first <em>through</em> output port</port>
+		</outputPorts>
+		
+		
+		
+		<parameters>
+		
+			<parameter key="define_connection" type="selection">This parameter indicates how the database connection should be specified. It gives you three options: predefined, url and jndi.</parameter>
+			
+			<parameter key="connection" type="selection">This parameter is only available when the <em>define connection</em> parameter is set to <em>predefined</em>. This parameter is used for connecting to a database using a predefined connection. You can have many predefined connections. You can choose one of them using the drop down list. You can add a new connections or modify previous connections using the button next to the drop down list. You may also accomplish this by clicking on <em>Manage Database Connections... </em> from the <em>Tools</em> menu in the main window. A new window appears. This window asks for several details e.g. <em>Host, Port, Database system, schema, username</em> and <em>password</em>. The <em>Test</em> button in this new window will allow you to check whether the connection can be made. Save the connection once the test is successful. After saving a new connection, it can be chosen from the drop down list of the <em>connection</em> parameter. You need to have a basic understanding of databases for configuring a connection.</parameter>
+			
+			<parameter key="database_system" type="selection">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for selecting the database system in use. It can have one of the following values: MySQL, PostgreSQL, Sybase, HSQLDB, ODBC Bridge (e.g. Access), Microsoft SQL Server (JTDS), Ingres, Oracle.</parameter>
+			
+			<parameter key="database_url" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for defining the URL connection string for the database, e.g. &apos;jdbc:mysql://foo.bar:portnr/database&apos;.</parameter>
+			
+			<parameter key="username" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for specifying the username of the database. </parameter>
+			
+			<parameter key="password" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for specifying the password of the database. </parameter>
+			
+			<parameter key="jndi_name" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>jndi</em>. This parameter is used for specifying the JNDI name for a data source.</parameter>
+			
+			<parameter key="query" type="string">This parameter is used for specifying the SQL query which will be executed on the specified database. </parameter>
+			
+			<parameter key="query_file" type="filename">This parameter is used for selecting the file that contains the SQL query which will be executed on the specified database. Long queries are usually stored in files. Storing queries in files can also enhance reusability.</parameter>
+									
+			<parameter key="prepare_statement" type="boolean">If checked, the statement is prepared, and &apos;?&apos; can be filled in using the <em>parameters</em> parameter. </parameter>
+			
+			<parameter key="parameters" type="enumeration">This parameter specifies the Parameters to insert into &apos;?&apos; placeholders when the statement is prepared. </parameter>
+		
+			</parameters>
+			
+
+<relatedDocuments>
+			<relatedDocument key="jdbc_connectors:read_database"></relatedDocument>
+</relatedDocuments>
+   	
+		
+		<tutorialProcesses>
+			<tutorialProcess key="process.execute_sql.create_table" title="Creating a new table in mySQL database">
+				<description>
+<paragraph>The Execute SQL operator is used for creating a new table in an existing <em>mySQL</em> database. The <em>define connection</em> parameter is set to <em>predefined</em>. The <em>define connection</em> parameter was configured using the button next to the drop down list. The name of the connection was set to &apos;mySQLconn&apos;. The following values were set in the connection parameter&apos;s wizard. The <em>Database system</em> was set to &apos;mySQL&apos;. The <em>Host</em> was set to &apos;localhost&apos;. The <em>Port</em> was set to &apos;3306&apos;. The <em>Database scheme</em> was set to &apos;golf&apos;; this is the name of the database. The <em>User</em> was set to &apos;root&apos;. No password was provided. You will need a password if your database is password protected. Set all the values and test the connection. Make sure that the connection works.</paragraph>
+<paragraph>The <em>query</em> parameter is set to the following query: &apos;CREATE TABLE Weather(Temperature INTEGER)&apos;. This query creates a new table named Weather in the &apos;golf&apos; database. This table has one integer attribute named Temperature. Run the process, you will not see any results in RapidMiner because this operator did not return anything. It simply executed the query on the specified database. So, in order to see the changes you can open the database and verify that a new table has been created. </paragraph>
+				</description>
+
+
+<process version="5.2.003">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="5.2.003" expanded="true" name="Process">
+    <process expanded="true" height="418" width="723">
+      <operator activated="true" class="execute_sql" compatibility="5.2.003" expanded="true" height="60" name="Execute SQL" width="90" x="514" y="75">
+        <parameter key="connection" value="mySQLconn"/>
+        <parameter key="query" value="CREATE TABLE Weather(Temperature INTEGER)"/>
+        <enumeration key="parameters"/>
+      </operator>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="54"/>
+    </process>
+  </operator>
+</process>
+
+			</tutorialProcess>
+		</tutorialProcesses>
+	</operator>
+</p1:documents>

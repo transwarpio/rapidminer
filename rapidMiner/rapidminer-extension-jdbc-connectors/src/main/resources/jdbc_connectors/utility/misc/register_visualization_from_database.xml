@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../documentation2html.xsl"?>
+<p1:documents xmlns:p1="http://rapid-i.com/schemas/documentation/reference/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://rapid-i.com/schemas/documentation/reference/1.0                http://rapid-i.com/schemas/documentation/reference/1.0/documentation.xsd">
+
+	<operator key="operator.jdbc_connectors:register_visualization_from_database" locale="en" version="5.2.003">
+	
+		<title>Register Visualization from Database</title>
+		
+<synopsis>Allows the visualization of examples (attribute values) in the plot view of an example set (double click on data point). The data is directly derived from the specified database table.</synopsis>
+		
+		<text>
+<paragraph>Queries the database table for the row with the requested ID and creates a generic example visualizer. This visualizer simply displays the attribute values of the example. Adding this operator is might be necessary to enable the visualization of single examples in the provided plotter or graph components. In contrast to the usual example visualizer, this version does not load the complete data set into memory but simply queries the information from the database and just shows the single row.</paragraph> 
+		</text>			
+
+
+	<inputPorts>
+			<port name="through" type="com.rapidminer.operator.IOObject">It is not compulsory to connect any object with this port. Any object connected at this port is delivered without any modifications to the output port. This operator can have multiple inputs. When one input is connected, another <em>through</em> input port becomes available which is ready to accept another input (if any). The order of inputs remains the same. The object supplied at the first <em>through</em> input port of the operator is available at the first <em>through</em> output port.</port>
+		</inputPorts>
+		
+		<outputPorts>
+			<port name="through" type="com.rapidminer.operator.IOObject">The objects that were given as input are passed without changing to the output through this port. It is not compulsory to connect this port to any other port. The operator can have multiple outputs. When one output is connected, another <em>through</em> output port becomes available which is ready to deliver another output (if any). The order of outputs remains the same. The object delivered at the first <em>through</em> input port of the operator is delivered at the first <em>through</em> output port.</port>
+		</outputPorts>
+		
+		
+		
+		<parameters>
+		
+			<parameter key="define_connection" type="selection">Indicates how the database connection should be specified.</parameter>
+				
+			<parameter key="connection" type="selection">A predefined database connection.</parameter>
+			
+			<parameter key="database_system" type="selection">The used database system.</parameter>
+		
+			<parameter key="database_url" type="string">The URL connection string for the database, e.g. 'jdbc:mysql://foo.bar:portnr/database'</parameter>
+			
+			<parameter key="username" type="string">The database username.</parameter>
+			
+			<parameter key="password" type="string">The password for the database.</parameter>
+			
+			<parameter key="jndi_name" type="string">JNDI name for a data source.</parameter>
+			
+			<parameter key="use_default_schema" type="boolean">If checked, the user's default schema will be used.</parameter>
+			
+			<parameter key="schema_name" type="string">The schema name to use, unless use_default_schema is true.</parameter>
+			
+			<parameter key="table_name" type="string">A database table.</parameter>
+			
+			<parameter key="id_column" type="string">The column of the table holding the object ids for detail data querying.</parameter>			
+				
+		</parameters>
+			
+
+		<relatedDocuments>
+			<relatedDocument key="jdbc_connectors:read_database"></relatedDocument>
+		</relatedDocuments>
+   	
+		
+		
+	</operator>
+</p1:documents>

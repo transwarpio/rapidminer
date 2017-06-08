@@ -1,0 +1,56 @@
+task wrapper(type: Wrapper) { gradleVersion = '3.4.1' }
+
+allprojects {
+   apply plugin: 'idea'
+}
+
+subprojects {
+    apply plugin: 'java'
+}
+
+
+repositories {
+    mavenLocal()
+    maven { url 'http://172.16.1.168:8081/artifactory/libs-release' }
+    
+}
+
+dependencies {
+}
+
+apply plugin: 'distribution'    
+
+distributions {
+    main {
+        baseName = 'midas'
+        contents {
+            project.subprojects.each { sub ->
+                if (sub.name.contains("extension")) {
+                    into('lib/plugins') {
+                        from sub.jar
+                    }
+                } else {
+                    into('lib') {
+                        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+                        from sub.jar
+                        from sub.project.configurations.runtime
+                    }
+                }
+            }
+            into('script') {
+                from {'script'}
+            }
+            from {'bin'}
+            into('samples') {
+                from {'samples'}
+            }
+            into('drivers') {
+                from {'drivers'}
+            }
+            into('data') {
+                from {'data'}
+            }
+            from {'RELEASE'}
+        }
+    }
+}

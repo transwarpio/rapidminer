@@ -1,0 +1,65 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'http://172.16.1.168:8081/artifactory/libs-release' }
+        
+        maven { url 'https://maven.rapidminer.com/content/groups/public/' }
+    }
+    dependencies {
+        classpath 'com.rapidminer.gradle:java-basics:0.3.3'
+        classpath 'com.rapidminer.gradle:java-publishing:0.2.0'
+        classpath 'com.rapidminer.gradle:java-signing:0.1.0'
+    }
+}
+
+apply plugin: 'com.rapidminer.java-basics'
+apply plugin: 'com.rapidminer.java-signing'
+apply plugin: 'com.rapidminer.java-publishing.agpl-v3'
+
+repositories {
+    mavenLocal()
+    
+    maven { url 'https://maven.rapidminer.com/content/groups/public/' }
+    maven { url 'http://172.16.1.168:8081/artifactory/libs-release' }
+}
+
+dependencies {
+    // RapidMiner license framework for license management
+    compile 'com.rapidminer.license:rapidminer-license-api:3.1.0'
+    compile 'com.rapidminer.license:rapidminer-license-commons:3.1.0'
+    compile project(":rapidminer-studio-core")
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+jar {
+    manifest {
+        attributes 'RapidMiner-Version': '1.0.0'
+        attributes 'Implementation-Title': 'JDBC Connectors'
+        attributes 'Plugin-Dependencies': ''
+        attributes 'UserError-Descriptor': 'com/rapidminer/extension/resources/i18n/UserErrorMessagesJDBCConnectors.properties'
+        attributes 'Settings-Descriptor': 'com/rapidminer/extension/resources/i18n/SettingsJDBCConnectors.properties'
+        attributes 'IOObject-Descriptor': 'com/rapidminer/extension/resources/ioobjectsJDBCConnectors.xml'
+        attributes 'Operator-Descriptor': 'com/rapidminer/extension/resources/OperatorsJDBCConnectors.xml'
+        attributes 'Operator-Descriptor_zh': 'com/rapidminer/extension/resources/OperatorsJDBCConnectors_zh.xml'
+        attributes 'RapidMiner-Type': 'RapidMiner_Extension'
+        attributes 'GUI-Descriptor': 'com/rapidminer/extension/resources/i18n/GUIJDBCConnectors.properties'
+        attributes 'Extension-ID': 'rmx_jdbc_connectors'
+        attributes 'Namespace': 'jdbc_connectors'
+        attributes 'ParseRule-Descriptor': 'com/rapidminer/extension/resources/parserulesJDBCConnectors.xml'
+        attributes 'SettingsStructure-Descriptor': 'com/rapidminer/extension/resources/settingsJDBCConnectors.xml'
+        attributes 'Error-Descriptor': 'com/rapidminer/extension/resources/i18n/ErrorsJDBCConnectors.properties'
+        attributes 'Implementation-URL': 'www.rapidminer.com'
+        attributes 'Initialization-Class': 'com.rapidminer.extension.jdbc.PluginInitJDBCConnectors'
+        attributes 'Group-Descriptor': 'com/rapidminer/extension/resources/i18n/ErrorsJDBCConnectors.properties'
+    }
+}
+
+ext {
+    storeFile = file("test.keystore")
+    storePassword = "123456"
+    keyAlias = "test1"
+    keyPassword = "123456"
+}
+setProperty("keystore", storeFile)
+setProperty("storepass", storePassword)
+setProperty("alias", keyAlias)

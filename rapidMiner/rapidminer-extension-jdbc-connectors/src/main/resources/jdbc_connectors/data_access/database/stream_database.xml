@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../documentation2html.xsl"?>
+<p1:documents xmlns:p1="http://rapid-i.com/schemas/documentation/reference/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://rapid-i.com/schemas/documentation/reference/1.0                http://rapid-i.com/schemas/documentation/reference/1.0/documentation.xsd">
+
+	<operator key="operator.jdbc_connectors:stream_database" locale="en" version="5.2.008">
+	
+		<title>Stream Database</title>
+		
+		<synopsis>This operator reads an ExampleSet from an SQL database by incrementally caching it (recommended).</synopsis>
+		
+		<text>
+<paragraph>The Stream Database operator is used for reading an ExampleSet from the specified SQL database. You need to have at least basic understanding of databases and database connections in order to use this operator properly. Please go through the parameter description and the attached Example Process to understand the working of this operator.</paragraph>
+
+<paragraph>This operator reads an ExampleSet from an SQL database. The data is loaded from a single table which is defined by the <em>table name</em> parameter. Please note that table and column names are often case sensitive. The most convenient way of defining the necessary parameters is through the configuration wizard. The most important parameters (<em>database URL</em> and <em>username</em>) will be automatically determined by this wizard. You can define the special attributes like labels, ids and weights through corresponding parameters. </paragraph>
+
+<paragraph>In contrast to the <reference key="operator.jdbc_connectors:read_database">Database operator</reference>, which loads the data into the main memory, this operator keeps the data in the database and performs the data reading in batches. This allows RapidMiner to access data sets of arbitrary sizes without any size restrictions. </paragraph>
+
+<paragraph>
+Please note the following important restrictions and notes: 
+<ul>
+<li>Only manifested tables (no views) are allowed as the base for this data caching operator.</li>
+
+<li>If primary key and index are not present, a new column named RM_INDEX is created and it is automatically used as the primary key</li>
+
+<li>If a primary key is already present in the specified table, a new table named RM_MAPPED_INDEX is created which maps a new index column RM_INDEX to the original primary key. </li>
+
+<li>The users can provide the primary key column RM_INDEX themselves. This column should be an integer valued index attribute, counting should start from 1, without any gaps or missing values for all rows.</li>
+</ul>
+</paragraph>
+
+<paragraph>Besides the new index column or the creation of mapping the table, no writing actions are performed in the database. Moreover, data sets built on top of a cached database table do not support writing actions at all. Users have to materialize the data, change it, and write it back into a new table of the database (e.g. with the Write Database operator).</paragraph>			 
+		
+		</text>
+		
+		
+<differentiation>
+			<relatedDocument key="jdbc_connectors:execute_sql">The Stream Database operator is used for reading data from a database. The Execute SQL operator cannot be used for reading data from databases. It can be used for executing SQL statements like CREATE or ADD etc on the database.</relatedDocument>
+			<relatedDocument key="jdbc_connectors:read_database">In contrast to the Read Database operator, which loads the data into the main memory, the Stream Database operator keeps the data in the database and performs the data reading in batches. This allows RapidMiner to access data sets of arbitrary sizes without any size restrictions. </relatedDocument>
+</differentiation>	
+	
+	
+		<outputPorts>
+		<port name="output" type="com.rapidminer.example.ExampleSet">This port delivers the database table in  form of an ExampleSet along with the meta data. This output is similar to the output of the Retrieve operator.</port>
+		</outputPorts>
+		
+		
+		<parameters>
+			
+			<parameter key="define_connection" type="selection">This parameter indicates how the database connection should be specified. The following options are available: predefined, url and jndi.</parameter>
+			
+			<parameter key="connection" type="string">This parameter is only available when the <em>define connection</em> parameter is set to &apos;predefined&apos;. This parameter is used for connecting to the database using a predefined connection. You can have many predefined connections. You can choose one of them using the drop down box. You can add a new connection or modify previous connections using the button next to the drop down box. You may also accomplish this by clicking on the <em>Manage Database Connections... </em> from the <em>Tools</em> menu in the main window. A new window appears. This window asks for several details e.g. <em>Host, Port, Database system, schema, username</em> and <em>password</em>. The <em>Test</em> button in this new window will allow you to check whether the connection can be made. Save the connection once the test is successful. After saving a new connection, it can be chosen from the drop down box of the <em>connection</em> parameter. You need to have basic understanding of databases for configuring a connection.</parameter>
+			
+			<parameter key="database_system" type="selection">This parameter is only available when the <em>define connection</em> parameter is set to &apos;url&apos;. This parameter is used for selecting the database system in use. It can have one of the following values: MySQL, PostgreSQL, Sybase, HSQLDB, ODBC Bridge (e.g. Access), Microsoft SQL Server (JTDS), Ingres, Oracle.</parameter>
+			
+			<parameter key="database_url" type="string">This parameter is only available when the <em>define connection</em> parameter is set to &apos;url&apos;. This parameter is used for defining the URL connection string for the database, e.g. &apos;jdbc:mysql://foo.bar:portnr/database&apos;.</parameter>
+			
+			<parameter key="username" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used to specify the username of the database. </parameter>
+			
+			<parameter key="password" type="string">This parameter is only available when the <em>define connection</em> parameter is set to &apos;url&apos;. This parameter is used for specifying the password of the database. </parameter>
+			
+			<parameter key="jndi_name" type="string">This parameter is only available when the <em>define connection</em> parameter is set to &apos;jndi&apos;. This parameter is used for specifying the JNDI name for a data source. </parameter>
+			
+			<parameter key="table_name" type="string">This parameter is used for selecting the required table from the specified database.  </parameter>
+						
+			<parameter key="recreate_index" type="boolean">This parameter indicates if recreation of the index or index mapping table should be forced.</parameter>
+			
+			<parameter key="label_attribute" type="string">The name (case sensitive) of the label attribute is specified through this parameter.</parameter>
+			
+			<parameter key="id_attribute" type="string">The name (case sensitive) of the id attribute is specified through this parameter.</parameter>
+			
+			<parameter key="weight_attribute" type="string">The name (case sensitive) of the weight attribute is specified through this parameter.</parameter>
+			
+			</parameters>
+			
+			
+<relatedDocuments>
+			<relatedDocument key="execute_sql"></relatedDocument>
+			<relatedDocument key="read_database"></relatedDocument>
+</relatedDocuments>
+
+
+		<tutorialProcesses>
+			<tutorialProcess key="process.stream_database.mysql_database" title="Reading an ExampleSet from a mySQL database">
+				<description>
+					<paragraph>The Stream Database operator is used in this Example Process for reading a <em>mySQL</em> database. The <em>define connection</em> parameter is set to <em>predefined</em>. The <em>define connection</em> parameter was configured using the button next to the drop down box. The name of the connection was set to &apos;mySQLconn&apos;. The following values were set in the connection parameter&apos;s wizard. The <em>Database system</em> was set to &apos;mySQL&apos;. The <em>Host</em> was set to &apos;localhost&apos;. The <em>Port</em> was set to &apos;3306&apos;. The <em>Database scheme</em> was set to &apos;golf&apos;; this is the name of the database. The <em>User</em> was set to &apos;root&apos;. No password was provided. You will need a password if your database is password protected. Set all the values and test the connection. Make sure that the connection works.</paragraph>
+										<paragraph>The <em>table name</em> parameter is set to &apos;golf_table&apos; which is the name of the required table in the &apos;golf&apos; database. The <em>label attribute</em> parameter is set to &apos;Play&apos;. Run the process, you will see the entire &apos;golf_table&apos; in the Results Workspace. </paragraph>
+					
+				</description>
+
+<process version="5.2.008">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="5.2.008" expanded="true" name="Process">
+    <process expanded="true" height="377" width="665">
+      <operator activated="true" class="stream_database" compatibility="5.2.008" expanded="true" height="60" name="Stream Database" width="90" x="447" y="30">
+        <parameter key="connection" value="mySQLconn"/>
+        <parameter key="table_name" value="golf_table"/>
+        <parameter key="label_attribute" value="Play"/>
+      </operator>
+      <connect from_op="Stream Database" from_port="output" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="36"/>
+    </process>
+  </operator>
+</process>
+
+			</tutorialProcess>
+		</tutorialProcesses>
+	</operator>
+</p1:documents>

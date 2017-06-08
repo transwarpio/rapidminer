@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../documentation2html.xsl"?>
+<p1:documents xmlns:p1="http://rapid-i.com/schemas/documentation/reference/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://rapid-i.com/schemas/documentation/reference/1.0                http://rapid-i.com/schemas/documentation/reference/1.0/documentation.xsd">
+
+	<operator key="operator.jdbc_connectors:write_access" locale="en" version="6.5.000">
+	
+		<title>Write Access</title>
+		
+		<synopsis>This operator writes an ExampleSet into the specified Microsoft Access database.</synopsis>
+		
+		<text>
+			<paragraph>The Write Access operator is used for writing an ExampleSet into the specified Microsoft Access database (.mdb or .accdb extension) using the UCanAccess jdbc driver. You only need to have a basic understanding of databases in order to use this operator properly. Please go through the parameters and the attached Example Process to understand the working of this operator.</paragraph> 
+		</text>
+<!--
+<differentiation>
+			<relatedDocument key=""></relatedDocument>
+</differentiation>					
+-->
+
+		<inputPorts>
+			<port name="input" type="com.rapidminer.example.ExampleSet">This input port expects an ExampleSet. It is output of the Retrieve operator in the attached Example Process.</port>
+		</inputPorts>
+		
+		<outputPorts>
+			<port name="through" type="com.rapidminer.example.ExampleSet">The ExampleSet that was provided at the input port is delivered through this output port without any modifications. This is usually used to reuse the same ExampleSet in further operators of the process.</port>
+		
+			<port name="file" type="com.rapidminer.operator.nio.file.FileObject">This port memory buffers file object for passing it to the reader operators</port>
+		</outputPorts>
+		
+		
+		<parameters>
+		
+		<parameter key="database_file" type="filename">This parameter specifies the path of the Access database ( i.e. the mdb or accdb file)</parameter>
+		
+			<parameter key="username" type="string">This parameter is used for specifying the username of the database (if any). </parameter>
+			
+			<parameter key="password" type="string">This parameter is used for specifying the password of the database (if any). </parameter>
+					
+			<parameter key="table_name" type="string">This parameter is used for specifying the name of the required table from the specified database. </parameter>
+				
+			<parameter key="overwrite_mode" type="selection">This parameter indicates if an existing table should be overwritten or the data should be appended. </parameter>		
+			
+			<parameter key="access_version" type="selection">If a new database is created this parameter specifies its format version. This parameter is not used if the database already exists.</parameter>
+	
+				</parameters>
+			
+<!--
+<relatedDocuments>
+			<relatedDocument key=""></relatedDocument>
+</relatedDocuments>
+   	-->
+   	
+		<tutorialProcesses>
+			<tutorialProcess key="process.read_access.write_read_access" title="Writing and then reading data from an Access database">
+				<description>
+					<paragraph>The &apos;Golf&apos; data set is loaded using the Retrieve operator. The Write Access operator is used for writing this ExampleSet into the golf table of the &apos;golf_db.mdb&apos; database. The <em>database file</em> parameter is provided with the path of the database file &apos;golf_db.mdb&apos; and the name of the desired table is specified in the table name parameter ( i.e. it is set to &apos;golf&apos;). A <em>breakpoint</em> is inserted here. No results are visible in RapidMiner at this stage but you can see that at this point of the execution the database has been created and the golf table has been filled with the examples of the &apos;Golf&apos; data set.</paragraph>
+					<paragraph>Now the Read Access operator is used for reading the golf table from the &apos;golf_db.mdb&apos; database. The <em>database file</em> parameter is provided with the path of the database file &apos;golf_db.mdb&apos;. The <em>define query</em> parameter is set to &apos;table name&apos;. The <em>table name</em> parameter is set to &apos;golf&apos; which is the name of the required table. Continue the process, you will see the entire golf table in the Results Workspace. The <em>define query</em> parameter is set to &apos;table name&apos; if you want to read an entire table from the database. You can also read a selected portion of the database by using queries. Set the <em>define query</em> parameter to &apos;query&apos; and specify a query in the <em>query</em> parameter. </paragraph>
+					
+					<!-- tutorialProcess description: What is done and shown here? You can use formated text here -->
+				</description>
+
+<process version="6.5.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="6.0.002" expanded="true" name="Process">
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="6.5.000" expanded="true" height="60" name="Golf" width="90" x="313" y="30">
+        <parameter key="repository_entry" value="//Samples/data/Golf"/>
+      </operator>
+      <operator activated="true" breakpoints="after" class="write_access" compatibility="6.5.000" expanded="true" height="76" name="Write Access" width="90" x="447" y="30">
+        <parameter key="database_file" value="golf_db.mdb"/>
+        <parameter key="table_name" value="golf"/>
+        <parameter key="overwrite_mode" value="overwrite"/>
+      </operator>
+      <operator activated="true" class="read_access" compatibility="6.5.000" expanded="true" height="60" name="Read Access" width="90" x="447" y="210">
+        <parameter key="define_connection" value="url"/>
+        <parameter key="database_system" value="UCanAccess"/>
+<parameter key="database_url" value="jdbc:ucanaccess://golf_db.mdb;jackcessOpener=com.rapidminer.jdbc.AccessCryptCodecOpener"/>
+        <parameter key="username" value="noUser"/>
+        <parameter key="password" value="TkOTY2cMSt3EX+a2XvivVw=="/>
+        <parameter key="table_name" value="golf"/>
+        <enumeration key="parameters"/>
+        <parameter key="database_file" value="golf_db.mdb"/>
+      </operator>
+      <connect from_op="Golf" from_port="output" to_op="Write Access" to_port="input"/>
+      <connect from_op="Read Access" from_port="output" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="180"/>
+      <portSpacing port="sink_result 2" spacing="54"/>
+    </process>
+  </operator>
+</process>
+
+
+			</tutorialProcess>
+		</tutorialProcesses>
+	</operator>
+</p1:documents>

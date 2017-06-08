@@ -1,0 +1,1916 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<operatorHelp lang="en_EN">
+    <group>
+        <key>remote</key>
+        <name>Remote</name>
+    </group>
+
+    <!--groups -->
+    <group>
+        <key>remote.read</key>
+        <name>Read</name>
+    </group>
+    <group>
+        <key>remote.read.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.write</key>
+        <name>Write</name>
+    </group>
+    <group>
+        <key>remote.write.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.preprocessing</key>
+        <name>Preprocessing</name>
+    </group>
+    <group>
+        <key>remote.preprocessing.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.classification</key>
+        <name>Classification</name>
+    </group>
+    <group>
+        <key>remote.classification.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.clustering</key>
+        <name>Clustering</name>
+    </group>
+    <group>
+        <key>remote.clustering.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.regression</key>
+        <name>Regression</name>
+    </group>
+    <group>
+        <key>remote.regression.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.deeplearning</key>
+        <name>Deep Learning</name>
+    </group>
+    <group>
+        <key>remote.deeplearning.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.statistics</key>
+        <name>Statistics</name>
+    </group>
+    <group>
+        <key>remote.statistics.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.recommendation</key>
+        <name>Recommendation</name>
+    </group>
+    <group>
+        <key>remote.recommendation.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.association</key>
+        <name>Association</name>
+    </group>
+    <group>
+        <key>remote.association.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.scoring</key>
+        <name>Scoring</name>
+    </group>
+    <group>
+        <key>remote.scoring.more</key>
+        <name>More</name>
+    </group>
+
+    <group>
+        <key>remote.util</key>
+        <name>Util</name>
+    </group>
+    <group>
+        <key>remote.util.more</key>
+        <name>More</name>
+    </group>
+    <group>
+        <key>remote.custom</key>
+        <name>Custom</name>
+    </group>
+
+    <group>
+        <key>remote.user_defined</key>
+        <name>User Saved</name>
+    </group>
+
+    <operator>
+        <name>Join(Remote)</name>
+        <synopsis>Build the join of two example sets using the id attributes
+            of the sets in order to identify the same examples.</synopsis>
+        <help/>
+        <key>remote_join</key>
+    </operator>
+
+    <operator>
+        <name>Split(Remote)</name>
+        <synopsis>split a dataset into multiple parts</synopsis>
+        <key>remote_split</key>
+    </operator>
+    <operator>
+        <name>Numerical to Polynominal(Remote)</name>
+        <synopsis>Maps all numeric values simply to the corresponding nominal values. Please use one
+            of the discretization operators if you need more sophisticated nominalization methods.
+        </synopsis>
+        <key>remote_numerical_to_polynominal</key>
+    </operator>
+    <operator>
+        <name>Cholesky Decomposition</name>
+        <synopsis>Cholesky Decomposition</synopsis>
+        <help>Cholesky Decomposition</help>
+        <key>remote_cholesky_decomposition</key>
+    </operator>
+    <operator>
+        <name>Set Minus(Remote)</name>
+        <synopsis>This operator returns these examples of an example set whose
+            IDs are not contained within another example set.</synopsis>
+        <help>This operator performs a set minus on two example sets, i.e. the
+            resulting example set contains all the examples of the minuend
+            example set whose IDs do not appear in the subtrahend example set.
+            Please note, that the subtrahend example set must be the first on the
+            ioobject stack, i.e. it must be the last example set which has been
+            added. As compared to SQL, both example sets need have neither the
+            same number of columns nor the same data types. The operation does
+            only depend on the ID columns of the example sets.</help>
+        <key>remote_set_minus</key>
+    </operator>
+    <operator>
+        <name>Multiple Order By(Remote)</name>
+        <synopsis>This operator order the table by columns specified by user</synopsis>
+        <help>This operator order the table by columns specified by user</help>
+        <key>remote_multi_order_by</key>
+    </operator>
+    <operator>
+        <name>Top N(Remote)</name>
+        <synopsis>This operator selects top n records from the table</synopsis>
+        <help>This operator selects top n records from the table</help>
+        <key>remote_top</key>
+    </operator>
+    <operator>
+        <name>Intersect(Remote)</name>
+        <synopsis>This operator returns these examples of an example set whose
+            IDs are contained within another example set.</synopsis>
+        <help>This operator performs a set intersection on two example sets,
+            i.e., the resulting example set contains all the examples of the
+            first example set whose IDs appear also in the second example set. As
+            compared to SQL, both example sets neither need to have neither the
+            same number of columns nor the same data types. The operation does
+            only depend on the ID columns of the example sets.</help>
+        <key>remote_intersect</key>
+    </operator>
+    <operator>
+        <name>Union(Remote)</name>
+        <synopsis>This operator unions two tables.</synopsis>
+        <help>This operator unions two tables.</help>
+        <key>remote_union</key>
+    </operator>
+
+    <operator>
+        <name>Replace Data(Remote)</name>
+        <synopsis>This operator replaces the specified column of original table by
+            another table</synopsis>
+        <help>This operator replaces the specified column of original table by
+            another table</help>
+        <key>remote_replace_data</key>
+    </operator>
+
+    <group>
+        <key>remote.cleansing.type</key>
+        <name>Data Type Transformer(Remote)</name>
+    </group>
+
+    <operator>
+        <name>Data Type Transformer(Remote)</name>
+        <synopsis>This operator transforms the data type of specified columns.</synopsis>
+        <help>This operator transforms the data type of specified columns.</help>
+        <key>remote_data_type_transformer</key>
+        <shortName>Data Type Transformer(Remote)</shortName>
+    </operator>
+
+    <operator>
+        <name>Join(Remote)</name>
+        <synopsis>This operator joins two tables</synopsis>
+        <help>This operator joins two tables. Users can choose the join type by selecting
+            join_type. Inner join, left join, right join, outer join are all supported. if
+            users use id attribute as key, then this operator will automatically use the id
+            column or users can specify columns if they want.</help>
+        <key>remote_join</key>
+    </operator>
+    <operator>
+        <name>Union(Remote)</name>
+        <synopsis>This operator union two tables</synopsis>
+        <help>This operator unions two tables. </help>
+        <key>remote_union</key>
+    </operator>
+    <operator>
+        <name>Rename by Replacing(Remote)</name>
+        <synopsis>This operator can be used to rename a set of attributes by
+            replacing parts of the attribute names by a specified replacement.
+        </synopsis>
+        <help>&lt;p&gt;This operator replaces parts of the attribute names
+            (like whitespaces, parentheses, or other unwanted characters) by a
+            specified replacement. The replace_what parameter can be defined as a
+            regular expression (please refer to the annex of the Midas
+            tutorial for a description). The replace_by parameter can be defined
+            as an arbitrary string. Empty strings are also allowed. Capturing
+            groups of the defined regular expression can be accessed with $1, $2,
+            $3...&lt;/p&gt;</help>
+        <key>remote_rename_by_replacing</key>
+    </operator>
+    <operator>
+        <name>Subprocess(Remote)</name>
+        <synopsis>A chain of operators that is subsequently applied.
+        </synopsis>
+        <help>A simple operator chain which can have an arbitrary number of
+            inner operators. The operators are subsequently applied and their
+            output is used as input for the succeeding operator. The input of the
+            operator chain is used as input for the first inner operator and the
+            output of the last operator is used as the output of the operator
+            chain.</help>
+        <key>remote_subprocess</key>
+    </operator>
+    <operator>
+        <name>Filter Examples(Remote)</name>
+        <synopsis>This operator only allows examples which fulfill a specified
+            condition.</synopsis>
+        <key>remote_filter_examples</key>
+    </operator>
+    <operator>
+        <name>Linear Regression(Remote)</name>
+        <synopsis>Linear regression.</synopsis>
+        <help>&lt;p&gt;This operator calculates a linear regression model. It
+            uses the Akaike criterion for model selection.&lt;/p&gt;</help>
+        <key>remote_linear_regression</key>
+    </operator>
+    <operator>
+        <name>Apply Threshold(Remote)</name>
+        <synopsis>Applies a threshold on soft classified data.</synopsis>
+        <help>This operator applies the given threshold to an example set and
+            maps a soft prediction to crisp values. If the confidence for the
+            second class (usually positive for Midas) is greater than the
+            given threshold the prediction is set to this class.</help>
+        <key>remote_apply_threshold</key>
+    </operator>
+    <operator>
+        <name>Find Thresholds(Remote)</name>
+        <synopsis></synopsis>
+        <help></help>
+        <key>remote_find_thresholds</key>
+    </operator>
+    <operator>
+        <name>Create Thresholds(Remote)</name>
+        <synopsis></synopsis>
+        <help></help>
+        <key>remote_create_thresholds</key>
+    </operator>
+    <operator>
+        <name>Performance (Binominal Classification)(Remote)</name>
+        <synopsis>This operator delivers as output a list of performance
+            values according to a list of selected performance criteria (for
+            binominal classification tasks).</synopsis>
+        <help>&lt;p&gt;This performance evaluator operator should be used for
+            classification tasks, i.e. in cases where the label attribute has a
+            binominal value type. Other polynominal classification tasks, i.e.
+            tasks with more than two classes can be handled by the
+            &lt;i&gt;PolynominalClassificationPerformanceEvaluator&lt;/i&gt;
+            operator. This operator expects a test &lt;i&gt;ExampleSet&lt;/i&gt;
+            as input, whose elements have both true and predicted labels, and
+            delivers as output a list of performance values according to a list
+            of performance criteria that it calculates. If an input performance
+            vector was already given, this is used for keeping the performance
+            values.&lt;/p&gt; &lt;p&gt;All of the performance criteria can be
+            switched on using boolean parameters. Their values can be queried by
+            a ProcessLogOperator using the same names. The main criterion is used
+            for comparisons and need to be specified only for processes where
+            performance vectors are compared, e.g. feature selection or other
+            meta optimization process setups. If no other main criterion was
+            selected, the first criterion in the resulting performance vector
+            will be assumed to be the main criterion.&lt;/p&gt; &lt;p&gt;The
+            resulting performance vectors are usually compared with a standard
+            performance comparator which only compares the fitness values of the
+            main criterion. Other implementations than this simple comparator can
+            be specified using the parameter
+            &lt;var&gt;comparator_class&lt;/var&gt;. This may for instance be
+            useful if you want to compare performance vectors according to the
+            weighted sum of the individual criteria. In order to implement your
+            own comparator, simply subclass
+            &lt;i&gt;PerformanceComparator&lt;/i&gt;. Please note that for true
+            multi-objective optimization usually another selection scheme is used
+            instead of simply replacing the performance comparator.&lt;/p&gt;
+        </help>
+        <key>remote_performance_binominal_classification</key>
+        <shortName>Performance</shortName>
+    </operator>
+
+
+    <operator>
+        <name>Select(Remote)</name>
+        <synopsis>select columns, like the SQL select</synopsis>
+        <key>remote_select</key>
+    </operator>
+
+    <operator>
+        <name>Pivot(Remote)</name>
+        <synopsis>Transforms an example set by grouping multiple examples of
+            single units to single examples.</synopsis>
+        <key>remote_pivot</key>
+    </operator>
+    <operator>
+        <name>String Indexer(Remote)</name>
+        <synopsis>StringIndexer encodes a string column of labels to a column of
+            label indices.
+        </synopsis>
+        <help>StringIndexer encodes a string column of labels to a column of
+            label indices. The indices are in [0, numLabels), ordered by label
+            frequencies. So the most frequent label gets index 0. If the input
+            column is numeric, we cast it to string and index the string values.
+            When downstream pipeline components such as Estimator or Transformer
+            make use of this string-indexed label, you must set the input column
+            of the component to this string-indexed column name. In many cases,
+            you can set the input column with setInputCol.</help>
+        <key>remote_string_indexer</key>
+    </operator>
+
+    <operator>
+        <name>Rename(Remote)</name>
+        <synopsis>This operator can be used to rename an attribute.</synopsis>
+        <help>&lt;p&gt; This operator can be used to rename an attribute of
+            the input &lt;i&gt;ExampleSet&lt;/i&gt;. Please keep in mind, that attribute names have to be unique.&lt;br /&gt;
+            Although renamed, an attribute keeps it's role. For example if you rename an attribute &quot;label&quot; of the role &lt;b&gt;label&lt;/b&gt; to &quot;color&quot;, the resulting attribute &quot;color&quot; will still have the role &lt;b&gt;label&lt;/b&gt;. For changing a role, see &lt;a href="rm://opdoc/set_role"&gt;Set Role&lt;/a&gt;.
+            &lt;/p&gt;</help>
+        <key>remote_rename</key>
+    </operator>
+
+    <operator>
+        <name>k-Means(Remote)</name>
+        <synopsis>Clustering with k-means</synopsis>
+        <help>This operator represents an implementation of k-means. This
+            operator will create a cluster attribute if not present yet.</help>
+        <key>remote_k_means</key>
+        <shortName>Clustering</shortName>
+    </operator>
+    <operator>
+        <name>Multiply(Remote)</name>
+        <synopsis>This operators multiplies its input object.</synopsis>
+        <help>&lt;p&gt;This operator copies its input object to all connected output ports. As     more ports are connected, more copies are generated. Note that objects are     copied by reference, hence the underlying data of &lt;i&gt;ExampleSets&lt;/i&gt; is     never copied (unless using a &lt;i&gt;Materialize Data&lt;/i&gt; operator). Therefore,     copying objects is cheap. When copying &lt;i&gt;ExampleSets&lt;/i&gt; only references     to attributes are copied. When attributes are changed or added to one     example set, this change is invisible to the other copies. However, if &lt;i&gt;data&lt;/i&gt;     is modified in one thread of the process flow, it is also modified in the     other copies.&lt;/p&gt;</help>
+        <key>remote_multiply</key>
+    </operator>
+    <operator>
+        <name>Performance (Regression)(Remote)</name>
+        <synopsis>This operator delivers as output a list of performance
+            values according to a list of selected performance criteria (for
+            regression tasks).</synopsis>
+        <help>&lt;p&gt;This performance evaluator operator should be used for
+            regression tasks, i.e. in cases where the label attribute has a
+            numerical value type. The operator expects a test
+            &lt;i&gt;ExampleSet&lt;/i&gt; as input, whose elements have both true
+            and predicted labels, and delivers as output a list of performance
+            values according to a list of performance criteria that it
+            calculates. If an input performance vector was already given, this is
+            used for keeping the performance values.&lt;/p&gt; &lt;p&gt;All of
+            the performance criteria can be switched on using boolean parameters.
+            Their values can be queried by a ProcessLogOperator using the same
+            names. The main criterion is used for comparisons and need to be
+            specified only for processes where performance vectors are compared,
+            e.g. feature selection or other meta optimization process setups. If
+            no other main criterion was selected, the first criterion in the
+            resulting performance vector will be assumed to be the main
+            criterion.&lt;/p&gt; &lt;p&gt;The resulting performance vectors are
+            usually compared with a standard performance comparator which only
+            compares the fitness values of the main criterion. Other
+            implementations than this simple comparator can be specified using
+            the parameter &lt;var&gt;comparator_class&lt;/var&gt;. This may for
+            instance be useful if you want to compare performance vectors
+            according to the weighted sum of the individual criteria. In order to
+            implement your own comparator, simply subclass
+            &lt;i&gt;PerformanceComparator&lt;/i&gt;. Please note that for true
+            multi-objective optimization usually another selection scheme is used
+            instead of simply replacing the performance comparator.&lt;/p&gt;
+        </help>
+        <key>remote_performance_regression</key>
+        <shortName>Performance</shortName>
+    </operator>
+    <operator>
+        <name>LogisticRegression</name>
+        <synopsis>A logistic regression learner for binary classification
+            tasks.</synopsis>
+        <help>This operator determines a logistic regression model.</help>
+        <key>logisticregression</key>
+    </operator>
+    <operator>
+        <name>Discretize by Binning</name>
+        <synopsis>Discretize numerical attributes into a user defined number
+            of bins.</synopsis>
+        <help>This operator discretizes all numeric attributes in the dataset
+            into nominal attributes. This discretization is performed by simple
+            binning, i.e. the specified number of equally sized bins is created
+            and the numerical values are simply sorted into those bins. Skips all
+            special attributes including the label.</help>
+        <key>discretize_by_bins</key>
+        <shortName>Discretize</shortName>
+    </operator>
+    <operator>
+        <name>Fill Data Gaps</name>
+        <synopsis>This operator fills gaps in the data based on the ID
+            attribute of the data set.</synopsis>
+        <help>&lt;p&gt;This operator fills gaps in the data based on the ID
+            attribute of the data set. The ID attribute must either have the
+            value type &amp;quot;integer&amp;quot; or one of the data value
+            types.&lt;/p&gt; &lt;p&gt;The operator performs the following
+            steps:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;The data is sorted according to
+            the ID attribute&lt;/li&gt; &lt;li&gt;All occurring distances between
+            consecutive ID values are calculated&lt;/li&gt; &lt;li&gt;The
+            greatest common divisor (GCD) of all distances is
+            calculated&lt;/li&gt; &lt;li&gt;All rows which would have an ID value
+            which is a multiple of the GCD but are missing are added to the data
+            set&lt;/li&gt; &lt;/ol&gt; &lt;p&gt;Please note that all values of
+            attributes beside the ID attribute will have a missing value which
+            often must be replaced as a next step.&lt;/p&gt;</help>
+        <key>fill_data_gaps</key>
+    </operator>
+    <operator>
+        <name>Combine Performances</name>
+        <synopsis>Returns a performance vector containing the weighted fitness
+            value of the input criteria.</synopsis>
+        <help>Returns a performance vector containing the weighted fitness
+            value of the input criteria.</help>
+        <key>combine_performances</key>
+        <shortName>Performance</shortName>
+    </operator>
+    <operator>
+        <name>ANOVA</name>
+        <synopsis>Performs ANalysis Of VAriances to determine the probability
+            for the null hypothesis 'the actual means are the same'.</synopsis>
+        <help>Determines if the null hypothesis (all actual mean values are
+            the same) holds for the input performance vectors. This operator uses
+            an ANalysis Of VAriances approach to determine probability that the
+            null hypothesis is wrong.</help>
+        <key>anova</key>
+    </operator>
+    <operator>
+        <name>Cluster Distance Performance</name>
+        <synopsis>Delivers a performance based on cluster centroids.
+        </synopsis>
+        <help>An evaluator for centroid based clustering methods. The average
+            within cluster distance is calculated by averaging the distance
+            between the centroid and all examples of a cluster.</help>
+        <key>cluster_distance_performance</key>
+        <shortName>Performance</shortName>
+    </operator>
+    <operator>
+        <name>Generate Nominal Data</name>
+        <synopsis>Generates an example set based on nominal attributes.
+        </synopsis>
+        <help>Generates a random example set for testing purposes. All
+            attributes have only (random) nominal values and a classification
+            label.</help>
+        <key>generate_nominal_data</key>
+    </operator>
+    <operator>
+        <name>Optimize Selection (Brute Force)</name>
+        <synopsis>Selects the best features for an example set by trying all
+            possible combinations of attribute selections.</synopsis>
+        <help>This feature selection operator selects the best attribute set
+            by trying all possible combinations of attribute selections. It
+            returns the example set containing the subset of attributes which
+            produced the best performance. As this operator works on the powerset
+            of the attributes set it has exponential runtime.</help>
+        <key>optimize_selection_brute_force</key>
+    </operator>
+
+    <operator>
+        <name>AbsoluteStratifiedSampling</name>
+        <synopsis>Creates a stratified sample from an example set by drawing a
+            given number of examples.</synopsis>
+        <help>Stratified sampling operator. This operator performs a random
+            sampling of a given size. In contrast to the simple sampling
+            operator, this operator performs a stratified sampling for data sets
+            with nominal label attributes, i.e. the class distributions remains
+            (almost) the same after sampling. Hence, this operator cannot be
+            applied on data sets without a label or with a numerical label. In
+            these cases a simple sampling without stratification is performed. In
+            some cases it might happen that not the exact desired number of
+            examples is sampled, e.g. if the desired number is 100 from three
+            qually distributed classes the resulting number will be 99 (33 of
+            each class).</help>
+        <key>absolutestratifiedsampling</key>
+    </operator>
+    <operator>
+        <name>Read CSV</name>
+        <synopsis>This operator can read csv files.</synopsis>
+        <help>&lt;p&gt;This operator can read csv files, where all values of an example are written into one line and separated by an constant separator.
+            The separator might be specified in the &lt;b&gt;column separators&lt;/b&gt; parameter. The default will split the line on each comma, semicolon and blank. Arbitrary regular expressions are usable as separator.
+            Empty values and the question mark will be read as missing values. You can quote the values (including
+            the column separators) with a double quote (&quot;). You can
+            escape the quoting character with a backslash, i.e.
+            \&quot;.&lt;/p&gt;
+            &lt;p&gt;The first line is used for the attribute names as default, controlled by the &lt;b&gt;use first row as attribute names&lt;/b&gt; parameter.&lt;br /&gt;
+            This operator tries to determine an appropriate type of the attributes by reading the first few lines and checking the occuring values. If all values are integers, the attribute will become integer, if
+            real numbers occur, it will be of type real. Columns containing values which can't be interpreted as numbers will be nominal, as long as they don't match the date and time pattern of the &lt;b&gt;date format&lt;/b&gt; parameter. If they do, this column of the csv file will be automatically parsed as date and the according attribute will be of type date.
+            &lt;/p&gt;</help>
+        <key>read_csv</key>
+    </operator>
+
+    <operator>
+        <name>Read URL</name>
+        <synopsis>This operator reads an example set from a URL. It allows
+            only a fixed data format but on the other hand is able to read data
+            from arbitrary sources.</synopsis>
+        <help>&lt;p&gt; This operator reads an example set from an URL. The
+            format has to be a CSV format with ';' as column separator and
+            nominal values have to be quoted with a double quote (&amp;quot;). A
+            quote inside of a nominal value has to be escaped by a backslash like
+            in \&amp;quot;. The first row is allowed to contain the column names
+            which has to be indicated by the corresponding parameter. Comments
+            are not allowed, unknown attribute values can be marked with empty
+            strings or a question mark. &lt;/p&gt; &lt;p&gt; This operator is not
+            nearly as powerful as the operators ExampleSource or
+            SimpleExampleSource but is on the other hand able to read data from
+            arbitrary places as long as the format fits the specification above.
+            Please note also that the usage of this operator hardly allows for a
+            correct meta data description which might lead to problems if the
+            meta data between training and test set differ in a learning
+            scenario. &lt;/p&gt; &lt;p&gt; Attribute roles can not be directly
+            set during loading but the operator ChangeAttributeRole has to be
+            used after loading in order to change the roles. &lt;/p&gt;</help>
+        <key>read_url</key>
+    </operator>
+    <operator>
+        <name>Add</name>
+        <synopsis>This operator adds an additional value to a specified
+            nominal attribute which is then mapped to a specific index.
+        </synopsis>
+        <help>Adds a value to a nominal attribute definition.</help>
+        <key>add</key>
+    </operator>
+    <operator>
+        <name>Weight by User Specification</name>
+        <synopsis>This operator defines the weights for all features based on
+            a list of regular expressions for the feature names which can be used
+            to set a specified weight to features with a name fulfilling these
+            expressions.</synopsis>
+        <help>&lt;p&gt;This operator is able to create feature weights based
+            on regular expressions defined for the feature names. For example,
+            the user can map all features with a name starting with "Att" to the
+            weight 0.5 by using the regular expression "Att.*". Alternatively,
+            the specified weight may be considered as weight sum for all
+            attributes matching the corresponding regular expression and may be
+            equally distributed among these attributes. All other feature weights
+            whose feature names are not covered by one of the regular expressions
+            are set to the default weight.&lt;/p&gt; &lt;p&gt;Please note that
+            the weights defined in the regular expression list are set in the
+            order as they are defined in the list, i.e. weights can overwrite
+            weights set before.&lt;/p&gt;</help>
+        <key>weight_by_user_specification</key>
+    </operator>
+
+    <operator>
+        <name>FeatureValueTypeFilter</name>
+        <synopsis>This operator switches off those features whose value type
+            matches the given one.</synopsis>
+        <help>This operator switches off all features whose value type matches
+            the one given in the parameter
+            &lt;code&gt;skip_features_of_type&lt;/code&gt;. This can be useful
+            e.g. for learning schemes that can handle only nominal attributes.
+        </help>
+        <key>featurevaluetypefilter</key>
+    </operator>
+    <operator>
+        <name>Join</name>
+        <synopsis>Build the join of two example sets using the id attributes
+            of the sets in order to identify the same examples.</synopsis>
+        <help>&lt;p&gt; Build the join of two example sets using the id
+            attributes of the sets, i.e. both example sets must have an id
+            attribute where the same id indicate the same examples. If examples
+            are missing an exception will be thrown. The result example set will
+            consist of the same number of examples but the union set or the union
+            list (depending on parameter setting double attributes will be
+            removed or renamed) of both feature sets. In case of removing double
+            attribute the attribute values must be the same for the examples of
+            both example set, otherwise an exception will be thrown. &lt;/p&gt;
+            &lt;p&gt; Please note that this check for double attributes will only
+            be applied for regular attributes. Special attributes of the second
+            input example set which do not exist in the first example set will
+            simply be added. If they already exist they are simply skipped.
+            &lt;/p&gt;</help>
+        <key>join</key>
+    </operator>
+
+    <operator>
+        <name>MinMaxBinDiscretization</name>
+        <synopsis>Discretize numerical attributes into a user defined number
+            of bins lying in a user defined value range.</synopsis>
+        <help>This operator discretizes all numeric attributes in the dataset
+            into nominal attributes. This discretization is performed by simple
+            binning, i.e. the specified number of equally sized bins is created
+            and the numerical values are simply sorted into those bins. Skips all
+            special attributes including the label. In contrast to the usual
+            simple binning performed by the &lt;i&gt;BinDiscretization&lt;/i&gt;,
+            this operator bins the values into a predefined range (and not into
+            the range defined by the minimum and maximum values taken from the
+            data).</help>
+        <key>minmaxbindiscretization</key>
+    </operator>
+
+    <operator>
+        <name>Bayesian Boosting</name>
+        <synopsis>Boosting operator based on Bayes' theorem.</synopsis>
+        <help>&lt;p&gt;This operator trains an ensemble of classifiers for
+            boolean target attributes. In each iteration the training set is
+            reweighted, so that previously discovered patterns and other kinds of
+            prior knowledge are &amp;quot;sampled out&amp;quot; {@rapidminer.cite
+            Scholz/2005b}. An inner classifier, typically a rule or decision tree
+            induction algorithm, is sequentially applied several times, and the
+            models are combined to a single global model. The number of models to
+            be trained maximally are specified by the parameter
+            &lt;code&gt;iterations&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;If the
+            parameter &lt;code&gt;rescale_label_priors&lt;/code&gt; is set, then
+            the example set is reweighted, so that all classes are equally
+            probable (or frequent). For two-class problems this turns the problem
+            of fitting models to maximize weighted relative accuracy into the
+            more common task of classifier induction {@rapidminer.cite
+            Scholz/2005a}. Applying a rule induction algorithm as an inner
+            learner allows to do subgroup discovery. This option is also
+            recommended for data sets with class skew, if a &amp;quot;very weak
+            learner&amp;quot; like a decision stump is used. If
+            &lt;code&gt;rescale_label_priors&lt;/code&gt; is not set, then the
+            operator performs boosting based on probability estimates.&lt;/p&gt;
+            &lt;p&gt;The estimates used by this operator may either be computed
+            using the same set as for training, or in each iteration the training
+            set may be split randomly, so that a model is fitted based on the
+            first subset, and the probabilities are estimated based on the
+            second. The first solution may be advantageous in situations where
+            data is rare. Set the parameter
+            &lt;code&gt;ratio_internal_bootstrap&lt;/code&gt; to 1 to use the
+            same set for training as for estimation. Set this parameter to a
+            value of lower than 1 to use the specified subset of data for
+            training, and the remaining examples for probability
+            estimation.&lt;/p&gt; &lt;p&gt;If the parameter
+            &lt;code&gt;allow_marginal_skews&lt;/code&gt; is
+            &lt;em&gt;not&lt;/em&gt; set, then the support of each subset defined
+            in terms of common base model predictions does not change from one
+            iteration to the next. Analogously the class priors do not change.
+            This is the procedure originally described in {@rapidminer.cite
+            Scholz/2005b} in the context of subgroup discovery.&lt;/p&gt;
+            &lt;p&gt;Setting the &lt;code&gt;allow_marginal_skews&lt;/code&gt;
+            option to &lt;code&gt;true&lt;/code&gt; leads to a procedure that
+            changes the marginal weights/probabilities of subsets, if this is
+            beneficial in a boosting context, and stratifies the two classes to
+            be equally likely. As for AdaBoost, the total weight upper-bounds the
+            training error in this case. This bound is reduced more quickly by
+            the BayesianBoosting operator, however.&lt;/p&gt; &lt;p&gt;In sum, to
+            reproduce the sequential sampling, or knowledge-based sampling, from
+            {@rapidminer.cite Scholz/2005b} for subgroup discovery, two of the
+            default parameter settings of this operator have to be changed:
+            &lt;code&gt;rescale_label_priors&lt;/code&gt; must be set to
+            &lt;code&gt;true&lt;/code&gt;, and
+            &lt;code&gt;allow_marginal_skews&lt;/code&gt; must be set to
+            &lt;code&gt;false&lt;/code&gt;. In addition, a boolean (binomial)
+            label has to be used.&lt;/p&gt; &lt;p&gt;The operator requires an
+            example set as its input. To sample out prior knowledge of a
+            different form it is possible to provide another model as an optional
+            additional input. The predictions of this model are used to weight
+            produce an initial weighting of the training set. The ouput of the
+            operator is a classification model applicable for estimating
+            conditional class probabilities or for plain crisp classification. It
+            contains up to the specified number of inner base models. In the case
+            of an optional initial model, this model will also be stored in the
+            output model, in order to produce the same initial weighting during
+            model application.&lt;/p&gt;</help>
+        <key>bayesian_boosting</key>
+    </operator>
+    <operator>
+        <name>Cluster Count Performance</name>
+        <synopsis>Delivers a performance based on the number of clusters.
+        </synopsis>
+        <help>This operator does actually not compute a performance criterion
+            but simply provides the number of clusters as a value.</help>
+        <key>cluster_count_performance</key>
+        <shortName>Performance</shortName>
+    </operator>
+    <operator>
+        <name>Sort</name>
+        <synopsis>This operator sorts the given &lt;i&gt;ExampleSet&lt;/i&gt; according to a
+            single attribute.</synopsis>
+        <help>
+            &lt;p&gt; This operator sorts the given  &lt;i&gt;ExampleSet&lt;/i&gt; according to
+            a single attribute specified by the &lt;b&gt;attribute_name&lt;/b&gt; parameter. The examples are sorted according to the
+            natural order of the values of this attribute either in increasing or
+            in decreasing direction, depending on the setting of &lt;b&gt;sorting direction&lt;/b&gt;. &lt;/p&gt;
+        </help>
+        <key>sort</key>
+    </operator>
+
+    <operator>
+        <name>Generate Direct Mailing Data</name>
+        <synopsis>Generates data for testing purposes based on a direct
+            mailing data set.</synopsis>
+        <help>Generates a random example set for testing purposes. The data
+            represents a direct mailing example set.</help>
+        <key>generate_direct_mailing_data</key>
+    </operator>
+    <operator>
+        <name>Numerical to Binominal(Remote)</name>
+        <synopsis>Maps all numeric values to 'false' if they are in the
+            specified range (typical: equal 0.0) and to 'true' otherwise.
+        </synopsis>
+        <help>Converts all numerical attributes to binary ones. If the value
+            of an attribute is between the specified minimal and maximal value,
+            it becomes &lt;em&gt;false&lt;/em&gt;, otherwise
+            &lt;em&gt;true&lt;/em&gt;. If the value is missing, the new value
+            will be missing. The default boundaries are both set to 0, thus only
+            0.0 is mapped to false and all other values are mapped to true.
+        </help>
+        <key>remote_numerical_to_binominal</key>
+    </operator>
+
+    <operator>
+        <name>ExperimentLog</name>
+        <synopsis>Clears a table generated by a ProcessLog operator.
+        </synopsis>
+        <help>This operator can be used to clear a data table generated by a
+            &lt;i&gt;ProcessLogOperator&lt;/i&gt;.</help>
+    </operator>
+    <operator>
+        <name>Flatten Clustering</name>
+        <synopsis>Creates a flat cluster model from a hierarchical one.
+        </synopsis>
+        <help>Creates a flat cluster model from a hierarchical one by
+            expanding nodes in the order of their distance until the desired
+            number of clusters is reached.</help>
+        <key>flatten_clustering</key>
+    </operator>
+    <operator>
+        <name>Split Validation</name>
+        <synopsis>A SimpleValidation randomly splits up the example set into a
+            training and test set and evaluates the model.</synopsis>
+        <help>&lt;p&gt; A &lt;code&gt;RandomSplitValidationChain&lt;/code&gt;
+            splits up the example set into a training and test set and evaluates
+            the model. The first inner operator must accept an
+            &lt;i&gt;ExampleSet&lt;/i&gt; while the second must accept an
+            &lt;i&gt;ExampleSet&lt;/i&gt; and the output of the first (which is
+            in most cases a &lt;i&gt;Model&lt;/i&gt;) and must produce a
+            &lt;i&gt;PerformanceVector&lt;/i&gt;. &lt;/p&gt; &lt;p&gt;This
+            validation operator provides several values which can be logged by
+            means of a &lt;i&gt;ProcessLogOperator&lt;/i&gt;. All performance
+            estimation operators of Midas provide access to the average
+            values calculated during the estimation. Since the operator cannot
+            ensure the names of the delivered criteria, the ProcessLog operator
+            can access the values via the generic value names:&lt;/p&gt;
+            &lt;ul&gt; &lt;li&gt;performance: the value for the main criterion
+            calculated by this validation operator&lt;/li&gt;
+            &lt;li&gt;performance1: the value of the first criterion of the
+            performance vector calculated&lt;/li&gt; &lt;li&gt;performance2: the
+            value of the second criterion of the performance vector
+            calculated&lt;/li&gt; &lt;li&gt;performance3: the value of the third
+            criterion of the performance vector calculated&lt;/li&gt;
+            &lt;li&gt;for the main criterion, also the variance and the standard
+            deviation can be accessed where applicable.&lt;/li&gt; &lt;/ul&gt;
+        </help>
+        <key>split_validation</key>
+        <shortName>Validation</shortName>
+    </operator>
+    <operator>
+        <name>Performance (Costs)</name>
+        <synopsis>A cost evaluator delivers as output the costs for given
+            classification results.</synopsis>
+        <help>This operator provides the ability to evaluate classification
+            costs. Therefore a cost matrix might be specified, denoting the costs
+            for every possible classification outcome: predicted label x real
+            label. Costs will be minimized during optimization.</help>
+        <key>performance_costs</key>
+        <shortName>Performance</shortName>
+    </operator>
+
+    <operator>
+        <name>Aggregate(Remote)</name>
+        <synopsis>Performs one of the aggregation functions (count, sum...)
+            known from SQL (allows also grouping).</synopsis>
+        <help>&lt;p&gt;This operator creates a new example set from the input
+            example set showing the results of arbitrary aggregation functions
+            (as SUM, COUNT etc. known from SQL). Before the values of different
+            rows are aggregated into a new row the rows might be grouped by the
+            values of a multiple attributes (similar to the group-by clause known
+            from SQL). In this case a new line will be created for each
+            group.&lt;/p&gt; &lt;p&gt;Please note that the known HAVING clause
+            from SQL can be simulated by an additional
+            &lt;i&gt;ExampleFilter&lt;/i&gt; operator following this
+            one.&lt;/p&gt;</help>
+        <key>remote_aggregate</key>
+    </operator>
+    <operator>
+        <name>Count(Remote)</name>
+        <synopsis>Compute how many lines in this dataset</synopsis>
+        <help>Compute how many lines in this dataset</help>
+        <key>remote_count</key>
+    </operator>
+    <operator>
+        <name>GroupByKey(Remote)</name>
+        <synopsis>Group data by key</synopsis>
+        <help>Group data by key</help>
+        <key>remote_groupByKey</key>
+    </operator>
+    <operator>
+        <name>Dereplication(Remote)</name>
+        <synopsis>Dereplication</synopsis>
+        <help>Dereplication</help>
+        <key>remote_distinct</key>
+    </operator>
+
+    <operator>
+        <name>Select by Weights(Remote)</name>
+        <synopsis>Selects only attributes which weights fulfill a given
+            relation with respect to the input attribute weights.</synopsis>
+        <help>This operator selects all attributes which have a weight
+            satisfying a given condition. For example, only attributes with a
+            weight greater than &lt;code&gt;min_weight&lt;/code&gt; should be
+            selected. This operator is also able to select the k attributes with
+            the highest weight.</help>
+        <key>remote_select_by_weights</key>
+    </operator>
+
+    <operator>
+        <name>Retrieve(Remote)</name>
+        <synopsis>&lt;p&gt;Reads an object from the data repository.&lt;/p&gt;</synopsis>
+        <help>&lt;p&gt;      This operator can be used to access the repositories introduced in       Midas 5. It should replace all file access, since it provides full       meta data processing, which eases the usage of Midas a lot. In       contrast to accessing a raw file, it will provide the complete meta data       of the data, so that all meta data transformations are possible.    &lt;/p&gt;    &lt;p&gt;      The single parameter &amp;quot;repository_entry&amp;quot; references an entry in the       repository which will be returned as the output of this operator.       Repository locations are resolved relative to the repository folder       containing the current process. Folders in the repository are separated       by a forward slash (/), a &amp;quot;..&amp;quot; references the parent folder. A leading       forward slash references the root folder of the repository containing       the current process. A leading double forward slash is interpreted as an       absolute path starting with the name of a repository.    &lt;/p&gt;    &lt;p&gt;      &lt;br&gt;          &lt;/p&gt;    &lt;ul&gt;      &lt;li&gt;        &amp;quot;MyData&amp;quot; looks up an entry &amp;quot;MyData&amp;quot; in the same folder as the current         process.      &lt;/li&gt;      &lt;li&gt;        &amp;quot;../input/MyData looks up an entry &amp;quot;MyData&amp;quot; located in a folder         &amp;quot;input&amp;quot; next to the folder containing the current process.      &lt;/li&gt;      &lt;li&gt;        &amp;quot;/data/Model&amp;quot; looks up an entry &amp;quot;Model&amp;quot; in a top-level folder &amp;quot;data&amp;quot;         in the repository holding the current process      &lt;/li&gt;      &lt;li&gt;        &amp;quot;//Samples/data/Iris&amp;quot; looks up the Iris data set in the &amp;quot;Samples&amp;quot;         repository.&lt;/p&gt;&lt;p&gt;&lt;br&gt;        &lt;p&gt;                  &lt;/p&gt;      &lt;/li&gt;    &lt;/ul&gt;</help>
+        <key>remote_retrieve</key>
+    </operator>
+     <operator>
+        <name>Retrieve CSV(Remote)</name>
+        <synopsis>&lt;p&gt;Reads an csv file from the data repository.&lt;/p&gt;</synopsis>
+        <help>&lt;p&gt;      This operator can be used to access the repositories introduced in       Midas 5. It should replace all file access, since it provides full       meta data processing, which eases the usage of Midas a lot. In       contrast to accessing a raw file, it will provide the complete meta data       of the data, so that all meta data transformations are possible.    &lt;/p&gt;    &lt;p&gt;      The single parameter &amp;quot;repository_entry&amp;quot; references an entry in the       repository which will be returned as the output of this operator.       Repository locations are resolved relative to the repository folder       containing the current process. Folders in the repository are separated       by a forward slash (/), a &amp;quot;..&amp;quot; references the parent folder. A leading       forward slash references the root folder of the repository containing       the current process. A leading double forward slash is interpreted as an       absolute path starting with the name of a repository.    &lt;/p&gt;    &lt;p&gt;      &lt;br&gt;          &lt;/p&gt;    &lt;ul&gt;      &lt;li&gt;        &amp;quot;MyData&amp;quot; looks up an entry &amp;quot;MyData&amp;quot; in the same folder as the current         process.      &lt;/li&gt;      &lt;li&gt;        &amp;quot;../input/MyData looks up an entry &amp;quot;MyData&amp;quot; located in a folder         &amp;quot;input&amp;quot; next to the folder containing the current process.      &lt;/li&gt;      &lt;li&gt;        &amp;quot;/data/Model&amp;quot; looks up an entry &amp;quot;Model&amp;quot; in a top-level folder &amp;quot;data&amp;quot;         in the repository holding the current process      &lt;/li&gt;      &lt;li&gt;        &amp;quot;//Samples/data/Iris&amp;quot; looks up the Iris data set in the &amp;quot;Samples&amp;quot;         repository.&lt;/p&gt;&lt;p&gt;&lt;br&gt;        &lt;p&gt;                  &lt;/p&gt;      &lt;/li&gt;    &lt;/ul&gt;</help>
+        <key>remote_retrieve_csv</key>
+    </operator>
+    <operator>
+        <name>Retrieve Local CSV(Remote)</name>
+        <key>remote_retrieve_local_csv</key>
+    </operator>
+    <operator>
+        <name>Retrieve Json(Remote)</name>
+        <synopsis>&lt;p&gt;Reads an json file from the data repository.&lt;/p&gt;</synopsis>
+        <help>&lt;p&gt;      This operator can be used to access the repositories introduced in       Midas 5. It should replace all file access, since it provides full       meta data processing, which eases the usage of Midas a lot. In       contrast to accessing a raw file, it will provide the complete meta data       of the data, so that all meta data transformations are possible.    &lt;/p&gt;    &lt;p&gt;      The single parameter &amp;quot;repository_entry&amp;quot; references an entry in the       repository which will be returned as the output of this operator.       Repository locations are resolved relative to the repository folder       containing the current process. Folders in the repository are separated       by a forward slash (/), a &amp;quot;..&amp;quot; references the parent folder. A leading       forward slash references the root folder of the repository containing       the current process. A leading double forward slash is interpreted as an       absolute path starting with the name of a repository.    &lt;/p&gt;    &lt;p&gt;      &lt;br&gt;          &lt;/p&gt;    &lt;ul&gt;      &lt;li&gt;        &amp;quot;MyData&amp;quot; looks up an entry &amp;quot;MyData&amp;quot; in the same folder as the current         process.      &lt;/li&gt;      &lt;li&gt;        &amp;quot;../input/MyData looks up an entry &amp;quot;MyData&amp;quot; located in a folder         &amp;quot;input&amp;quot; next to the folder containing the current process.      &lt;/li&gt;      &lt;li&gt;        &amp;quot;/data/Model&amp;quot; looks up an entry &amp;quot;Model&amp;quot; in a top-level folder &amp;quot;data&amp;quot;         in the repository holding the current process      &lt;/li&gt;      &lt;li&gt;        &amp;quot;//Samples/data/Iris&amp;quot; looks up the Iris data set in the &amp;quot;Samples&amp;quot;         repository.&lt;/p&gt;&lt;p&gt;&lt;br&gt;        &lt;p&gt;                  &lt;/p&gt;      &lt;/li&gt;    &lt;/ul&gt;</help>
+        <key>remote_retrieve_json</key>
+    </operator>
+    <operator>
+        <name>Support Vector Machine(Remote)</name>
+        <synopsis>JMySVMLearner provides an internal Java implementation of
+            the mySVM by Stefan Rueping.</synopsis>
+        <help>This learner uses the Java implementation of the support vector
+            machine &lt;em&gt;mySVM&lt;/em&gt; by Stefan R&amp;uuml;ping. This
+            learning method can be used for both regression and classification
+            and provides a fast algorithm and good results for many learning
+            tasks.</help>
+        <key>remote_support_vector_machine</key>
+        <shortName>SVM</shortName>
+    </operator>
+    <operator>
+        <name>Support Vector Machine (Linear)</name>
+        <synopsis>This operator provides a linear Support Vector Machine based upon the JMySVM.</synopsis>
+        <help>This learner uses the Java implementation of the support vector
+            machine &lt;em&gt;mySVM&lt;/em&gt; by Stefan R&amp;uuml;ping. It is restricted to
+            the dot (linear) kernel, but outputs a high performance model that only contains the
+            linear coefficient for faster model application.</help>
+        <key>support_vector_machine_linear</key>
+        <shortName>SVM (Linear)</shortName>
+    </operator>
+    <operator>
+        <name>Process</name>
+        <synopsis>
+            The root operator which is the outer most operator of every process.
+        </synopsis>
+        <help>
+            Each process must contain exactly one operator of this class, and it must
+            be the root operator of the process. This operator provides a set of
+            parameters that are of global relevance to the process like logging and
+            initialization parameters of the random number generator.
+        </help>
+        <key>process</key>
+    </operator>
+    <operator>
+        <name>Performance (Classification)(Remote)</name>
+        <synopsis>This operator delivers as a &lt;i&gt;PerformanceVector&lt;/i&gt; containing performance
+            values according to a list of selected performance criteria applicable for multi-class
+            classification tasks.</synopsis>
+        <help>&lt;p&gt;This performance evaluator operator should be used for
+            classification tasks, i.e. in cases where the label attribute has a
+            (poly-)nominal value type.
+
+            &lt;p&gt;&lt;br/&gt;This operator expects a test &lt;i&gt;ExampleSet&lt;/i&gt; as
+            input, containing one attribute with the role &lt;i&gt;label&lt;/i&gt; and one with the role &lt;i&gt;prediction&lt;/i&gt;. See the &lt;a href="rm://opdoc/set_role"&gt;Set Role&lt;/a&gt; operator for more details.
+            On the basis of this two attributes a &lt;i&gt;PerformanceVector&lt;/i&gt; is calculated, containing the values of the performance criteria. If a &lt;i&gt;PerformanceVector&lt;/i&gt; was fed into &lt;i&gt;performance&lt;/i&gt; input, it's values are kept if it does not already contain the new criteria. Otherwise the values are averaged over the old and the new values.
+            &lt;/p&gt;
+
+            &lt;p&gt;All of
+            the performance criteria can be switched on using boolean parameters.
+            Their values can be queried by a &lt;a href="rm://opdoc/log"&gt;Log&lt;/a&gt; operator using the same
+            names. The main criterion is used for comparisons and need to be
+            specified only for processes where performance vectors are compared,
+            e.g. attribute selection or other meta optimization process setups. If
+            no main criterion was selected, the first criterion in the
+            resulting performance vector will be assumed to be the main
+            criterion.&lt;/p&gt;
+
+        </help>
+        <key>remote_performance_classification</key>
+        <shortName>Performance</shortName>
+    </operator>
+    <operator>
+        <name>Sample(Remote)</name>
+        <synopsis>Creates a sample from an example set by drawing a fraction.
+        </synopsis>
+        <help>Simple sampling operator. This operator performs a random
+            sampling of a given fraction. For example, if the input example set
+            contains 5000 examples and the sample ratio is set to 0.1, the result
+            will have approximately 500 examples.</help>
+        <key>remote_sample</key>
+    </operator>
+    <operator>
+        <name>Replace Missing Values(Remote)</name>
+        <synopsis>Replaces missing values in examples.</synopsis>
+        <help>Replaces missing values in examples. If a value is missing, it
+            is replaced by one of the functions &amp;quot;minimum&amp;quot;,
+            &amp;quot;maximum&amp;quot;, &amp;quot;average&amp;quot;, and
+            &amp;quot;none&amp;quot;, which is applied to the non missing
+            attribute values of the example set. &amp;quot;none&amp;quot; means,
+            that the value is not replaced. The function can be selected using
+            the parameter list &lt;code&gt;columns&lt;/code&gt;. If an
+            attribute's name appears in this list as a key, the value is used as
+            the function name. If the attribute's name is not in the list, the
+            function specified by the &lt;code&gt;default&lt;/code&gt; parameter
+            is used. For nominal attributes the mode is used for the average,
+            i.e. the nominal value which occurs most often in the data. For
+            nominal attributes and replacement type zero the first nominal value
+            defined for this attribute is used. The replenishment
+            &amp;quot;value&amp;quot; indicates that the user defined parameter
+            should be used for the replacement.</help>
+        <key>remote_replace_missing_values</key>
+    </operator>
+    <operator>
+        <name>Optimize Parameters (Grid)(Remote)</name>
+        <synopsis>This operator finds the optimal values for parameters.
+        </synopsis>
+        <help>
+            &lt;p&gt;
+            This operator finds the optimal values for a set of parameters using a
+            grid search. The parameter &lt;var&gt;parameters&lt;/var&gt; is a list of key value
+            pairs where the keys are of the form &lt;code&gt;operator_name.parameter_name&lt;/code&gt;
+            and the value is either a comma separated list of values (e.g.
+            10,15,20,25) or an interval definition in the format
+            [start;end;stepsize] (e.g. [10;25;5]). Alternatively a value grid
+            pattern may be used by [e.g. [start;end;no_steps;scale], where scale
+            identifies the type of the pattern.
+            &lt;/p&gt;
+            &lt;p&gt;
+            The operator returns an optimal &lt;i&gt;ParameterSet&lt;/i&gt; which can as well be
+            written to a file with a &lt;i&gt;ParameterSetWriter&lt;/i&gt;. This parameter set
+            can be read in another process using a &lt;i&gt;ParameterSetLoader&lt;/i&gt;.
+            &lt;/p&gt;
+            &lt;p&gt;
+            The file format of the parameter set file is straightforward and can
+            easily be generated by external applications. Each line is of the form
+            &lt;/p&gt;
+            &lt;center&gt;
+            &lt;code&gt;operator_name.parameter_name = value&lt;/code&gt;
+            &lt;/center&gt;
+            &lt;p&gt;
+            Additionally to the parameter set, it returns all inner results
+            generated during the execution, which delivered the best performance.
+            &lt;/p&gt;
+            &lt;p&gt;
+
+            &lt;/p&gt;
+            &lt;p&gt;
+            Please refer to section &lt;i&gt;Advanced Processes/Parameter and performance
+            analysis&lt;/i&gt; for an example application. Another parameter optimization
+            schems like the &lt;i&gt;EvolutionaryParameterOptimizationOperator&lt;/i&gt; might
+            also be useful if the best ranges and dependencies are not known at all.
+            Another operator which works similar to this parameter optimization
+            operator is the operator &lt;i&gt;ParameterIteration&lt;/i&gt;. In contrast to the
+            optimization operator, this operator simply iterates through all
+            parameter combinations. This might be especially useful for plotting
+            purposes.
+            &lt;/p&gt;
+        </help>
+        <key>remote_optimize_parameters_grid</key>
+    </operator>
+    <operator>
+        <name>One-Hot Encoder(Remote)</name>
+        <synopsis>One-Hot Encoder.
+        </synopsis>
+        <help>This operator maps the values of all nominal values to binary
+            attributes. For example, if a nominal attribute with name
+            &amp;quot;costs&amp;quot; and possible nominal values
+            &amp;quot;low&amp;quot;, &amp;quot;moderate&amp;quot;, and
+            &amp;quot;high&amp;quot; is transformed, the result is a set of three
+            binominal attributes &amp;quot;costs = low&amp;quot;, &amp;quot;costs
+            = moderate&amp;quot;, and &amp;quot;costs = high&amp;quot;. Only one
+            of the values of each attribute is true for a specific example, the
+            other values are false.</help>
+        <key>remote_one_hot_encoder</key>
+    </operator>
+    <operator>
+        <name>Logistic Regression(Remote)</name>
+        <synopsis>MyKLRLearner provides an internal Java implementation of the
+            myKLR by Stefan Rueping.</synopsis>
+        <help>This is the Java implementation of &lt;em&gt;myKLR&lt;/em&gt; by
+            Stefan R&amp;uuml;ping. myKLR is a tool for large scale kernel
+            logistic regression based on the algorithm of Keerthi/etal/2003 and
+            the code of mySVM.</help>
+        <key>remote_logistic_regression</key>
+    </operator>
+
+    <operator>
+        <name>Weight(Remote)</name>
+        <key>remote_calculate_weight</key>
+    </operator>
+    <operator>
+        <name>Set Role(Remote)</name>
+        <synopsis>&lt;p&gt;This operator can be used to change the attribute role (regular, special,     label, id...).&lt;/p&gt;</synopsis>
+        <help>&lt;p&gt;      This operator can be used to change the role of an attribute of the       input &lt;i&gt;ExampleSet&lt;/i&gt;. If you want to change the attribute name you       should use the     &lt;/p&gt;    &lt;a href="rm://opdoc/rename"&gt;Rename&lt;/a&gt;  operator.    &lt;p&gt;      The target role indicates if the attribute is a regular attribute (used       by learning operators) or a special attribute (e.g. a label or id       attribute). The following target attribute types are possible:    &lt;/p&gt;    &lt;ul&gt;      &lt;li&gt;        &lt;b&gt;regular: &lt;/b&gt;only regular attributes are used as input variables         for learning tasks      &lt;/li&gt;      &lt;li&gt;        &lt;b&gt;id:&lt;/b&gt; the id attribute for the example set      &lt;/li&gt;      &lt;li&gt;        &lt;b&gt;label:&lt;/b&gt; target attribute for learning      &lt;/li&gt;      &lt;li&gt;        &lt;b&gt;prediction:&lt;/b&gt; predicted attribute, i.e. the predictions of a         learning scheme      &lt;/li&gt;      &lt;li&gt;        &lt;b&gt;cluster:&lt;/b&gt; indicates the membership to a cluster      &lt;/li&gt;      &lt;li&gt;        &lt;b&gt;weight: &lt;/b&gt;indicates the weight of the example      &lt;/li&gt;      &lt;li&gt;        &lt;b&gt;batch:&lt;/b&gt; indicates the membership to an example batch      &lt;/li&gt;    &lt;/ul&gt;    &lt;p&gt;      Users can also define own attribute types by simply using the desired       name.    &lt;/p&gt;    &lt;p&gt;          &lt;/p&gt;    &lt;p&gt;      &lt;b&gt;Please be aware that roles have to be unique!&lt;/b&gt; Assigning a non       regular role the second time will cause the first attribute to be       dropped from the example set. If you want to keep this attribute, you       have to change it's role first.    &lt;/p&gt;</help>
+        <key>remote_set_role</key>
+    </operator>
+    <operator>
+        <name>Scale Transform(Remote)</name>
+        <synopsis>Transform the features with the method like log_2, log_10, ln, abs, sqrt.</synopsis>
+        <help>Transform the features with the method like log_2, log_10, ln, abs, sqrt.</help>
+        <key>remote_scale_transform</key>
+    </operator>
+    <operator>
+        <name>Move Repository Entry</name>
+        <synopsis></synopsis>
+        <help></help>
+        <key>move_repository_entry</key>
+    </operator>
+    <operator>
+        <name>Copy Repository Entry</name>
+        <synopsis></synopsis>
+        <help></help>
+        <key>copy_repository_entry</key>
+    </operator>
+    <operator>
+        <name>Rename Repository Entry</name>
+        <synopsis></synopsis>
+        <help></help>
+        <key>rename_repository_entry</key>
+    </operator>
+    <operator>
+        <name>Delete Repository Entry</name>
+        <synopsis></synopsis>
+        <help></help>
+        <key>delete_repository_entry</key>
+    </operator>
+    <operator>
+        <name>Generate Products</name>
+        <synopsis>Creates all products based on the attributes specified by
+            regular expressions.</synopsis>
+        <help>This operator creates all products of the specified attributes.
+            The attribute names can be specified by regular expressions.</help>
+        <key>generate_products</key>
+    </operator>
+    <operator>
+        <name>Write Message</name>
+        <synopsis>This operator simply writes the given text into the
+            specified file (can be useful in combination with a process branch).
+        </synopsis>
+        <help>This operator simply writed the specified text into the
+            specified file. This can be useful in combination with the
+            &lt;i&gt;ProcessBranch&lt;/i&gt; operator. For example, one could
+            write the success or non-success of a process into the same file
+            depending on the condition specified by a process branch.</help>
+        <key>write_message</key>
+    </operator>
+
+    <operator>
+        <name>Nominal2Binary</name>
+        <synopsis>Maps all nominal values to binary attributes.</synopsis>
+        <help>This operator maps the values of all nominal values to binary
+            attributes. For example, if a nominal attribute with name
+            &amp;quot;costs&amp;quot; and possible nominal values
+            &amp;quot;low&amp;quot;, &amp;quot;moderate&amp;quot;, and
+            &amp;quot;high&amp;quot; is transformed, the result is a set of three
+            binominal attributes &amp;quot;costs = low&amp;quot;, &amp;quot;costs
+            = moderate&amp;quot;, and &amp;quot;costs = high&amp;quot;. Only one
+            of the values of each attribute is true for a specific example, the
+            other values are false.</help>
+    </operator>
+    <operator>
+        <name>Weight by Deviation</name>
+        <synopsis>Computes weights based on the (normalized) standard
+            deviation of the attributes.</synopsis>
+        <help>&lt;p&gt; Creates weights from the standard deviations of all
+            attributes. The values can be normalized by the average, the minimum,
+            or the maximum of the attribute. &lt;/p&gt;</help>
+        <key>weight_by_deviation</key>
+    </operator>
+    <operator>
+        <name>FP-Growth(Remote)</name>
+        <synopsis>aa This learner efficiently calculates all frequent item sets
+            from the given data.</synopsis>
+        <help>&lt;p&gt;This operator calculates all frequent items sets from a
+            data set by building a FPTree data structure on the transaction data
+            base. This is a very compressed copy of the data which in many cases
+            fits into main memory even for large data bases. From this FPTree all
+            frequent item set are derived. A major advantage of FPGrowth compared
+            to Apriori is that it uses only 2 data scans and is therefore often
+            applicable even on large data sets.&lt;/p&gt; &lt;p&gt;Please note
+            that the given data set is only allowed to contain binominal
+            attributes, i.e. nominal attributes with only two different values.
+            Simply use the provided preprocessing operators in order to transform
+            your data set. The necessary operators are the discretization
+            operators for changing the value types of numerical attributes to
+            nominal and the operator Nominal2Binominal for transforming nominal
+            attributes into binominal / binary ones. &lt;/p&gt; &lt;p&gt;The
+            frequent item sets are mined for the positive entries in your data
+            base, i.e. for those nominal values which are defined as positive in
+            your data base. If you use an attribute description file (.aml) for
+            the &lt;i&gt;ExampleSource&lt;/i&gt; operator this corresponds to the
+            second value which is defined via the classes attribute or inner
+            value tags.&lt;/p&gt; &lt;p&gt; If your data does not specify the
+            positive entries correctly, you may set them using the parameter
+            positive_value. This only works if all your attributes contain this
+            value!&lt;/p&gt; &lt;p&gt;This operator has two basic working modes:
+            finding at least the specified number of item sets with highest
+            support without taking the min_support into account (default) or
+            finding all item sets with a support large than
+            min_support.&lt;/p&gt;</help>
+        <key>remote_fp_growth</key>
+    </operator>
+    <operator>
+        <name>Apply Model(Remote)</name>
+        <synopsis>Applies a model to an example set. This might be a
+            prediction or another data transformation model.</synopsis>
+        <help>&lt;p&gt;      This operator applies a &lt;i&gt;Model&lt;/i&gt; to an &lt;i&gt;ExampleSet&lt;/i&gt;. &lt;i&gt;Models &lt;/i&gt;usually       contain information about the data they have been trained on. This       information can be used for predicting the value of a possibly unknown       label, reproduce some transformations as during training or performing       other changes. All needed parameters are stored within the model object.    &lt;/p&gt;    &lt;p&gt;          &lt;/p&gt;    &lt;p&gt;      Please pay attention to the fact, that the application of &lt;i&gt;Models &lt;/i&gt;will       need the same attributes during application on an &lt;i&gt;ExampleSet &lt;/i&gt;that       where part of the &lt;i&gt;ExampleSet&lt;/i&gt; it was trained on. Some minor       changes like adding attributes might be possible, but might cause severe       calculation errors. Please make sure, that &lt;b&gt;the attributes' number,       order, type and role &lt;/b&gt;are consistent during training and application.    &lt;/p&gt;    &lt;p&gt;          &lt;/p&gt;    &lt;p&gt;      If the model supports views, it is possible to create a view instead of       changing the underlying data. In order to advise the Apply Model       operator to do so, simply switch on the create view parameter. The       transformation that would be normaly performed directly on the data will       then be computed every time a value is requested and the result is       returned without changing the data. Please keep in mind, that not all       models support views.    &lt;/p&gt;    &lt;p&gt;          &lt;/p&gt;    &lt;p&gt;          &lt;/p&gt;    &lt;p&gt;      If you have to apply serveral models in a row, like for example when you       have to apply a few preprocessing models before applying a prediction       model, then you would like to group models. This is possible using the &lt;a href="rm://opdoc/group_models"&gt;Group       Models &lt;/a&gt;operator in a convenient way.    &lt;/p&gt;</help>
+        <key>remote_apply_model</key>
+    </operator>
+
+    <operator>
+        <name>Create Association Rules(Remote)</name>
+        <synopsis>This operator generated a set of association rules for a
+            given set of frequent item sets.</synopsis>
+        <help>&lt;p&gt;This operator generates association rules from frequent
+            item sets. In Midas, the process of frequent item set mining is
+            divided into two parts: first, the generation of frequent item sets
+            and second, the generation of association rules from these
+            sets.&lt;/p&gt; &lt;p&gt;For the generation of frequent item sets,
+            you can use for example the operator &lt;i&gt;FPGrowth&lt;/i&gt;. The
+            result will be a set of frequent item sets which could be used as
+            input for this operator.&lt;/p&gt;</help>
+        <key>remote_create_association_rules</key>
+    </operator>
+
+    <operator>
+        <name>Apply Association Rules(Remote)</name>
+        <synopsis>This operator generated a set of association rules for a
+            given set of frequent item sets.</synopsis>
+        <help>&lt;p&gt;This operator generates association rules from frequent
+            item sets. In Midas, the process of frequent item set mining is
+            divided into two parts: first, the generation of frequent item sets
+            and second, the generation of association rules from these
+            sets.&lt;/p&gt; &lt;p&gt;For the generation of frequent item sets,
+            you can use for example the operator &lt;i&gt;FPGrowth&lt;/i&gt;. The
+            result will be a set of frequent item sets which could be used as
+            input for this operator.&lt;/p&gt;</help>
+        <key>remote_apply_association_rules</key>
+    </operator>
+
+    <operator>
+        <name>Reshape Data(Remote)</name>
+        <synopsis>This operator generated a set of association rules for a
+            given set of frequent item sets.</synopsis>
+        <help>&lt;p&gt;This operator generates association rules from frequent
+            item sets. In Midas, the process of frequent item set mining is
+            divided into two parts: first, the generation of frequent item sets
+            and second, the generation of association rules from these
+            sets.&lt;/p&gt; &lt;p&gt;For the generation of frequent item sets,
+            you can use for example the operator &lt;i&gt;FPGrowth&lt;/i&gt;. The
+            result will be a set of frequent item sets which could be used as
+            input for this operator.&lt;/p&gt;</help>
+        <key>remote_reshape_data</key>
+    </operator>
+
+    <operator>
+        <name>Regularized Discriminant Analysis</name>
+        <synopsis>A regularized generale discriminant function for binominal
+            labels and numerical attributes.</synopsis>
+        <help>&lt;p&gt;This is a regularized discriminant analysis (RDA) which
+            is a generalization of the LDA or QDA. Both algorithms are special
+            cases of this algorithm, using parameter alpha = 1 respectively alpha
+            = 0.&lt;/p&gt;</help>
+        <key>regularized_discriminant_analysis</key>
+        <shortName>RDA</shortName>
+    </operator>
+    <operator>
+        <name>DBSCAN</name>
+        <synopsis>Clustering with DBSCAN</synopsis>
+        <help>This operator provides the DBScan cluster algorithm. If no id
+            attribute is present, the operator will create one.</help>
+        <key>dbscan</key>
+        <shortName>Clustering</shortName>
+    </operator>
+    <operator>
+        <name>SimpleReader</name>
+        <synopsis>This operator reads an example set from file. It is a
+            simpler version of the ExampleSource operator.</synopsis>
+        <help>&lt;p&gt; This operator reads an example set from (a) file(s).
+            Probably you can use the default parameter values for the most file
+            formats (including the format produced by the ExampleSetWriter, CSV,
+            ...). In fact, in many cases this operator is more appropriate for
+            CSV based file formats than the &lt;i&gt;CSVExampleSource&lt;/i&gt;
+            operator itself since you can better control some of the necessary
+            settings like column separators etc. &lt;/p&gt; &lt;p&gt; In contrast
+            to the usual ExampleSource operator this operator is able to read the
+            attribute names from the first line of the data file. However, there
+            is one restriction: the data can only be read from one file instead
+            of multiple files. If you need a fully flexible operator for data
+            loading you should use the more powerful ExampleSource operator which
+            also provides more parameters tuning for example the quoting
+            mechanism and other specialized settings. &lt;/p&gt; &lt;p&gt; The
+            column split points can be defined with regular expressions (please
+            refer to the annex of the Midas tutorial). The default split
+            parameter &amp;quot;,\s*|;\s*|\s+&amp;quot; should work for most file
+            formats. This regular expression describes the following column
+            separators &lt;ul&gt; &lt;li&gt;the character &amp;quot;,&amp;quot;
+            followed by a whitespace of arbitrary length (also no white
+            space)&lt;/li&gt; &lt;li&gt;the character &amp;quot;;&amp;quot;
+            followed by a whitespace of arbitrary length (also no white
+            space)&lt;/li&gt; &lt;li&gt;a whitespace of arbitrary length (min.
+            1)&lt;/li&gt; &lt;/ul&gt; A logical XOR is defined by
+            &amp;quot;|&amp;quot;. Other useful separators might be
+            &amp;quot;\t&amp;quot; for tabulars, &amp;quot; &amp;quot; for a
+            single whitespace, and &amp;quot;\s&amp;quot; for any whitespace.
+            &lt;/p&gt; &lt;p&gt; Quoting is also possible with &amp;quot;.
+            Escaping a quote is done with \&amp;quot;. Additionally you can
+            specify comment characters which can be used at arbitrary locations
+            of the data lines and will skip the remaining part of the lines.
+            Unknown attribute values can be marked with empty strings or a
+            question mark. &lt;/p&gt;</help>
+    </operator>
+    <operator>
+        <name>Singular Value Decomposition(Remote)</name>
+        <synopsis>Performs a dimensionality reduction based on Singular Value
+            Decomposition (SVD).</synopsis>
+        <help>A dimensionality reduction method based on Singular Value
+            Decomposition. TODO: see super class</help>
+        <key>remote_singular_value_decomposition</key>
+        <shortName>SVD</shortName>
+    </operator>
+    <operator>
+        <name>MultiLayer Perceptron(Remote)</name>
+        <synopsis>Learns a neural net from the input data.</synopsis>
+        <help>&lt;p&gt;This operator learns a model by means of a feed-forward
+            neural network trained by a backpropagation algorithm (multi-layer
+            perceptron). The user can define the structure of the neural network
+            with the parameter list &amp;quot;hidden_layers&amp;quot;. Each list
+            entry describes a new hidden layer. The key of each entry must
+            correspond to the layer name. The value of each entry must be a
+            number defining the size of the hidden layer. A size value of -1
+            indicates that the layer size should be calculated from the number of
+            attributes of the input example set. In this case, the layer size
+            will be set to (number of attributes + number of classes) / 2 +
+            1.&lt;/p&gt; &lt;p&gt;If the user does not specify any hidden layers,
+            a default hidden layer with sigmoid type and size (number of
+            attributes + number of classes) / 2 + 1 will be created and added to
+            the net. If only a single layer without nodes is specified, the input
+            nodes are directly connected to the output nodes and no hidden layer
+            will be used.&lt;/p&gt; &lt;p&gt;The used activation function is the
+            usual sigmoid function. Therefore, the values ranges of the
+            attributes should be scaled to -1 and +1. This is also done by this
+            operator if not specified otherwise by the corresponding parameter
+            setting. The type of the output node is sigmoid if the learning data
+            describes a classification task and linear for numerical regression
+            tasks.&lt;/p&gt;</help>
+        <key>remote_multiLayer_perceptron</key>
+    </operator>
+    <operator>
+        <name>Naive Bayes(Remote)</name>
+        <synopsis>Returns classification model using estimated normal
+            distributions.</synopsis>
+        <help>Naive Bayes learner.</help>
+        <key>remote_naive_bayes</key>
+    </operator>
+    <operator>
+        <name>X-Validation(Remote)</name>
+        <synopsis>X-Validation encapsulates a cross-validation in order to
+            estimate the performance of a learning operator.</synopsis>
+        <help>&lt;p&gt;      &lt;code&gt;X-Validation&lt;/code&gt; performs a cross-validation process. The input &lt;i&gt;ExampleSet&lt;/i&gt;       &lt;i&gt;S&lt;/i&gt; is split up into &lt;var&gt;number of validations&lt;/var&gt; subsets &lt;i&gt;S_i&lt;/i&gt;.       The inner subprocesses are applied &lt;var&gt;number of validations&lt;/var&gt;       times using &lt;i&gt;S_i&lt;/i&gt; as the test set (input of the &lt;i&gt;Testing&lt;/i&gt;       subprocess) and &lt;i&gt;S \ S_i&lt;/i&gt; as training set (input of the &lt;i&gt;Training&lt;/i&gt;       subprocess).    &lt;/p&gt;    &lt;p&gt;      The &lt;i&gt;Training&lt;/i&gt; subprocess must return a model, which is usually       trained on the input &lt;i&gt;ExampleSet.&lt;/i&gt; The &lt;i&gt;Testing&lt;/i&gt; subprocess       must return a &lt;i&gt;PerformanceVector&lt;/i&gt;. This is usually generated by       applying the model and measuring it's performance. Additional objects       might be passed from the &lt;i&gt;Training&lt;/i&gt; to the &lt;i&gt;Testing&lt;/i&gt;       subprocess using the through ports. Please note that the performance calculated by this estimation scheme is only an estimation of the performance which would be achieved with the model built on the complete delivered data set instead of an exact calculation. Exactly this model, hence the one built on the complete input data, is delivered at the corresponding port in order to give convenient access to this model. &lt;/p&gt;    &lt;p&gt;          &lt;/p&gt;    &lt;p&gt;      Like other validation schemes the Midas cross validation can use       several types of sampling for building the subsets    &lt;/p&gt;    &lt;p&gt;      Linear sampling simply divides the example set into partitions without       changing the order of the examples. Shuffled sampling build random       subsets from the data. Stratifed sampling builds random subsets and       ensures that the class distribution in the subsets is the same as in the       whole example set. For having the random splits independent from the rest of the process, a local random seed might be used. See the parameters       for details.    &lt;/p&gt;    &lt;p&gt;          &lt;/p&gt;    &lt;p&gt;      The cross validation operator provides several values which can be       logged by means of a     &lt;/p&gt;    &lt;a href="rm://opdoc/log"&gt;Log&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;    &lt;p&gt;      . Of course the number of the current iteration can be logged which       might be useful for ProcessLog operators wrapped inside a cross       validation. Beside that, all performance estimation operators of       Midas provide access to the average values calculated during the       estimation. Since the operator cannot ensure the names of the delivered       criteria, the ProcessLog operator can access the values via the generic       value names:    &lt;/p&gt;    &lt;ul&gt;      &lt;li&gt;        performance: the value for the main criterion calculated by this         validation operator      &lt;/li&gt;      &lt;li&gt;        performance1: the value of the first criterion of the performance         vector calculated      &lt;/li&gt;      &lt;li&gt;        performance2: the value of the second criterion of the performance         vector calculated      &lt;/li&gt;      &lt;li&gt;        performance3: the value of the third criterion of the performance         vector calculated      &lt;/li&gt;      &lt;li&gt;        for the main criterion, also the variance and the standard deviation         can be accessed where applicable.      &lt;/li&gt;    &lt;/ul&gt;</help>
+        <key>remote_x_validation</key>
+        <shortName>Validation</shortName>
+    </operator>
+    <operator>
+        <name>Write to Inceptor(Remote)</name>
+        <synopsis>This operator can write data to Inceptor.</synopsis>
+        <help></help>
+        <key>remote_save</key>
+    </operator>
+    <operator>
+        <name>Write to Database(Remote)</name>
+        <synopsis>write data to database through JDBC</synopsis>
+        <key>remote_write_jdbc</key>
+    </operator>
+    <operator>
+        <name>Write to HDFS(Remote)</name>
+        <synopsis>This operator can write data to HDFS.</synopsis>
+        <help></help>
+        <key>remote_write_file</key>
+    </operator>
+    <operator>
+        <name>Write to CSV(Remote)</name>
+        <synopsis>This operator can write data to HDFS.</synopsis>
+        <help></help>
+        <key>remote_write_to_csv</key>
+    </operator>
+    <operator>
+        <name>Write to Json(Remote)</name>
+        <synopsis>This operator can write data to HDFS.</synopsis>
+        <help></help>
+        <key>remote_write_to_json</key>
+    </operator>
+
+    <operator>
+        <name>Model to Json(Remote)</name>
+        <synopsis>export model to json file</synopsis>
+        <help></help>
+        <key>remote_model_to_json</key>
+    </operator>
+    <operator>
+        <key>remote_transpose</key>
+        <name>Transpose(Remote)</name>
+    </operator>
+    <group>
+        <key>deprecated</key>
+        <name>Deprecated</name>
+    </group>
+    <group>
+        <key>pmml</key>
+        <name>Pmml</name>
+    </group>
+    <operator>
+        <key>remote_prefix_span</key>
+        <name>PrefixSpan(Remote)</name>
+        <synopsis>This learner efficiently calculates all frequent sequence patterns
+            from the given data.</synopsis>
+        <help>This learner efficiently calculates all frequent sequence patterns
+            from the given data.</help>
+    </operator>
+    <operator>
+        <key>remote_apriori</key>
+        <name>Apriori(Remote)</name>
+        <synopsis>This learner efficiently calculates all frequent itemsets
+            from the given data.</synopsis>
+        <help>This learner efficiently calculates all frequent itemsets
+            from the given data.</help>
+    </operator>
+
+    <operator>
+        <name>Decision Tree(Remote)</name>
+        <key>remote_parallel_decision_tree</key>
+	<synopsis>Decision trees are popular family of classification and regression.Decision Trees are widely used since they are easy to interpret,handle categorical feature,extend to the multicalss calssfication setting,do not require feature scaling,and are able to capture non-linearities and feature interaction.</synopsis>
+	<help>
+		1.criterion:Criterion used for information gain calculation.Supported: "entropy" and "gini".Default is "gini".&lt;br&gt; &lt;br&gt;
+		2.maxDepth:Maximum depth of the tree.default is 5.&lt;br&gt; &lt;br&gt;
+		3.maxBins:Maximum number of bins used for discretizing continuous features and for choosing how to split on features at each node.  More bins give higher granularity.&lt;br&gt; &lt;br&gt;
+		4.minInstancesPerNode:Minimum number of instances each child must have after split.If a split causes the left or right child to have fewer than minInstancesPerNode,the split will be discarded as invalid.Default is 1.&lt;br&gt; &lt;br&gt;
+		5.minInfoGain:Minimum information gain for a split to be considered at a tree node.Default is 0.0.
+
+	</help>
+    </operator>
+
+    <operator>
+        <name>Random Forest(Remote)</name>
+        <key>remote_random_forest</key>
+        <synopsis>Random forest are ensembles of decision trees.Random forests combine many decision trees in order to reduce the risk of overfitting.</synopsis>
+	<help>
+		1.criterion:Criterion used for information gain calculation.Supported: "entropy" and "gini".Default is "gini".&lt;br&gt; &lt;br&gt;
+		2.maxDepth:Maximum depth of the tree.default is 5.&lt;br&gt; &lt;br&gt;
+		3.maxBins:Maximum number of bins used for discretizing continuous features and for choosing how to split on features at each node.  More bins give higher granularity.&lt;br&gt; &lt;br&gt;
+		4.minInstancesPerNode:Minimum number of instances each child must have after split.If a split causes the left or right child to have fewer than minInstancesPerNode,the split will be discarded as invalid.Default is 1.&lt;br&gt; &lt;br&gt;
+		5.minInfoGain:Minimum information gain for a split to be considered at a tree node.Default is 0.0.&lt;br&gt; &lt;br&gt;
+		6.numTrees:Number of trees to train.Default is 20.&lt;br&gt; &lt;br&gt;
+		7.subsamplingRate:Fraction of the training data used for learning each decision tree.
+	</help>
+    </operator>
+
+    <operator>
+        <name>Gradient Boosted Tree(Remote)</name>
+        <key>remote_gradient_boosted_tree</key>
+	<synopsis>Grandient-boosted trees(GBTs) are a popular classification and regression method using ensembles of decision trees.</synopsis>
+	<help>
+		1.criterion:Criterion used for information gain calculation.Supported: "entropy" and "gini".Default is "gini".&lt;br&gt; &lt;br&gt;
+		2.maxDepth:Maximum depth of the tree.default is 5.&lt;br&gt; &lt;br&gt;
+		3.maxBins:Maximum number of bins used for discretizing continuous features and for choosing how to split on features at each node.  More bins give higher granularity.&lt;br&gt; &lt;br&gt;
+		4.minInstancesPerNode:Minimum number of instances each child must have after split.If a split causes the left or right child to have fewer than minInstancesPerNode,the split will be discarded as invalid.Default is 1.&lt;br&gt; &lt;br&gt;
+		5.minInfoGain:Minimum information gain for a split to be considered at a tree node.Default is 0.0.&lt;br&gt; &lt;br&gt;
+		6.numTrees:Number of trees to train.Default is 20.&lt;br&gt; &lt;br&gt;
+		7.subsamplingRate:Fraction of the training data used for learning each decision tree.&lt;br&gt; &lt;br&gt;
+		8.maxIter:Max iteration num.Default is 10.&lt;br&gt; &lt;br&gt;
+		9.stepSize:Param for Step size to be used for each iteration of optimization.
+	</help>
+    </operator>
+
+    <operator>
+        <name>Decision Tree Regression(Remote)</name>
+        <key>remote_parallel_decision_tree_regression</key>
+	<synopsis>Decision trees are popular family of classification and regression.Decision Trees are widely used since they are easy to interpret,handle categorical feature,extend to the multicalss calssfication setting,do not require feature scaling,and are able to capture non-linearities and feature interaction.</synopsis>
+	<help>
+		1.criterion:Criterion used for information gain calculation.Supported: "variance".&lt;br&gt; &lt;br&gt;
+		2.maxDepth:Maximum depth of the tree.default is 5.&lt;br&gt; &lt;br&gt;
+		3.maxBins:Maximum number of bins used for discretizing continuous features and for choosing how to split on features at each node.  More bins give higher granularity.&lt;br&gt; &lt;br&gt;
+		4.minInstancesPerNode:Minimum number of instances each child must have after split.If a split causes the left or right child to have fewer than minInstancesPerNode,the split will be discarded as invalid.Default is 1.&lt;br&gt; &lt;br&gt;
+		5.minInfoGain:Minimum information gain for a split to be considered at a tree node.Default is 0.0.
+	</help>
+    </operator>
+
+    <operator>
+        <name>Random Forest Regression(Remote)</name>
+        <key>remote_random_forest_regression</key>
+        <synopsis>Random forest are ensembles of decision trees.Random forests combine many decision trees in order to reduce the risk of overfitting.</synopsis>
+	<help>
+		1.criterion:Criterion used for information gain calculation.Supported: "variance".&lt;br&gt; &lt;br&gt;
+		2.maxDepth:Maximum depth of the tree.default is 5.&lt;br&gt; &lt;br&gt;
+		3.maxBins:Maximum number of bins used for discretizing continuous features and for choosing how to split on features at each node.  More bins give higher granularity.&lt;br&gt; &lt;br&gt;
+		4.minInstancesPerNode:Minimum number of instances each child must have after split.If a split causes the left or right child to have fewer than minInstancesPerNode,the split will be discarded as invalid.Default is 1.&lt;br&gt; &lt;br&gt;
+		5.minInfoGain:Minimum information gain for a split to be considered at a tree node.Default is 0.0.&lt;br&gt; &lt;br&gt;
+		6.numTrees:Number of trees to train.Default is 20.&lt;br&gt; &lt;br&gt;
+		7.subsamplingRate:Fraction of the training data used for learning each decision tree.
+	</help>
+    </operator>
+
+    <operator>
+        <name>Gradient Boosted Tree Regression(Remote)</name>
+        <key>remote_gradient_boosted_tree_regression</key>
+	<synopsis>Grandient-boosted trees(GBTs) are a popular classification and regression method using ensembles of decision trees.</synopsis>
+	<help>
+		1.criterion:Criterion used for information gain calculation.Supported: "variance".&lt;br&gt; &lt;br&gt;
+		2.maxDepth:Maximum depth of the tree.default is 5.&lt;br&gt; &lt;br&gt;
+		3.maxBins:Maximum number of bins used for discretizing continuous features and for choosing how to split on features at each node.  More bins give higher granularity.&lt;br&gt; &lt;br&gt;
+		4.minInstancesPerNode:Minimum number of instances each child must have after split.If a split causes the left or right child to have fewer than minInstancesPerNode,the split will be discarded as invalid.Default is 1.&lt;br&gt; &lt;br&gt;
+		5.minInfoGain:Minimum information gain for a split to be considered at a tree node.Default is 0.0.&lt;br&gt; &lt;br&gt;
+		6.numTrees:Number of trees to train.Default is 20.&lt;br&gt; &lt;br&gt;
+		7.subsamplingRate:Fraction of the training data used for learning each decision tree.&lt;br&gt; &lt;br&gt;
+		8.maxIter:Max iteration num.Default is 10.&lt;br&gt; &lt;br&gt;
+		9.stepSize:Param for Step size to be used for each iteration of optimization.
+	</help>
+    </operator>
+
+
+    <operator>
+        <name>Read Model(Remote)</name>
+        <key>remote_read_model</key>
+    </operator>
+    <operator>
+        <name>Write Model(Remote)</name>
+        <key>remote_write_model</key>
+    </operator>
+    <operator>
+        <name>Write Model PMML(Remote)</name>
+        <key>remote_write_model_pmml</key>
+    </operator>
+    <operator>
+        <name>Read Model PMML(Remote)</name>
+        <key>remote_read_model_pmml</key>
+    </operator>
+    <operator>
+        <name>Alternating Least Squares(ALS,Remote)</name>
+        <key>remote_als</key>
+	<synopsis>Collaborative filtering is commonly used for recommender systems.These techiniques aim to fill in the missing entries of a user-item association matrix.These operator supports model-based colloborative filtering,in which users and products are described by a small set of latent factores that can be used to predict missing entries.Alternationg Least Squares(ALS) algorithm to learn these latent factors.</synopsis>
+	<help>
+		The input dataset of this model must contain three cloumns that called "user","item" and "rating".If the names are not these,you can use rename operator to rename the dataset.&lt;br&gt; &lt;br&gt;
+		1.rank: The number of latent factors in the model.Defaults to 10.&lt;br&gt; &lt;br&gt;
+		2.maxIter: The maximum number of iterations to run (defaults to 10).&lt;br&gt; &lt;br&gt;
+		3.regParam: Specifies the regularization parameter in ALS (defaults to 0.1).&lt;br&gt; &lt;br&gt;
+		4.implicitPrefs: Specifies whether to use the explicit feedback ALS variant or one adapted for implicit feedback data (defaults to false which means using explicit feedback).&lt;br&gt; &lt;br&gt;
+		5.alpha: A parameter applicable to the implicit feedback variant of ALS that governs the baseline confidence in preference observations (defaults to 1.0).&lt;br&gt; &lt;br&gt;
+		6.nonnegative: Specifies whether or not to use nonnegative constraints for least squares (defaults to false).
+	</help>
+    </operator>
+    <operator>
+        <name>Factorization Machines(Remote)</name>
+        <key>remote_factorization_machines</key>
+    </operator>
+
+    <operator>
+        <name>TF-IDF(Remote)</name>
+        <key>remote_tf-idf</key>
+	<synopsis>Term frequency-inverse document frequency (TF-IDF) is a feature vectorization method widely used in text mining to reflect the importance of a term to a document in the corpus.</synopsis>
+	<help>
+		1.minDocFreq:minimum number of documents in which a term should appear for filtering.&lt;br&gt; &lt;br&gt;
+		2.numFeatures:number of features
+	</help>
+    </operator>
+
+    <operator>
+        <name>Word2Vector(Remote)</name>
+        <key>remote_word2vec</key>
+	<synopsis>Word2Vec is an estimator which takes sequences of words representing documents and trains a model.The model maps each word to a unique fixed-size vector.The model transforms each document into a vector using the average of all words in the document;this vector can the be used as features for prediction,document similarity calculations,etc.</synopsis>
+	<help>
+		1.vectorSize:the dimension of codes after transforming from words.&lt;br&gt; &lt;br&gt;
+		2.windowSize:The window size (context words from [-window, window]).Default is 5.&lt;br&gt; &lt;br&gt;
+		3.numPartitions:Number of partitions for sentences of words.Default is 1.&lt;br&gt; &lt;br&gt;
+		4.minCount:The minimum number of times a token must appear to be included in the word2vec model's vocabulary.Default is 5.&lt;br&gt; &lt;br&gt;
+		5.maxSentenceLength:Sets the maximum length (in words) of each sentence in the input data.Any sentence longer than this threshold will be divided into chunks of up to maxSentenceLength size.Default is 1000.&lt;br&gt; &lt;br&gt;
+		6.stepSize:Step size of optimization algorithm.Default is 0.25.&lt;br&gt; &lt;br&gt;
+		7.maxIter:Max iteration num.Default is 1.
+	</help>
+    </operator>
+    <operator>
+        <name>Standard Scaler(Remote)</name>
+        <key>remote_standard_scaler</key>
+	<synopsis>StandardScaler transforms a dataset of Vector rows, normalizing each feature to have unit standard deviation and/or zero mean. </synopsis>
+	<help>
+		1.withStd: True by default. Scales the data to unit standard deviation.&lt;br&gt; &lt;br&gt;
+		2.withMean: False by default. Centers the data with mean before scaling. It will build a dense output, so this does not work on sparse input and will raise an exception.
+	</help>
+    </operator>
+    <operator>
+        <name>Normalizer(Remote)</name>
+        <key>remote_normalizer</key>
+	<synopsis>Normalizer is a Transformer which transforms a dataset of Vector rows, normalizing each Vector to have unit norm. </synopsis>
+	<help>p: specifies the p-norm used for normalization. (p=2 by default.) </help>
+    </operator>
+    <operator>
+        <name>Latent Dirichlet Allocation(Remote)</name>
+        <key>remote_lda</key>
+	<synopsis>LDA is a topic model and we can use it to estimate topics of data</synopsis>
+	<help>
+		1.k:The number of topics (clusters) to infer.&lt;br&gt; &lt;br&gt;
+		2.docConcentration:Concentration parameter (commonly named "alpha") for the prior placed on documents' distributions over topics ("theta").&lt;br&gt; &lt;br&gt;
+		3.topicConcentration:Concentration parameter (commonly named "beta" or "eta") for the prior placed on topics' distributions over terms.&lt;br&gt; &lt;br&gt;
+		4.optimizer:Optimizer or inference algorithm used to estimate the LDA model.Currently supported Online Variational Bayes ("online") and Expectation-Maximization("em").Defalut is online.&lt;br&gt; &lt;br&gt;
+		5.maxIter: Max iteration number.
+	</help>
+    </operator>
+    <operator>
+        <name>Bisecting KMeans(Remote)</name>
+        <key>remote_bisecting_k_means</key>
+	<synopsis>Bisecting k-means is a kind of hierarchical clustering using a divisive (or “top-down\E2\80?) approach: all observations start in one cluster, and splits are performed recursively as one moves down the hierarchy.Bisecting K-means can often be much faster than regular K-means, but it will generally produce a different clustering.</synopsis>
+	<help>
+		1.k:The desired number of leaf clusters.&lt;br&gt; &lt;br&gt;
+		2.minDivisibleClusterSize:The minimum number of points (if >= 1.0) or the minimum proportion of points (if &lt; 1.0) of a divisible cluster (default: 1.0).&lt;br&gt; &lt;br&gt;
+		3.maxIter: Max iteration number.
+	</help>
+    </operator>
+    <operator>
+        <name>Gaussian Mixture Model(Remote)</name>
+        <key>remote_gaussian_mixture</key>
+	<synopsis>A Gaussian Mixture Model represents a composite distribution whereby points are drawn from one of k Gaussian sub-distributions, each with its own probability.</synopsis>
+	<help>
+		1.k:Number of independent Gaussians in the mixture model. Must be > 1. Default: 2.&lt;br&gt; &lt;br&gt;
+		2.tol:the convergence tolerance for iterative algorithms.&lt;br&gt; &lt;br&gt;
+		3.maxIter: Max iteration number.
+	</help>
+    </operator>
+    <operator>
+        <name>Isotonic Regression(Remote)</name>
+        <key>remote_isotonic_regression</key>
+	<synopsis>Isotonic regression belongs to the family of regression algorithms.Formally isotonic regression is a problem where given a finite set of real numbers  Y = {y_1, y_2, ..., y_n} representing observed responses and  X = {x_1, x_2, ..., x_n} the unknown response values to be fitted finding a function that minimises f(x)=sum_{i=1}^n w_i (y_i - x_i)^2</synopsis>
+	<help>isotonic:Param for whether the output sequence should be isotonic/increasing (true) or antitonic/decreasing (false).Default: true</help>
+    </operator>
+    <operator>
+        <name>AFT Survival Regression(Remote)</name>
+        <key>remote_aft_survival_regression</key>
+	<synopsis>Accelerated failure time (AFT) model which is a parametric survival regression model for censored data. It describes a model for the log of survival time, so it’s often called a log-linear model for survival analysis. Different from a Proportional hazards model designed for the same purpose, the AFT model is easier to parallelize because each instance contributes to the objective function independently.</synopsis>
+	<help>
+		1.quantileProbabilities:Param for quantile probabilities array.Values of the quantile probabilities array should be in the range (0, 1) and the array should be non-empty.&lt;br&gt; &lt;br&gt;
+		2.fitIntercept:Set if we should fit the intercept.Default is true.&lt;br&gt; &lt;br&gt;
+		3.maxIter: Max iteration number.
+	</help>
+    </operator>
+    <operator>
+        <name>Generalized Linear Regression(Remote)</name>
+        <key>remote_generalized_linear_regression</key>
+	<synopsis>Contrasted with linear regression where the output is assumed to follow a Gaussian distribution, generalized linear models (GLMs) are specifications of linear models where the response variable Y_i follows some distribution from the exponential family of distributions.</synopsis>
+	<help>
+		1.family:Param for the name of family which is a description of the error distribution to be used in the model.Supported options: "gaussian", "binomial", "poisson" and "gamma".Default is "gaussian".&lt;br&gt; &lt;br&gt;
+		2.link:Param for the name of link function which provides the relationship between the linear predictor and the mean of the distribution function.Supported options: "identity", "log", "inverse", "logit", "probit", "cloglog" and "sqrt".&lt;br&gt; &lt;br&gt;
+		3.solver:Sets the solver algorithm used for optimization.Currently only supports "irls" which is also the default solver.&lt;br&gt; &lt;br&gt;
+		4.fitIntercept:Set if we should fit the intercept.Default is true.&lt;br&gt; &lt;br&gt;
+		5.maxIter: Max iteration number.&lt;br&gt; &lt;br&gt;
+		6.tol:Sets the convergence tolerance of iterations.Smaller value will lead to higher accuracy with the cost of more iterations.Default is 1E-6.&lt;br&gt; &lt;br&gt;
+		7.regParam:Sets the regularization parameter for L2 regularization.Default is 0.0.
+	</help>
+    </operator>
+
+
+    <operator>
+        <name>Univariate Scale Feature Statistic(Remote)</name>
+        <key>remote_univariate_scale_feature_statistic</key>
+        <synopsis>
+		Sample statistics of scale feature
+        </synopsis>
+	<help>
+		1.Mean:The arithmetic average over a sample of a quantitative feature.&lt;br&gt; &lt;br&gt;
+		2.Median:The "middle" value that separates the higher half of the sample values (in a sorted order) from the lower half.&lt;br&gt; &lt;br&gt;
+		3.Interquartile mean: For a sample of a quantitative feature, this is the mean of the values greater than or equal to the 1^rd quartile and less than or equal the 3^rd quartile. &lt;br&gt; &lt;br&gt;
+		4.Variance:A measure of dispersion, or spread-out, of sample values around their mean, expressed in units that are the square of those of the feature itself.&lt;br&gt; &lt;br&gt;
+		5.Standard deviation:A measure of dispersion around the mean, the square root of variance.&lt;br&gt; &lt;br&gt;
+		6.Coefficient of variation:The ratio of the standard deviation to the mean, i.e. the relative standard deviation, of a quantitative feature sample.&lt;br&gt; &lt;br&gt;
+		7.Minimum:The smallest value of a quantitative sample.&lt;br&gt; &lt;br&gt;
+		8.Maximum:The largest value of a quantitative sample.&lt;br&gt; &lt;br&gt;
+		9.Range:The difference between the largest and the smallest value of a quantitative sample.&lt;br&gt; &lt;br&gt;
+		10.Standard error of the mean:A measure of how much the value of the sample mean may vary from sample to sample taken from the same (hypothesized) distribution of the feature. &lt;br&gt; &lt;br&gt;
+		11.Skewness: It measures how symmetrically the values of a feature are spread out around the mean.&lt;br&gt; &lt;br&gt;
+		12.Standard error in skewness:A measure of how much the sample skewness may vary from sample to sample, assuming that the feature is normally distributed, which makes its distribution skewness equal 0.&lt;br&gt; &lt;br&gt;
+		13.Kurtosis: As a distribution parameter, kurtosis is a measure of the extent to which feature values cluster around a central point. In other words, it quantifies "peakedness" of the distribution: how tall and sharp the central peak is relative to a standard bell curve.&lt;br&gt; &lt;br&gt;
+		14.Standard error in kurtosis:A measure of how much the sample kurtosis may vary from sample to sample, assuming that the feature is normally distributed, which makes its distribution kurtosis equal 0. 
+	</help>
+    </operator>
+    <operator>
+        <name>Univariate Categorical Feature Statistic(Remote)(Remote)</name>
+        <key>remote_univariate_category_feature_statistic</key>
+        <synopsis>
+            Statistics that describe the sample of a categorical feature, either nominal or ordinal.
+            We represent all categories by integers from 1 to the number of categories;we call these integers category IDs.
+        </synopsis>
+	<help>
+		1.Number of categories: The maximum category ID that occurs in the sample.&lt;br&gt; &lt;br&gt;
+		2.Mode:The most frequently occurring category value. If several values share the greatest frequency of occurrence, then each of them is a mode; but here we report only the smallest of these modes.&lt;br&gt; &lt;br&gt;
+		3.Number of modes:The number of category values that each have the largest frequency count in the sample.
+	</help>
+    </operator>
+    <operator>
+        <name>Bivariate Scale And Scale Feature (Remote)</name>
+        <key>remote_bivariate_scale_vs_scale_feature_statistic</key>
+        <synopsis>
+           Sample statistics that describe association between two quantitative (scale) features.
+           A scale feature has numerical values, with the natural ordering relation.
+        </synopsis>
+	<help>
+		Pearson's correlation coefficient:A measure of linear dependence between two numerical features.
+	</help>
+    </operator>
+    <operator>
+        <name>Bivariate Categorical And Categorical Feature Statistic(Remote)</name>
+        <key>remote_bivariate_cate_vs_cate_feature_statistic</key>
+        <synopsis>
+		Sample statistics that describe association between two nominal categorical features.
+	        Both features value domains are encoded with positive integers in arbitrary order: nominal features do not order their value domains.
+	</synopsis>
+	<help>
+		1.Pearson's chi square:A measure of how much the frequencies of value pairs of two categorical features deviate from statistical independence.&lt;br&gt; &lt;br&gt;
+		2.Degrees of freedom:An integer parameter required for the interpretation of Pearson's chi square measure. &lt;br&gt; &lt;br&gt;
+		3.P-value of Pearson's chi square:A measure of how likely we would observe the current frequencies of value pairs of two categorical features assuming their statistical independence. &lt;br&gt; &lt;br&gt;
+		4.Cramr's V:A measure for the strength of association, i.e. of statistical dependence, between two categorical features, conceptually similar to Pearson's correlation coefficient.
+	</help>
+    </operator>
+    <operator>
+        <name>Bivariate Categorical And Scale Feature Statistic(Remote)</name>
+        <key>remote_bivariate_cate_vs_scale_feature_statistic</key>
+        <synopsis>
+             Sample statistics that describe association between a categorical feature (order ignored) and a quantitative (scale) feature.
+             The values of the categorical feature must be coded as positive integers.     
+        </synopsis>
+	<help>
+		1.Eta statistic:A measure for the strength of association (statistical dependence) between a nominal feature and a scale feature, conceptually similar to Pearson's correlation coefficient. &lt;br&gt; &lt;br&gt;
+		2.F statistic: A measure of how much the values of the scale feature, denoted here by y, deviate from statistical independence on the nominal feature, denoted by x.
+	</help>
+    </operator>
+
+    <operator>
+	<name>Bucketizer(Remote)</name>
+        <key>remote_bucketizer</key>
+        <synopsis>
+          Bucketizer transforms a column of continuous features to a column of feature buckets, where the buckets are specified by users.
+        </synopsis>
+	<help>
+	  Bucketizer transforms a column of continuous features to a column of feature buckets, where the buckets are specified by users.You must specify splits and splits should be strictly increasing.For examle, if splits is [-0.5, 0.0, 0.5],and input is [-0.5, -0.3, 0.0, 0.2],so you can get the result [0.0, 0.0, 1.0, 1.0].
+	</help>
+    </operator>
+
+    <operator>
+	<name>Quantile Discretizer(Remote)</name>
+        <key>remote_quantile_discretizer</key>
+        <synopsis>
+          QuantileDiscretizer takes a column with continuous features and outputs a column with binned categorical features.
+        </synopsis>
+	<help>
+	  The number of bins is set by the numBuckets parameter. The bin ranges are chosen using an approximate algorithm named approxQuantile. The precision of the approximation can be controlled with the relativeError parameter. When set to zero, exact quantiles are calculated. (Note: Computing exact quantiles is an expensive operation). The lower and upper bin bounds will be -Infinity and +Infinity covering all real values.
+	</help>
+    </operator>
+
+    <operator>
+	<name>Binarizer(Remote)</name>
+        <key>remote_binarizer</key>
+        <synopsis>
+          Binarization is the process of thresholding numerical features to binary (0/1) features.
+        </synopsis>
+	<help>
+	  Binarizer takes the common parameters inputCol and outputCol, as well as the threshold for binarization. Feature values greater than the threshold are binarized to 1.0; values equal to or less than the threshold are binarized to 0.0.
+	</help>
+    </operator>
+
+
+    <operator>
+	<name>Discrete Cosine Transform(Remote)</name>
+        <key>remote_dct</key>
+        <synopsis>
+          The Discrete Cosine Transform transforms a length N real-valued sequence in the time domain into another length N real-valued sequence in the frequency domain.
+        </synopsis>
+	<help>
+	 A DCT class provides this functionality, implementing the &lt;a href="https://en.wikipedia.org/wiki/Discrete_cosine_transform#DCT-II"&gt;DCT-II&lt;/a&gt; and scaling the result by 1/sqrt{2} such that the representing matrix for the transform is unitary. No shift is applied to the transformed sequence (e.g. the 0th element of the transformed sequence is the 0th DCT coefficient and not the N/2th).
+	</help>
+    </operator>
+
+    <operator>
+        <name>Min-Max Scaler(Remote)</name>
+        <key>remote_min_max_scaler</key>
+        <synopsis>
+            Min-Max Scaler transforms a dataset of Vector rows, rescaling each feature to a
+            specific range (often [0, 1])
+        </synopsis>
+        <help>
+            Min-Max Scaler computes summary statistics on a data set and produces a
+            MinMaxScalerModel. The model can then transform each feature individually such that it is in the given range.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Max-Abs Scaler(Remote)</name>
+        <key>remote_max_abs_scaler</key>
+        <synopsis>max-abstransforms a dataset of Vector rows, rescaling each feature to range
+            [-1,1].
+        </synopsis>
+    </operator>
+
+    <operator>
+        <name>Exact Sample(Remote)</name>
+        <key>remote_sample_exact</key>
+    </operator>
+
+    <operator>
+        <name>Random Data Generate(Remote)</name>
+        <key>remote_random_generate</key>
+    </operator>
+
+    <operator>
+        <name>Generate ID Feature(Remote)</name>
+        <key>remote_generate_id_feature</key>
+    </operator>
+
+    <operator>
+        <name>KNN Classifier(Remote)</name>
+        <key>remote_k_nearest_neighbors</key>
+    </operator>
+
+    <operator>
+        <name>Artificial Neural Network(Remote)</name>
+        <key>remote_artificial_neural_network</key>
+        <synopsis>An Artificial Neural Network(ANN) which takes record vectors as input.</synopsis>
+        <help>
+            Construct an Artificial Neural Network(ANN) for deep learning tasks.
+            A set of deep learning layers could be applied in the sub-process of a deep learning network.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Dense Layer(Remote)</name>
+        <key>remote_dense_layer</key>
+        <synopsis>A deep learning dense layer operator.</synopsis>
+        <help>
+            A deep learning fully-connected layer operator.
+            A deep learning layer operator should be applied in a sub-process of a deep learning network operator.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Dropout Layer(Remote)</name>
+        <key>remote_dropout_layer</key>
+        <synopsis>A deep learning dropout layer operator.</synopsis>
+        <help>
+            A deep learning dropout layer operator which drops units in the layer randomly.
+            A deep learning layer operator should be applied in a sub-process of a deep learning network operator.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Output Layer(Remote)</name>
+        <key>remote_output_layer</key>
+        <synopsis>A deep learning output layer operator.</synopsis>
+        <help>
+            A deep learning output layer operator.
+            A deep learning layer operator should be applied in a sub-process of a deep learning network operator.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Basic RNN Cell(Remote)</name>
+        <key>remote_basic_rnn_cell</key>
+        <synopsis>A deep learning basic RNN cell operator.</synopsis>
+        <help>
+            A deep learning basic RNN cell operator is an RNN cell operator.
+            A RNN Cell is regarded as a deep learning layer operator here.
+            A deep learning layer operator should be applied in a sub-process of a deep learning network operator.
+            As a single RNN cell, this operator could also be used in a combined RNN cells.
+        </help>
+    </operator>
+
+    <operator>
+        <name>GRU Cell(Remote)</name>
+        <key>remote_gru_cell</key>
+        <synopsis>A deep learning GRU cell operator.</synopsis>
+        <help>
+            A deep learning GRU cell operator is an RNN cell operator.
+            A RNN Cell is regarded as a deep learning layer operator here.
+            A deep learning layer operator should be applied in a sub-process of a deep learning network operator.
+            As a single RNN cell, this operator could also be used in a combined RNN cells.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Basic LSTM Cell(Remote)</name>
+        <key>remote_basic_lstm_cell</key>
+        <synopsis>A deep learning LSTM cell operator.</synopsis>
+        <help>
+            A deep learning LSTM cell operator is an RNN cell operator.
+            A RNN Cell is regarded as a deep learning layer operator here.
+            A deep learning layer operator should be applied in a sub-process of a deep learning network operator.
+            As a single RNN cell, this operator could also be used in a combined RNN cells.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Combined RNN Cells(Remote)</name>
+        <key>remote_combined_rnn_cells</key>
+        <synopsis>A deep learning combined RNN cells operator.</synopsis>
+        <help>
+            A deep learning combined RNN cells operator is an RNN cell operator.
+            Single RNN cells could be added in a combined RNN cell.
+            A RNN Cell is regarded as a deep learning layer operator here.
+            A deep learning layer operator should be applied in a sub-process of a deep learning network operator.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Multiple RNN Cell(Remote)</name>
+        <key>remote_multiple_rnn_cell</key>
+        <synopsis>A deep learning multiple RNN cell operator.</synopsis>
+        <help>
+            A deep learning multiple RNN operator is an RNN cell operator.
+            A multiple RNN cell operator stacks several same single RNN cells.
+            A RNN Cell is regarded as a deep learning layer operator here.
+            A deep learning layer operator should be applied in a sub-process of a deep learning network operator.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Apply Deep Model(Remote)</name>
+        <key>remote_apply_deep_model</key>
+        <synopsis>Applies a deep model to an example set.</synopsis>
+        <help>
+            Applies a deep model to an example set. This might be a
+            prediction or another data transformation model.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Custom Operator(Remote)</name>
+        <synopsis>use customized operator</synopsis>
+        <key>remote_custom</key>
+    </operator>
+
+    <operator>
+        <name>Python script(Remote)</name>
+        <synopsis>execute python script</synopsis>
+        <key>remote_python</key>
+    </operator>
+
+    <operator>
+        <name>Outlier Soften(Remote)</name>
+        <synopsis>soften the outlier of the selected attributes.</synopsis>
+        <key>remote_outlier_soften</key>
+    </operator>
+
+    <operator>
+        <name>Window Variable Statistics(Remote)</name>
+        <synopsis>data group by date and ID column with some aggregation method.</synopsis>
+        <key>remote_window_variable_stat</key>
+    </operator>
+</operatorHelp>

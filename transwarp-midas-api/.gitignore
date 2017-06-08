@@ -1,0 +1,23 @@
+# java related
+*.class
+*.jar
+
+# vm crash logs
+hs_err_pid*
+
+# idea
+.idea/
+*.iml
+
+# build tools
+build/
+dist/
+lib/
+.gradle/
+target/
+classes/
+dependency-reduced-pom.xml
+
+# midas
+*.properties
+*.log*

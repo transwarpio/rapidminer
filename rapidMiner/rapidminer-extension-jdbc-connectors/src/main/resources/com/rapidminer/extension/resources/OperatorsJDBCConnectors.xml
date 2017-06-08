@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<operators name="jdbc_connectors" version="6.0"
+		   docbundle="com/rapidminer/extension/resources/i18n/OperatorsDocJDBCConnectors">
+	<group key="">
+	  <group key="local">
+		<group key="data_access">
+			<group key="files">
+				<group key="read">
+					<operator>
+						<key>read_access</key>
+						<class>com.rapidminer.extension.jdbc.operator.io.AccessDataReader</class>
+						<replaces>read_access</replaces>
+					</operator>
+				</group>
+				<group key="write">
+					<operator>
+						<key>write_access</key>
+						<class>com.rapidminer.extension.jdbc.operator.io.AccessDataWriter</class>
+						<replaces>write_access</replaces>
+					</operator>
+				</group>
+			</group>
+			<group key="database">
+				<operator>
+					<icon>inbox_into.png</icon>
+					<key>read_database</key>
+					<class>com.rapidminer.extension.jdbc.operator.io.DatabaseDataReader</class>
+					<replaces>read_database</replaces>
+				</operator>
+				<operator>
+					<icon>inbox_into.png</icon>
+					<key>read_database</key>
+					<class>com.rapidminer.extension.jdbc.operator.io.DatabaseDataReader</class>
+					<replaces>read_database</replaces>
+				</operator>
+				<operator>
+					<icon>inbox_out.png</icon>
+					<key>write_database</key>
+					<class>com.rapidminer.extension.jdbc.operator.io.DatabaseExampleSetWriter</class>
+					<replaces>write_database</replaces>
+				</operator>
+				<operator>
+					<icon>inbox_out.png</icon>
+					<key>update_database</key>
+					<class>com.rapidminer.extension.jdbc.operator.io.DatabaseExampleSetUpdater</class>
+					<replaces>update_database</replaces>
+				</operator>
+				<operator>
+					<icon>inbox_into.png</icon>
+					<key>stream_database</key>
+					<class>com.rapidminer.extension.jdbc.operator.io.CachedDatabaseExampleSource
+					</class>
+					<replaces>stream_database</replaces>
+				</operator>
+			</group>
+		</group>
+		<group key="utility">
+			<group key="scripting">
+				<operator>
+					<key>execute_sql</key>
+					<class>com.rapidminer.extension.jdbc.operator.SQLExecution</class>
+					<replaces>execute_sql</replaces>
+				</operator>
+			</group>
+			<group key="misc">
+				<operator>
+					<key>register_visualization_from_database</key>
+					<class>com.rapidminer.extension.jdbc.operator.visualization.DatabaseExampleVisualizationOperator
+					</class>
+					<replaces>register_visualization_from_database</replaces>
+				</operator>
+			</group>
+		</group>
+	  </group>
+	</group>
+	<group key="remote">
+		<group key="read">
+			<operator>
+				<key>remote_retrieve</key>
+				<class>com.rapidminer.extension.jdbc.operator.io.RetrieveExampleSetOp</class>
+				<replaces>RepositorySource</replaces>
+			</operator>
+			<operator>
+				<icon>inbox_into.png</icon>
+				<key>remote_read_database</key>
+				<class>com.rapidminer.extension.jdbc.operator.io.RetrieveRDB
+				</class>
+				<replaces>read_database</replaces>
+			</operator>
+			<group key="more">
+				<operator>
+					<icon>inbox_into.png</icon>
+					<key>read_database</key>
+					<class>com.rapidminer.extension.jdbc.operator.io.DatabaseDataReader</class>
+					<replaces>read_database</replaces>
+				</operator>
+			</group>
+		</group>
+		<group key="write">
+			<operator>
+				<key>remote_save</key>
+				<class>com.rapidminer.extension.jdbc.operator.io.WriteInceptorOp</class>
+				<replaces>save</replaces>
+			</operator>
+			<operator>
+				<key>remote_write_jdbc</key>
+				<class>com.rapidminer.extension.jdbc.operator.io.WriteJdbcOp</class>
+				<replaces>write database Jdbc</replaces>
+			</operator>
+		</group>
+	</group>
+</operators>

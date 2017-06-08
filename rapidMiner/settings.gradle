@@ -1,0 +1,28 @@
+rootProject.name = 'rapidMiner'
+
+include 'rapidminer-studio-core'
+
+include 'launcher'
+
+include 'rapidminer-studio-onboarding'
+
+include 'rapidminer-license-core'
+
+include 'rapidminer-api'
+
+include 'rapidminer-license-api'
+
+include 'rapidminer-license-commons'
+
+include 'rapidminer-studio-marketplace'
+
+include 'rapidminer-studio-osx-adaptor'
+
+include 'rapidminer-studio-reference-manual'
+
+include 'rapidminer-extension-jdbc-connectors'
+
+include 'rapidminer-extension-advanced-file-connectors'
+
+include 'rapidminer-extension-dataeditor'
+

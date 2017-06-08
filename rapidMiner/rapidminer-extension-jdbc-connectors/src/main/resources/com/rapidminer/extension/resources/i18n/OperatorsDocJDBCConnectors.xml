@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<operatorHelp lang="en_EN">
+    <operator>
+        <name>Retrieve(Remote)</name>
+        <synopsis>read data from database</synopsis>
+        <help>read data from database</help>
+        <key>remote_retrieve</key>
+    </operator>
+    <operator>
+        <name>Write Database</name>
+        <synopsis>Writes the values of all examples to a single table in a
+            database.</synopsis>
+        <help>&lt;p&gt;This operator writes an &lt;i&gt;ExampleSet&lt;/i&gt;
+            into an SQL database. The user can specify the database connection
+            and a table name. Please note that the table will be created during
+            writing if it does not exist.&lt;/p&gt; &lt;p&gt;The most convenient
+            way of defining the necessary parameters is the configuration wizard.
+            The most important parameters (database URL and user name) will be
+            automatically determined by this wizard. At the end, you only have to
+            define the table name and then you are ready.&lt;/p&gt; &lt;p&gt;
+            This operator only supports the writing of the complete example set
+            consisting of all regular and special attributes and all examples. If
+            this is not desired perform some preprocessing operators like
+            attribute or example filter before applying this operator. &lt;/p&gt;
+        </help>
+        <key>write_database</key>
+    </operator>
+    <operator>
+        <name>Write HDFS</name>
+        <synopsis>Writes the values of all examples to a single table in hdfs</synopsis>
+        <help>
+        </help>
+        <key>write_hdfs</key>
+    </operator>
+    <operator>
+        <name>Update Database</name>
+        <synopsis>Updates the values of all examples with matching ID values in a
+            database.</synopsis>
+        <help>&lt;p&gt;This operator updates an &lt;i&gt;ExampleSet&lt;/i&gt;
+            in an SQL database. The user can specify the database connection, a table 
+            name and ID column names.&lt;/p&gt; &lt;p&gt;The most convenient
+            way of defining the necessary parameters is the configuration wizard.
+            The most important parameters (database URL and user name) will be
+            automatically determined by this wizard.&lt;/p&gt;
+        </help>
+    <key>update_database</key>
+  	</operator>
+  	
+  	    <operator>
+        <name>Register Visualization from Database</name>
+        <synopsis>Allows the visualization of examples (attribute values) in
+            the plot view of an example set (double click on data point). The
+            data is directly derived from the specified database table.
+        </synopsis>
+        <help>Queries the database table for the row with the requested ID and
+            creates a generic example visualizer. This visualizer simply displays
+            the attribute values of the example. Adding this operator is might be
+            necessary to enable the visualization of single examples in the
+            provided plotter or graph components. In contrast to the usual
+            example visualizer, this version does not load the complete data set
+            into memory but simply queries the information from the database and
+            just shows the single row.</help>
+    <key>register_visualization_from_database</key>
+  </operator>
+  
+   <operator>
+        <name>Stream Database</name>
+        <synopsis>This operator reads an example set from an SQL database by
+            incrementally caching it (recommended).</synopsis>
+        <help>&lt;p&gt;This operator reads an &lt;i&gt;ExampleSet&lt;/i&gt;
+            from an SQL database. The data is load from a single table which is
+            defined with the table name parameter. Please note that table and
+            column names are often case sensitive. Databases may behave
+            differently here.&lt;/p&gt; &lt;p&gt;The most convenient way of
+            defining the necessary parameters is the configuration wizard. The
+            most important parameters (database URL and user name) will be
+            automatically determined by this wizard and it is also possible to
+            define the special attributes like labels or ids.&lt;/p&gt;
+            &lt;p&gt;In contrast to the DatabaseExampleSource operator, which
+            loads the data into the main memory, this operator keeps the data in
+            the database and performs the data reading in batches. This allows
+            Midas to access data sets of arbitrary sizes without any size
+            restrictions.&lt;/p&gt; &lt;p&gt;Please note the following important
+            restrictions and notes: &lt;ul&gt; &lt;li&gt;only manifested tables
+            (no views) are allowed as the base for this data caching
+            operator,&lt;/li&gt; &lt;li&gt;if no primary key and index is
+            present, a new column named RM_INDEX is created and automatically
+            used as primary key,&lt;/li&gt; &lt;li&gt;if a primary key is already
+            present in the specified table, a new table named RM_MAPPED_INDEX is
+            created mapping a new index column RM_INDEX to the original primary
+            key.&lt;/li&gt; &lt;li&gt;users can provide the primary key column
+            RM_INDEX themself which then has to be an integer valued index
+            attribute, counting starts with 1 without any gaps or missing values
+            for all rows&lt;/li&gt; &lt;/ul&gt; Beside the new index column or
+            the mapping table creation &lt;em&gt;no writing actions&lt;/em&gt;
+            are performed in the database. Moreover, &lt;em&gt;data sets built on
+            top of a cached database table do not support writing actions at
+            all&lt;/em&gt;. Users have to materialize the data, change it, and
+            write it back into a new table of the database (e.g.with the
+            &lt;i&gt;DatabaseExampleSetWriter&lt;/i&gt;. If the data set is
+            large, users can employ the operator
+            &lt;i&gt;BatchProcessing&lt;/i&gt; for splitting up this data change
+            task. &lt;/p&gt;</help>
+    <key>stream_database</key>
+  </operator>
+  
+  <operator>
+        <name>Read Database</name>
+        <synopsis>This operator reads an example set from an SQL database.
+        </synopsis>
+        <help>&lt;p&gt;This operator reads an &lt;i&gt;ExampleSet&lt;/i&gt;
+            from an SQL database. The SQL query can be auto generated giving a table name, passed to Midas via a
+            parameter or, in case of long SQL statements, in a separate file. The desired behavior can be chosen using the &lt;b&gt;define query&lt;/b&gt; parameter.  
+            Please note that column names are often case sensitive and might need quoting. Databases may
+            behave differently here.&lt;/p&gt;
+            
+            &lt;p&gt;Before acutally sending a statement to a database, you need to create a database connection. You might either choose &lt;i&gt;Manage Database Connections...&lt;/i&gt; from the &lt;i&gt;Tools&lt;/i&gt; menu in the main window, or
+            click on the button on the right of the drop down box of the &lt;b&gt;connection&lt;/b&gt; parameter. The window showing up asks for several details as Host, Port, Database system, schema and username. The &lt;i&gt;Test&lt;/i&gt; button will allow you to check wheter the connection can be made. After saving a new connection, it might be chosen from the drop down box of the &lt;b&gt;connection&lt;/b&gt; parameter.&lt;/p&gt;
+            
+            &lt;p&gt;&lt;br/&gt;When the operator is executed, the table delivered by the query will be copied into the memory of your computer. This will give all subsequent operators a fast access on the data so that even learning schemes like the &lt;a href="rm://opdoc/support_vector_machine"&gt;SVM&lt;/a&gt; with their high number of random accesses will run fast. If the table is too big for your main memory, you might use the &lt;a href="rm://opdoc/stream_database"&gt;Stream Database&lt;/a&gt; operator. It will hold only a part of the table in memory for the cost of several magnitudes slower access if the desired example isn't cached.&lt;/p&gt; 
+            
+            &lt;h5&gt;Warning&lt;/h5&gt; 
+            &lt;p&gt;
+            As the java
+            &lt;code&gt;ResultSetMetaData&lt;/code&gt; interface does not provide
+            information about the possible values of nominal attributes, the
+            internal indices the nominal values are mapped to will depend on the
+            ordering they appear in the table. This may cause problems only when
+            processes are split up into a training process and an application or
+            testing process. For learning schemes which are capable of handling
+            nominal attributes, this is not a problem. If a learning scheme like
+            a SVM is used with nominal data, Midas pretends that nominal
+            attributes are numerical and uses indices for the nominal values as
+            their numerical value. A SVM may perform well if there are only two
+            possible values. If a test set is read in another process, the
+            nominal values may be assigned different indices, and hence the SVM
+            trained is useless. This is not a problem for label attributes, since
+            the classes can be specified using the
+            &lt;code&gt;classes&lt;/code&gt; parameter and hence, all learning
+            schemes intended to use with nominal data are safe to use.&lt;/p&gt;
+            &lt;p&gt;You migth avoid this problem, if you first combine both &lt;i&gt;ExampleSets&lt;/i&gt; using the &lt;a href="rm://opdoc/append"&gt;Append&lt;/a&gt; operator and then split it again using two &lt;a href="rm://opdoc/filter_examples"&gt;Filter Examples&lt;/a&gt; operators.&lt;/p&gt;</help>
+    <key>read_database</key>
+  </operator>
+  
+    <operator>
+        <name>Execute SQL</name>
+        <synopsis>
+        	This operator simply performs an arbitrary SQL statement.
+        </synopsis>
+        <help>
+        	This operator performs an arbitrary SQL statement on an
+            SQL database. The SQL query can be passed to Midas via a
+            parameter or, in case of long SQL statements, in a separate file.
+            Please note that column names are often case sensitive. Databases may
+            behave differently here.&lt;/p&gt; &lt;p&gt;Please note that this
+            operator cannot be used to load data from databases but mereley to
+            execute SQL statements like CREATE or ADD etc. In oder to load data
+            from a database, the operators
+            &lt;i&gt;DatabaseExampleSource&lt;/i&gt; or
+            &lt;i&gt;CachedDatabaseExampleSource&lt;/i&gt; can be used.&lt;/p&gt;
+        </help>
+    <key>execute_sql</key>
+    
+ 	</operator>
+ 	    <operator>
+    <name>Read Access</name>
+    	<synopsis>This operator reads a data set from an Access database.</synopsis>
+    	<help>
+    		This operator reads a data set from a Microsoft Access database using
+    		the JDBC-ODBC-Bridge.
+    	</help>
+    	<key>read_access</key>
+  	</operator>
+  	<operator>
+    	<name>Write Access</name>
+    	<synopsis>This operator writes a data set to an Access database.</synopsis>
+    	<help>
+    		This operator writes a data set to a Microsoft Access database using
+    		the JDBC-ODBC-Bridge.
+    	</help>
+    	<key>write_access</key>
+	</operator>
+
+    <operator>
+        <name>Read Database</name>
+        <synopsis>This operator reads an example set from an SQL database.</synopsis>
+        <help>
+            This operator read a data set from database via JDBC
+        </help>
+        <key>remote_read_database</key>
+    </operator>
+</operatorHelp>

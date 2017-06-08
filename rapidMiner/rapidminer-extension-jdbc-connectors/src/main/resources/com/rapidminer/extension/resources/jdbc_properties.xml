@@ -1,0 +1,36 @@
+<drivers>
+    <driver dbnameseparator="/"
+            defaultport="1521"
+            driver_jar="ojdbc6.jar"
+            drivers="oracle.jdbc.OracleDriver"
+            name="oracle"
+            urlprefix="jdbc:oracle:thin:@"/>
+
+    <driver dbnameseparator="/"
+            defaultport="3306"
+            driver_jar="mysql-connector-java-5.1.40-bin.jar"
+            drivers="com.mysql.jdbc.Driver"
+            name="mysql"
+            urlprefix="jdbc:mysql://"/>
+
+    <driver dbnameseparator="/"
+            defaultport="50000"
+            driver_jar="db2jcc4.jar"
+            drivers="com.ibm.db2.jcc.DB2Driver"
+            name="db2"
+            urlprefix="jdbc:db2://"/>
+
+    <driver dbnameseparator="/"
+            defaultport="10000"
+            driver_jar="inceptor-driver-tdh460.jar"
+            drivers="org.apache.hive.jdbc.HiveDriver"
+            name="inceptor"
+            urlprefix="jdbc:hive2://"/>
+
+    <driver dbnameseparator=";database="
+            defaultport="1433"
+            driver_jar="sqljdbc41.jar"
+            drivers="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+            name="sqlserver"
+            urlprefix="jdbc:sqlserver://"/>
+</drivers>

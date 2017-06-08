@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../documentation2html.xsl"?>
+<p1:documents xmlns:p1="http://rapid-i.com/schemas/documentation/reference/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://rapid-i.com/schemas/documentation/reference/1.0                http://rapid-i.com/schemas/documentation/reference/1.0/documentation.xsd">
+
+	<operator key="operator.jdbc_connectors:update_database" locale="en" version="5.2.004">
+		<title>Update Database</title>
+		<synopsis>This operator updates the values of all examples with matching ID values in a database.</synopsis>
+		<text>
+			<paragraph>The Update Database operator is used for updating an existing table in the specified SQL database. You need to have at least basic understanding of databases and database connections in order to use this operator properly. Go through the parameters and the attached Example Process to understand the flow of this operator.</paragraph>
+			
+			<paragraph>The user can specify the database connection, a table name and ID column names. The most convenient way of defining the necessary parameters is the <em>Manage Database Connections</em> wizard. The most important parameters (database URL and user name) will be automatically determined by this wizard.</paragraph>
+			
+			<paragraph>The row(s) to update are specified via the db id attribute name parameter. If the id columns of the table do not match all the id values of any given example, the row will be inserted instead. The ExampleSet attribute names must be a subset of the table column names, otherwise the operator will fail.</paragraph>
+		</text>
+
+		<inputPorts>
+			<port name="input">This input port expects an ExampleSet. It is output of the Retrieve operator in the attached Example Process.</port>
+		</inputPorts>
+		
+		<outputPorts>
+			<port name="through">The ExampleSet that was provided at the input port is delivered through this output port without any modifications. This is usually used to reuse the same ExampleSet in further operators of the process.</port>
+		</outputPorts>
+		<parameters>
+			<!-- description of the parameters and the corresponding values -->
+			
+
+			
+			<parameter key="define_connection" type="selection">This parameter indicates how the database connection should be specified. It gives you three options: predefined, url and jndi.</parameter>
+			
+			<parameter key="connection" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>predefined</em>. This parameter is used for connecting to the database using a predefined connection. You can have many predefined connections. You can choose one of them using the drop down box. You can add a new connection or modify previous connections using the button next to the drop down box. You may also accomplish this by clicking on <em>Manage Database Connections... </em> from the <em>Tools</em> menu in the main window. A new window appears. This window asks for several details e.g. <em>Host, Port, Database system, schema, username</em> and <em>password</em>. The <em>Test</em> button in this new window will allow you to check whether the connection can be made. Save the connection once the test is successful. After saving a new connection, it can be chosen from the drop down box of the <em>connection</em> parameter. You need to have basic understanding of databases for configuring a connection.</parameter>
+			
+			<parameter key="database_system" type="selection">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for selecting the database system in use. It can have one of the following values: MySQL, PostgreSQL, Sybase, HSQLDB, ODBC Bridge (e.g. Access), Microsoft SQL Server (JTDS), Ingres, Oracle.</parameter>
+			
+			<parameter key="database_url" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for defining the URL connection string for the database, e.g. &apos;jdbc:mysql://foo.bar:portnr/database&apos;.</parameter>
+			
+			<parameter key="username" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for specifying the username of the database. </parameter>
+			
+			<parameter key="password" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used for specifying the password of the database. </parameter>
+			
+			<parameter key="jndi_name" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>jndi</em>. This parameter is used for giving the JNDI a name for a data source. </parameter>
+			
+			<parameter key="table_name">This parameter is used for selecting the required table from the specified database.  Please note that you can also write a table name here, if the table does not exist it will be created during writing.</parameter>
+			
+			<parameter key="attribute_filter_type" type="selection" default="all">This parameter allows you to select the ID attribute which values ALL have to match in the example set and the database for the row to be updated. It has the following options:
+				<values>
+					<value value="all">Does not make sense in this context so do not use, will break the process.</value>
+					<value value="single">This option allows the selection of a single id attribute.</value>
+					<value value="subset">This option allows the selection of multiple id attributes through a list. This option will not work if the meta data is not known.</value>
+					<value value="regular_expression">This option allows you to specify a regular expression for the id attribute selection. When this option is selected some other parameters (regular expression, use except expression) become visible in the Parameter panel.</value>
+					<value value="value_type">This option allows selection of all the id attributes of a particular type. It should be noted that types are hierarchical. For example <em>real</em> and <em>integer</em> types both belong to the <em>numeric</em> type. The user should have a basic understanding of type hierarchy when selecting attributes through this option. When this option is selected some other parameters (value type, use value type exception) become visible in the Parameter panel.</value>
+					<value value="block_type">This option is similar in working to the <em>value_type</em> option. This option allows the selection of all the attributes of a particular block type. It should be noted that block types may be hierarchical. For example <em>value_series_start</em> and <em>value_series_end</em> block types both belong to the <em>value_series</em> block type. When this option is selected some other parameters (block type, use block type exception) become visible in the Parameter panel.</value>
+					<value value="no_missing_values">This option simply selects all the attributes of the ExampleSet which don&apos;t contain a missing value in any example. Attributes that have even a single missing value are removed.</value>
+					<value value="numeric_value_filter">When this option is selected another parameter (numeric condition) becomes visible in the Parameter panel. All numeric attributes whose examples all satisfy the mentioned numeric condition are selected. Please note that all nominal attributes are also selected irrespective of the given numerical condition.</value>
+				</values>
+			</parameter>
+						
+			</parameters>
+			
+		<relatedDocuments>
+			<!-- ... -->
+		</relatedDocuments>
+		<tutorialProcesses>
+			<tutorialProcess key="process.jdbc_connectors:update_database.mysql_database" title="Updating an ExampleSet in a mySQL database">
+				<description>
+					<paragraph>The &apos;Iris&apos; data set is loaded using the Retrieve operator. The Update Database operator is used to update an existing database table named "Test" in the "My connection" SQL database. Rows in the example set and table which match on their "ID" column will be updated. If no match can be found, the row will be inserted instead.</paragraph> 
+					
+					<!-- tutorialProcess description: What is done and shown here? You can use formated text here -->
+				</description>
+
+
+<process version="5.2.003">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="5.2.003" expanded="true" name="Process">
+    <process expanded="true" height="235" width="480">
+      <operator activated="true" class="retrieve" compatibility="5.2.003" expanded="true" height="60" name="Retrieve" width="90" x="45" y="30">
+        <parameter key="repository_entry" value="//Samples/data/Iris"/>
+      </operator>
+      <operator activated="true" class="update_database" compatibility="5.2.003" expanded="true" height="60" name="Update Database" width="90" x="179" y="30">
+        <parameter key="connection" value="MyConnection"/>
+        <parameter key="table_name" value="TestTable"/>
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="id"/>
+      </operator>
+      <connect from_op="Retrieve" from_port="output" to_op="Update Database" to_port="input"/>
+      <connect from_op="Update Database" from_port="through" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>
+
+
+
+				<!-- Copy process from RapidMiner's XML view to here -->
+			</tutorialProcess>
+		</tutorialProcesses>
+	</operator>
+</p1:documents>

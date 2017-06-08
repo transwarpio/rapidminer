@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../documentation2html.xsl"?>
+<p1:documents xmlns:p1="http://rapid-i.com/schemas/documentation/reference/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://rapid-i.com/schemas/documentation/reference/1.0                http://rapid-i.com/schemas/documentation/reference/1.0/documentation.xsd">
+
+	<operator key="operator.jdbc_connectors:read_database" locale="en" version="5.1.012">
+		<title>Read Database</title>
+		<synopsis>This operator reads an ExampleSet from a SQL database. </synopsis>
+		<text>
+			<paragraph>The Read Database operator is used for reading an ExampleSet from the specified SQL database. You need to have at least basic understanding of databases, database connections and queries in order to use this operator properly. Go through the parameters and Example Process to understand the flow of this operator.</paragraph> 
+			<paragraph>When this operator is executed, the table delivered by the query will be copied into the memory of your computer. This will give all subsequent operators a fast access on the data. Even learning schemes like the Support Vector Machine with their high number of random accesses will run fast. If the table is too big for your main memory, you may use the Stream Database operator. It will hold only a part of the table in memory for the cost of several magnitudes slower access if the desired example isn&apos;t cached. </paragraph>
+			<paragraph>The java <em>ResultSetMetaData</em> interface does not provide information about the possible values of nominal attributes. The internal indices the nominal values are mapped to, will depend on the ordering they appear in the table. This may cause problems only when processes are split up into a training process and a testing process. This is not a problem for learning schemes which are capable of handling nominal attributes. If a learning scheme like the SVM is used with nominal data, RapidMiner pretends that nominal attributes are numerical and uses indices for the nominal values as their numerical value. The SVM may perform well if there are only two possible values. If a test set is read in another process, the nominal values may be assigned different indices, and hence the SVM trained is useless. This is not a problem for the label attributes, since the classes can be specified using the <em>classes</em> parameter and hence all learning schemes intended to use with nominal data are safe to use. You might avoid this problem if you first combine both ExampleSets using the Append operator and then split it again using two Filter Examples operators. </paragraph>
+		</text>
+		
+		
+<differentiation>
+			<relatedDocument key="jdbc_connectors:execute_sql">The Read Database operator is used for loading data from a database into RapidMiner. The Execute SQL operator cannot be used for loading data from databases. It can be used for executing SQL statements like CREATE or ADD etc on the database.</relatedDocument>
+			<relatedDocument key="jdbc_connectors:stream_database">In contrast to the Read Database operator, which loads the data into the main memory, the Stream Database operator keeps the data in the database and performs the data reading in batches. This allows RapidMiner to access data sets of arbitrary sizes without any size restrictions. </relatedDocument>
+</differentiation>	
+	
+		<outputPorts>
+			
+			<port name="output" type="com.rapidminer.example.ExampleSet">This port delivers the result of the query on database in tabular form along with the meta data. This output is similar to the output of the Retrieve operator.</port>
+		</outputPorts>
+		<parameters>
+			<!-- description of the parameters and the corresponding values -->
+						
+			<parameter key="define_connection" type="selection">This parameter indicates how the database connection should be specified. It gives you three options: predefined, url and jndi.</parameter>
+			
+			<parameter key="connection" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>predefined</em>. This parameter is used to connect to the database using a predefined connection. You can have many predefined connections. You can choose one of them using the drop down box. You can add a new connection or modify previous connections using the button next to the drop down box. You may also accomplish this by clicking on the <em>Manage Database Connections... </em> from the <em>Tools</em> menu in the main window. A new window appears. This window asks for several details e.g. <em>Host, Port, Database system, schema, username</em> and <em>password</em>. The <em>Test</em> button in this new window will allow you to check whether the connection can be made. Save the connection once the test is successful. After saving a new connection, it can be chosen from the drop down box of the <em>connection</em> parameter. You need to have basic understanding of databases for configuring a connection.</parameter>
+			
+			<parameter key="database_system" type="selection">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used to select the database system in use. It can have one of the following values: MySQL, PostgreSQL, Sybase, HSQLDB, ODBC Bridge (e.g. Access), Microsoft SQL Server (JTDS), Ingres, Oracle.</parameter>
+			
+			<parameter key="database_url" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used to define the URL connection string for the database, e.g. &apos;jdbc:mysql://foo.bar:portnr/database&apos;.</parameter>
+			
+			<parameter key="username" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used to specify the username of the database. </parameter>
+			
+			<parameter key="password" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>url</em>. This parameter is used to specify the password of the database. </parameter>
+			
+			<parameter key="jndi_name" type="string">This parameter is only available when the <em>define connection</em> parameter is set to <em>jndi</em>. This parameter is used to give the JNDI a name for a data source. </parameter>
+			
+			<parameter key="define_query"  type="selection" >Query is a statement that is used to select required data from the database. This parameter specifies whether the database query should be defined directly, through a file or implicitly by a given table name. The SQL query can be auto generated giving a table name, passed to RapidMiner via a parameter or, in case of long SQL statements, in a separate file. The desired behavior can be chosen using the <em>define query</em> parameter. Please note that column names are often case sensitive and might need quoting. </parameter>
+			
+			<parameter key="query" type="string">This parameter is only available when the <em>define query</em> parameter is set to <em>query</em>. This parameter is used to define the SQL query to select desired data from the specified database. </parameter>
+			
+			<parameter key="query_file" type="filename">This parameter is only available when the <em>define query</em> parameter is set to <em>query file</em>. This parameter is used to select a file that contains the SQL query to select desired data from the specified database. Long queries are usually stored in files. Storing queries in files can also enhance reusability.</parameter>
+			
+			<parameter key="table_name" type="string">This parameter is only available when the <em>define query</em> parameter is set to <em>table name</em>. This parameter is used to select the required table from the specified database.  </parameter>
+						
+			<parameter key="prepare_statement" type="boolean">If checked, the statement is prepared, and &apos;?&apos; can be filled in using the <em>parameters</em> parameter. </parameter>
+			
+			<parameter key="parameters" type="enumeration">Parameters to insert into &apos;?&apos; placeholders when statement is prepared. </parameter>
+				
+			</parameters>
+			
+			
+<relatedDocuments>
+			<relatedDocument key="jdbc_connectors:execute_sql"></relatedDocument>
+			<relatedDocument key="jdbc_connectors:stream_database"></relatedDocument>
+</relatedDocuments>
+
+
+		<tutorialProcesses>
+			<tutorialProcess key="process.read_database.mysql_database" title="Reading ExampleSet from a mySQL database">
+				<description>
+					<paragraph>The Read Database operator is used to read a <em>mySQL</em> database. The <em>define connection</em> parameter is set to <em>predefined</em>. The <em>define connection</em> parameter was configured using the button next to the drop down box. The name of the connection was set to &apos;mySQLconn&apos;. The following values were set in the connection parameter&apos;s wizard. The <em>Database system</em> was set to &apos;mySQL&apos;. The <em>Host</em> was set to &apos;localhost&apos;. The <em>Port</em> was set to &apos;3306&apos;. The <em>Database scheme</em> was set to &apos;golf&apos;; this is the name of the database. The <em>User</em> was set to &apos;root&apos;. No password was provided. You will need a password if your database is password protected. Set all the values and test the connection. Make sure that the connection works.</paragraph>
+										<paragraph>The <em>define query</em> parameter was set to &apos;table name&apos;. The <em>table name</em> parameter was set to &apos;golf_table&apos; which is the name of the required table in the &apos;golf&apos; database. Run the process, you will see the entire &apos;golf_table&apos; in the Results Workspace. The <em>define query</em> parameter is set to &apos;table name&apos; if you want to read an entire table from the database. You can also read a selected portion of the database by using queries. Set the <em>define query</em> parameter to &apos;query&apos; and specify a query in the <em>query</em> parameter. One sample query is already defined in this example. This query reads only those examples from &apos;golf_table&apos; where the &apos;Outlook&apos; attribute has the value &apos;sunny&apos;.</paragraph>
+					
+					<!-- tutorialProcess description: What is done and shown here? You can use formated text here -->
+				</description>
+
+<process version="5.1.011">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="5.1.011" expanded="true" name="Process">
+    <process expanded="true" height="377" width="665">
+      <operator activated="true" class="read_database" compatibility="5.1.011" expanded="true" height="60" name="Read Database" width="90" x="380" y="30">
+        <parameter key="connection" value="mySQLconn"/>
+        <parameter key="define_query" value="table name"/>
+        <parameter key="query" value="SELECT *&#10;FROM `golf_table`&#10;WHERE Outlook='sunny'"/>
+        <parameter key="table_name" value="golf_table"/>
+        
+      </operator>
+      <connect from_op="Read Database" from_port="output" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>
+
+				<!-- Copy process from RapidMiner's XML view to here -->
+			</tutorialProcess>
+		</tutorialProcesses>
+	</operator>
+</p1:documents>

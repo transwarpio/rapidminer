@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "midas.bat >midas.log 2>&1", 0, True

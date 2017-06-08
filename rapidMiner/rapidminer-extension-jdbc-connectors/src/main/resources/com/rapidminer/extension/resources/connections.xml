@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jdbc-entries key="vNP96d92UokxHGFGUbYyMmFd8lFo1QtS">
+    <field-entry>
+        <name>inceptor</name>
+        <system>inceptor</system>
+        <host>localhost</host>
+        <port>10000</port>
+        <database>midas3_0</database>
+        <user>hive</user>
+        <password>LrlJLTaBTZA=_</password>
+        <property></property>
+        <properties/>
+    </field-entry>
+</jdbc-entries>

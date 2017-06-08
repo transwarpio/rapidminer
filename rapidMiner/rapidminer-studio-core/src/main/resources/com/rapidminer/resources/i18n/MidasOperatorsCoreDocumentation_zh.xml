@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<operatorHelp lang="en_CN">
+
+
+    <group>
+        <key>remote</key>
+        <name>远程</name>
+    </group>
+
+    <!--groups -->
+    <group>
+        <key>remote.read</key>
+        <name>读入</name>
+    </group>
+    <group>
+        <key>remote.read.more</key>
+        <name>更多</name>
+    </group>
+
+    <group>
+        <key>remote.write</key>
+        <name>写出</name>
+    </group>
+    <group>
+        <key>remote.write.more</key>
+        <name>更多</name>
+    </group>
+
+    <group>
+        <key>remote.table</key>
+        <name>表操作</name>
+    </group>
+    <group>
+        <key>remote.preprocessing</key>
+        <name>预处理</name>
+    </group>
+    <group>
+        <key>remote.preprocessing.more</key>
+        <name>更多</name>
+    </group>
+
+    <group>
+        <key>remote.classification</key>
+        <name>分类</name>
+    </group>
+    <group>
+        <key>remote.classification.more</key>
+        <name>更多</name>
+    </group>
+
+    <group>
+        <key>remote.clustering</key>
+        <name>聚类</name>
+    </group>
+    <group>
+        <key>remote.clustering.more</key>
+        <name>更多</name>
+    </group>
+
+    <group>
+        <key>remote.regression</key>
+        <name>回归</name>
+    </group>
+    <group>
+        <key>remote.regression.more</key>
+        <name>更多</name>
+    </group>
+
+    <group>
+        <key>remote.deeplearning</key>
+        <name>深度学习</name>
+    </group>
+    <group>
+        <key>remote.deeplearning.more</key>
+        <name>更多</name>
+    </group>
+    <group>
+        <key>remote.deeplearning.model</key>
+        <name>模型</name>
+    </group>
+    <group>
+        <key>remote.nlp</key>
+        <name>自然语言处理</name>
+    </group>
+    <group>
+        <key>remote.nlp.more</key>
+        <name>更多</name>
+    </group>
+    <group>
+        <key>remote.statistics</key>
+        <name>统计相关</name>
+    </group>
+    <group>
+        <key>remote.statistics.more</key>
+        <name>更多</name>
+    </group>
+
+    <group>
+        <key>remote.recommendation</key>
+        <name>推荐系统</name>
+    </group>
+    <group>
+        <key>remote.recommendation.more</key>
+        <name>更多</name>
+    </group>
+
+    <group>
+        <key>remote.association</key>
+        <name>关联规则</name>
+    </group>
+    <group>
+        <key>remote.association.more</key>
+        <name>更多</name>
+    </group>
+
+    <group>
+        <key>remote.scoring</key>
+        <name>验证与评估</name>
+    </group>
+    <group>
+        <key>remote.scoring.more</key>
+        <name>更多</name>
+    </group>
+
+    <group>
+        <key>remote.util</key>
+        <name>实用工具</name>
+    </group>
+    <group>
+        <key>remote.util.macro</key>
+        <name>宏</name>
+    </group>
+    <group>
+        <key>remote.util.more</key>
+        <name>更多</name>
+    </group>
+    <group>
+        <key>remote.custom</key>
+        <name>自定义</name>
+    </group>
+    <group>
+        <key>remote.control</key>
+        <name>控制</name>
+    </group>
+
+    <group>
+        <key>remote.user_defined</key>
+        <name>用户另存</name>
+    </group>
+
+    <!--operators -->
+    <operator>
+        <name>读取数据(Remote)</name>
+        <synopsis>从数据仓库中读取数据</synopsis>
+        <key>remote_retrieve</key>
+    </operator>
+
+    <operator>
+        <name>读取CSV数据(Remote)</name>
+        <synopsis>从数据仓库中读取CSV数据</synopsis>
+        <key>remote_retrieve_csv</key>
+    </operator>
+
+    <operator>
+        <name>读取本地CSV数据(Remote)</name>
+        <synopsis>从本地中读取CSV数据</synopsis>
+        <key>remote_retrieve_local_csv</key>
+    </operator>
+
+    <operator>
+        <name>读取Json数据(Remote)</name>
+        <synopsis>从数据仓库中读取Json数据</synopsis>
+        <key>remote_retrieve_json</key>
+    </operator>
+
+    <!--write operator-->
+    <operator>
+        <name>写入Inceptor(Remote)</name>
+        <synopsis>写入数据到Inceptor中.</synopsis>
+        <key>remote_save</key>
+    </operator>
+
+    <operator>
+        <name>写入数据库(Remote)</name>
+        <synopsis>通过JDBC写入数据库</synopsis>
+        <key>remote_write_jdbc</key>
+    </operator>
+
+    <operator>
+        <name>写入HDFS文件(Remote)</name>
+        <synopsis>将数据写入HDFS文件中.</synopsis>
+        <key>remote_write_file</key>
+    </operator>
+
+    <operator>
+        <name>写入CSV文件(Remote)</name>
+        <synopsis>将数据写入CSV文件中</synopsis>
+        <key>remote_write_to_csv</key>
+    </operator>
+
+    <operator>
+        <name>写入Json文件(Remote)</name>
+        <synopsis>将数据写入Json文件中</synopsis>
+        <key>remote_write_to_json</key>
+    </operator>
+
+    <operator>
+        <name>模型导出为Json文件(Remote)</name>
+        <synopsis>模型导出为Json文件</synopsis>
+        <key>remote_model_to_json</key>
+    </operator>
+
+    <operator>
+        <name>重命名(remote)</name>
+        <synopsis>此算子重命名一个属性</synopsis>
+        <key>remote_rename</key>
+    </operator>
+
+    <operator>
+        <name>替换重命名(remote)</name>
+        <synopsis>此算子可以通过替换属性名的一部分来重命名属性</synopsis>
+        <key>remote_rename_by_replacing</key>
+    </operator>
+
+    <operator>
+        <name>设置角色(remote)</name>
+        <synopsis>此算子可以用来设置属性的角色</synopsis>
+        <key>remote_set_role</key>
+    </operator>
+
+    <operator>
+        <name>特征尺度变换(remote)</name>
+        <synopsis>对特征进行尺度变换（如log2, log10, ln, abs, sqrt）</synopsis>
+        <key>remote_scale_transform</key>
+    </operator>
+
+    <operator>
+        <name>选择属性(Remote)</name>
+        <synopsis>本算子可选择特定的属性在结果内呈现. 可以使用多种条件进行选择. </synopsis>
+        <key>remote_select_attributes</key>
+    </operator>
+
+    <operator>
+        <name>以权重选择(Remote)</name>
+        <synopsis>根据输入属性权重,选择权重满足特定关系的属性.</synopsis>
+        <key>remote_select_by_weights</key>
+    </operator>
+
+    <operator>
+        <name>One-Hot编码(Remote)</name>
+        <synopsis>One-Hot编码</synopsis>
+        <key>remote_one_hot_encoder</key>
+    </operator>
+
+    <operator>
+        <name>特征异常平滑(Remote)</name>
+        <synopsis>对选定的特征列进行异常值的平滑处理</synopsis>
+        <key>remote_outlier_soften</key>
+    </operator>
+
+    <operator>
+        <name>字符串索引(Remote)</name>
+        <synopsis>将字符串属性转成索引表示</synopsis>
+        <key>remote_string_indexer</key>
+    </operator>
+
+    <operator>
+        <name>词频TF(Remote)</name>
+        <key>remote_tf</key>
+        <synopsis>词频TF是一个广泛应用于文本挖掘的特征向量化方法.它反映了语料中一个词相对于一个文档的重要程度.</synopsis>
+    </operator>
+
+    <operator>
+        <name>逆文档频率IDF(Remote)</name>
+        <key>remote_idf</key>
+        <synopsis>逆文档频率IDF是一个广泛应用于文本挖掘的特征向量化方法.它反映了语料中一个词相对于一个文档的重要程度.</synopsis>
+    </operator>
+
+    <operator>
+        <name>Word2Vector(Remote)</name>
+        <key>remote_word2vec</key>
+        <synopsis>Word2Vec使用代表文档的一组词训练模型.这个模型将每个词映射为一个唯一的固定大小的向量.这个模型将每个文档转换为一个向量,这个向量是文档中所有词的向量的平均.这个向量可以作为特征用来进行预测,计算文本相似度等.</synopsis>
+    </operator>
+
+    <operator>
+        <name>过滤样本(Remote)</name>
+        <synopsis>只允许满足特定条件的样本</synopsis>
+        <key>remote_filter_examples</key>
+    </operator>
+
+    <operator>
+        <name>生成ID列(Remote)</name>
+        <synopsis>为样本生成一列ID属性</synopsis>
+        <key>remote_generate_id_feature</key>
+    </operator>
+
+    <operator>
+        <name>采样(Remote)</name>
+        <synopsis>通过取样本集的一部分创建一个子样本集.
+        </synopsis>
+        <key>remote_sample</key>
+    </operator>
+
+    <operator>
+        <name>精确采样(Remote)</name>
+        <synopsis>通过取样本集的一部分创建一个样本子样本集.
+        </synopsis>
+        <key>remote_sample_exact</key>
+    </operator>
+
+    <operator>
+        <name>过采样(Remote)</name>
+        <synopsis>对类别数量较少的样本利用过采样处理
+        </synopsis>
+        <key>remote_oversampling</key>
+    </operator>
+
+    <operator>
+        <name>欠采样(Remote)</name>
+        <synopsis>对类别数量较多的样本利用欠采样处理
+        </synopsis>
+        <key>remote_undersampling</key>
+    </operator>
+
+    <operator>
+        <name>平衡样本采样(Remote)</name>
+        <synopsis>根据二分类问题中的label属性进行平衡采样
+        </synopsis>
+        <key>remote_BalancedSample</key>
+    </operator>
+
+    <operator>
+        <name>Aggregate(Remote)</name>
+        <synopsis>执行一个SQL的聚集函数(count,sum...)</synopsis>
+        <key>remote_aggregate</key>
+    </operator>
+
+    <operator>
+        <name>窗口变量统计函数(Remote)</name>
+        <synopsis>根据时间窗口对相应变量进行聚合计算</synopsis>
+        <key>remote_window_variable_stat</key>
+    </operator>
+
+    <operator>
+        <name>按主键分组(Remote)</name>
+        <synopsis>指定主键（key）和值（value），按照主键对值进行分组</synopsis>
+        <key>remote_groupByKey</key>
+    </operator>
+
+    <operator>
+        <name>Select(Remote)</name>
+        <synopsis>选择属性，对应于SQL的select语法</synopsis>
+        <key>remote_select</key>
+    </operator>
+    <operator>
+        <name>Pivot(Remote)</name>
+        <synopsis>该算子将数据集中拥有相同分组的样本分组为单个样本.</synopsis>
+        <key>remote_pivot</key>
+    </operator>
+
+    <operator>
+        <name>Group by(Remote)</name>
+        <synopsis>执行group by操作</synopsis>
+        <key>remote_groupby</key>
+    </operator>
+
+    <operator>
+        <name>Cube(Remote)</name>
+        <synopsis>执行cube操作</synopsis>
+        <key>remote_cube</key>
+    </operator>
+    <operator>
+        <name>Rollup(Remote)</name>
+        <synopsis>执行Rollup操作</synopsis>
+        <key>remote_rollup</key>
+    </operator>
+    <operator>
+        <key>remote_transpose</key>
+        <name>表转置(Remote)</name>
+        <synopsis>对表执行转置操作</synopsis>
+    </operator>
+
+    <operator>
+        <name>连接(Remote)</name>
+        <synopsis>按照指定列对两张表（left和right）进行连接</synopsis>
+        <key>remote_join</key>
+    </operator>
+
+    <operator>
+        <name>Split(Remote)</name>
+        <synopsis>将一份数据按比例分成多份</synopsis>
+        <key>remote_split</key>
+    </operator>
+    <operator>
+        <name>Count(Remote)</name>
+        <synopsis>计算数据集的行数</synopsis>
+        <key>remote_count</key>
+    </operator>
+
+    <operator>
+        <name>去重(Remote)</name>
+        <synopsis>对指定列数据（数组类型）进行去重</synopsis>
+        <key>remote_distinct</key>
+    </operator>
+
+    <operator>
+        <name>表去重(Remote)</name>
+        <synopsis>表数据去重</synopsis>
+        <key>remote_drop_duplicates</key>
+    </operator>
+
+    <operator>
+        <name>按多列排序(Remote)</name>
+        <synopsis>此算子按照用户指定一列或多列对数据表进行排序。</synopsis>
+        <key>remote_multi_order_by</key>
+    </operator>
+
+    <operator>
+        <name>取前N条数据(Remote)</name>
+        <synopsis>此算子从数据表中取前N条数据返回新的数据集</synopsis>
+        <key>remote_top</key>
+    </operator>
+
+    <operator>
+        <name>差集(Remote)</name>
+        <synopsis>此算子对输入的两张表进行求差集，效果等同于SQL中的求差集操作。</synopsis>
+        <key>remote_set_minus</key>
+    </operator>
+
+    <operator>
+        <name>交集(Remote)</name>
+        <synopsis>此算子对输入的两张表进行求交集，效果等同于SQL中的求交集操作。</synopsis>
+        <key>remote_intersect</key>
+    </operator>
+
+    <operator>
+        <name>并集(Remote)</name>
+        <synopsis>对两张表进行求并集</synopsis>
+        <key>remote_union</key>
+    </operator>
+
+    <operator>
+        <name>替换数据(Remote)</name>
+        <synopsis>根据右表替换左表指定列的数据</synopsis>
+        <key>remote_replace_data</key>
+    </operator>
+
+    <operator>
+        <name>标准归一化(Remote)</name>
+        <key>remote_standard_scaler</key>
+        <synopsis>StandardScaler将数据集转换为向量集, 将每一列特征缩放为标准差为1,均值为0的结果. </synopsis>
+    </operator>
+
+    <operator>
+        <name>归一化(Remote)</name>
+        <key>remote_normalizer</key>
+        <synopsis>Normalizer是一个转换子, 归一化行为单元范数(unit norm). </synopsis>
+    </operator>
+
+    <operator>
+        <name>Min-Max归一化(Remote)</name>
+        <key>remote_min_max_scaler</key>
+        <synopsis>min-max归一化是一个转换子, 它将每列特征转换到特定的范围(通常是[0,1]). </synopsis>
+    </operator>
+
+    <operator>
+        <name>异常检测LOF(Remote)</name>
+        <key>remote_lof</key>
+        <synopsis>一种基于密度的异常检测算法. </synopsis>
+    </operator>
+
+    <operator>
+        <name>Max-Abs归一化(Remote)</name>
+        <key>remote_max_abs_scaler</key>
+        <synopsis>max-abs归一化是一个转换子, 它将每列特征转换到范围[-1,1]之间. </synopsis>
+    </operator>
+
+    <operator>
+        <name>特征分桶(Remote)</name>
+        <key>remote_bucketizer</key>
+        <synopsis>
+            该算子将一列连续特征转换成一列桶化的特征.
+        </synopsis>
+    </operator>
+
+    <operator>
+        <name>分位数离散化(Remote)</name>
+        <key>remote_quantile_discretizer</key>
+        <synopsis>
+            分位数离散化算子输入一列连续特征输出一列分好箱(bins)的条件特征.
+        </synopsis>
+    </operator>
+
+    <operator>
+        <name>二值化(Remote)</name>
+        <key>remote_binarizer</key>
+        <synopsis>
+            二值化将数值特征转换为二值特征.
+        </synopsis>
+    </operator>
+
+    <operator>
+        <name>离散余弦变换(Remote)</name>
+        <key>remote_dct</key>
+        <synopsis>
+            离散余弦变换将一个长度为N的时间域实值序列转换为一个长度为N的频率域实值序列.
+        </synopsis>
+    </operator>
+
+    <operator>
+        <name>替换缺失值(Remote)</name>
+        <synopsis>此算子替换数据中的缺失值</synopsis>
+        <key>remote_replace_missing_values</key>
+    </operator>
+
+    <operator>
+        <name>主成分分析(Remote)</name>
+        <synopsis>此算子通过使用协方差矩阵进行主成分分析</synopsis>
+        <key>remote_principal_component_analysis</key>
+        <shortName>主成分分析</shortName>
+    </operator>
+
+    <operator>
+        <name>奇异值分解(Remote)</name>
+        <synopsis>执行奇异值分解算法来降维</synopsis>
+        <key>remote_singular_value_decomposition</key>
+        <shortName>奇异值分解</shortName>
+    </operator>
+
+    <operator>
+        <name>数据类型转换(Remote)</name>
+        <synopsis>此算子将指定列的数据类型转换为指定数据类型</synopsis>
+        <key>remote_data_type_transformer</key>
+        <shortName>数据类型转换(Remote)</shortName>
+    </operator>
+
+    <operator>
+        <name>SQL转换(Remote)</name>
+        <synopsis>此算子对输入表进行sql操作</synopsis>
+        <key>remote_sql_transformer</key>
+    </operator>
+
+    <operator>
+        <name>一元变量特征统计(Remote)</name>
+        <key>remote_univariate_feature_statistic</key>
+        <synopsis>该算子描述了一元特征的统计信息</synopsis>
+    </operator>
+
+
+    <operator>
+        <name>二元变量数值特征统计(Remote)</name>
+        <key>remote_bivariate_scale_vs_scale_feature_statistic</key>
+        <synopsis>该算子描述了两列均是数值特征的二变量统计信息.</synopsis>
+    </operator>
+
+    <operator>
+        <name>二元变量类别特征统计(Remote)</name>
+        <key>remote_bivariate_cate_vs_cate_feature_statistic</key>
+        <synopsis>该算子两列特征均为类别特征.类别特征的值均为无序的正整数(类别ID),范围为[1-n],其中n表示类别数.</synopsis>
+    </operator>
+
+    <operator>
+        <name>二元变量类别与数值特征统计(Remote)</name>
+        <key>remote_bivariate_cate_vs_scale_feature_statistic</key>
+        <synopsis>
+            该算子第一列特征为类别特征,第二列特征为数值特征.类别特征的值均为无序的正整数(类别ID),范围为[1-n],其中n表示类别数.
+        </synopsis>
+    </operator>
+
+
+    <operator>
+        <name>支持向量机分类(Remote)</name>
+        <synopsis>支持向量机定义为特征空间上的间隔最大的线性分类器</synopsis>
+        <key>remote_support_vector_machine</key>
+    </operator>
+
+    <operator>
+        <name>朴素贝叶斯(Remote)</name>
+        <synopsis>朴素贝叶斯是一个依赖贝叶斯理论的概率分类模型</synopsis>
+        <key>remote_naive_bayes</key>
+    </operator>
+
+    <operator>
+        <name>决策树分类(Remote)</name>
+        <key>remote_parallel_decision_tree</key>
+        <synopsis>决策树是一个非常流行的分类算法.决策树广泛使用的原因是它们易于解释和处理类别特征,可以容易地拓展到多分类的情况,而不需要特征缩放.并且,它能够处理非线性的情况以及特征交互.</synopsis>
+    </operator>
+
+    <operator>
+        <name>随机森林分类(Remote)</name>
+        <key>remote_random_forest</key>
+        <synopsis>随机森林是多棵决策树的集成.随机森林组合多棵决策树的目的是为了减少过拟合的风险.</synopsis>
+    </operator>
+
+    <operator>
+        <name>梯度提升树分类(Remote)</name>
+        <key>remote_gradient_boosted_tree</key>
+        <synopsis>梯度提升树(GBTs)是使用决策树集成的常用的分类算法.</synopsis>
+    </operator>
+
+    <operator>
+        <name>决策树回归(Remote)</name>
+        <key>remote_parallel_decision_tree_regression</key>
+        <synopsis>决策树是一个非常流行的回归算法.决策树广泛使用的原因是它们易于解释和处理类别特征,可以容易地拓展到多分类的情况,而不需要特征缩放.并且,它能够处理非线性的情况以及特征交互.</synopsis>
+    </operator>
+
+    <operator>
+        <name>随机森林回归(Remote)</name>
+        <key>remote_random_forest_regression</key>
+        <synopsis>随机森林是多棵决策树的集成.随机森林组合多棵决策树的目的是为了减少过拟合的风险.</synopsis>
+    </operator>
+
+    <operator>
+        <name>梯度提升树回归(Remote)</name>
+        <key>remote_gradient_boosted_tree_regression</key>
+        <synopsis>梯度提升树(GBTs)是使用决策树集成的常用的回归算法.</synopsis>
+    </operator>
+
+    <operator>
+        <name>多层感知器分类(Remote)</name>
+        <synopsis>从输入数据学习一个神经网络</synopsis>
+        <key>remote_multiLayer_perceptron</key>
+    </operator>
+
+    <operator>
+        <name>Boost分类(Remote)</name>
+        <synopsis>Boost分类,可用于二分类和多分类</synopsis>
+        <key>remote_boost_classifier</key>
+    </operator>
+
+
+    <!-- 深度学习 -->
+    <operator>
+        <name>人工神经网络(Remote)</name>
+        <key>remote_artificial_neural_network</key>
+        <synopsis>一个取一组向量为输入的人工神经网络(ANN).</synopsis>
+        <help>
+            创建一个人工神经网络(ANN)来完成一个深度学习任务.
+            在一个深度学习神经网络的子流程中, 可以自定义添加一系列的深度学习层算子.
+        </help>
+    </operator>
+
+    <operator>
+        <name>深广学习(Remote)</name>
+        <key>remote_wide_and_deep_learning</key>
+        <synopsis>一种结合深度学习与广度学习的算法.</synopsis>
+    </operator>
+
+    <operator>
+        <name>Dense层(Remote)</name>
+        <key>remote_dense_layer</key>
+        <synopsis>深度学习Dense层算子(Dense Layer).</synopsis>
+        <help>
+            一个深度学习Dense层算子.
+            一个深度学习层算子应当被使用在一个深度学习网络算子的子流程中.
+        </help>
+    </operator>
+
+    <operator>
+        <name>Dropout层(Remote)</name>
+        <key>remote_dropout_layer</key>
+        <synopsis>深度学习Dropout层算子(Dropout Layer).</synopsis>
+        <help>
+            一个深度学习Dropout层算子会随机放弃该层中的神经单元.
+            一个深度学习层算子应当被使用在一个深度学习网络算子的子流程中.
+        </help>
+    </operator>
+
+    <operator>
+        <name>输出层(Remote)</name>
+        <key>remote_output_layer</key>
+        <synopsis>深度学习输出层算子(Output Layer).</synopsis>
+        <help>
+            一个深度学习输出层算子.
+            一个深度学习层算子应当被使用在一个深度学习网络算子的子流程中.
+        </help>
+    </operator>
+
+    <operator>
+        <name>基本RNN单元(Remote)</name>
+        <key>remote_basic_rnn_cell</key>
+        <synopsis>深度学习基本RNN单元算子(Basic RNN Cell).</synopsis>
+        <help>
+            一个深度学习基本RNN单元算子, 是一种RNN单元.
+            所有RNN单元都会被视为一个深度学习层算子.
+            一个深度学习层算子应当被使用在一个深度学习网络算子的子流程中.
+            作为一个单独的RNN单元算子, 该算子也可被使用在一个组合RNN单元的子流程中.
+        </help>
+    </operator>
+
+    <operator>
+        <name>GRU单元(Remote)</name>
+        <key>remote_gru_cell</key>
+        <synopsis>深度学习GRU单元算子(GRU Cell).</synopsis>
+        <help>
+            一个深度学习GRU单元算子, 是一种RNN单元.
+            所有RNN单元都会被视为一个深度学习层算子.
+            一个深度学习层算子应当被使用在一个深度学习网络算子的子流程中.
+            作为一个单独的RNN单元算子, 该算子也可被使用在一个组合RNN单元的子流程中.
+        </help>
+    </operator>
+
+    <operator>
+        <name>基本LSTM单元(Remote)</name>
+        <key>remote_basic_lstm_cell</key>
+        <synopsis>深度学习基本LSTM单元算子(Basic LSTM Cell).</synopsis>
+        <help>
+            一个深度学习基本LSTM单元算子, 是一种RNN单元.
+            所有RNN单元都会被视为一个深度学习层算子.
+            一个深度学习层算子应当被使用在一个深度学习网络算子的子流程中.
+            作为一个单独的RNN单元算子, 该算子也可被使用在一个组合RNN单元的子流程中.
+        </help>
+    </operator>
+
+    <operator>
+        <name>组合RNN单元(Remote)</name>
+        <key>remote_combined_rnn_cells</key>
+        <synopsis>深度学习组合RNN单元算子(Combined RNN Cells).</synopsis>
+        <help>
+            一个深度学习组合RNN单元算子, 是一种RNN单元.
+            用户可以在组合RNN单元算子的子流成中加入单独的RNN单元算子, 组合新的RNN单元.
+            所有RNN单元都会被视为一个深度学习层算子.
+            一个深度学习层算子应当被使用在一个深度学习网络算子的子流程中.
+        </help>
+    </operator>
+
+    <operator>
+        <name>多个RNN单元(Remote)</name>
+        <key>remote_multiple_rnn_cell</key>
+        <synopsis>深度学习多个RNN单元算子(Multiple RNN Cell).</synopsis>
+        <help>
+            一个深度学习多个RNN单元算子, 是一种RNN单元.
+            本算子通过堆叠多个相同的单独的RNN单元算子得到一个新的多个RNN单元.
+            所有RNN单元都会被视为一个深度学习层算子.
+            一个深度学习层算子应当被使用在一个深度学习网络算子的子流程中.
+        </help>
+    </operator>
+
+    <operator>
+        <name>应用深度模型(Remote)</name>
+        <synopsis>将深度模型应用到样本集.该模型可以是一个预测模型或者是一个数据转换模型.</synopsis>
+        <key>remote_apply_deep_model</key>
+    </operator>
+
+    <!-- 自然语言处理 -->
+    <operator>
+        <name>新词发现(Remote)</name>
+        <synopsis>从文本中发现词典中未曾出现过的新词.</synopsis>
+        <key>remote_nwi</key>
+    </operator>
+
+    <operator>
+        <name>分词(Remote)</name>
+        <synopsis>对指定文本进行分词.</synopsis>
+        <key>remote_word_segmentation</key>
+    </operator>
+
+    <operator>
+        <name>应用词向量(Remote)</name>
+        <synopsis>对应用词向量.</synopsis>
+        <key>remote_apply_word2vec</key>
+    </operator>
+
+    <operator>
+        <name>生成文档向量(Remote)</name>
+        <synopsis>生成文档向量.</synopsis>
+        <key>remote_gen_doc_vec</key>
+    </operator>
+
+    <operator>
+        <name>词频向量(Remote)</name>
+        <synopsis>计算文本的词频向量</synopsis>
+        <key>remote_count_vectorizer</key>
+    </operator>
+
+    <!-- 回归模型 -->
+    <operator>
+        <name>线性回归(Remote)</name>
+        <synopsis>线性回归是一个常用的分类算法</synopsis>
+        <key>remote_linear_regression</key>
+    </operator>
+
+    <operator>
+        <name>保序回归(Remote)</name>
+        <synopsis>保序回归</synopsis>
+        <key>remote_isotonic_regression</key>
+    </operator>
+
+    <operator>
+        <name>生存回归(Remote)</name>
+        <key>remote_aft_survival_regression</key>
+        <synopsis>加速失败时间(AFT)模型是一个参数化的生存回归模型,用于censored数据.它为生存时间的对数建模,所以它通常称为生存分析的对数线性模型.与比例风险模型(Proportional hazards model)不同的是,AFT模型更容易并行化,这是因为每个样本对目标函数的贡献是独立的.</synopsis>
+    </operator>
+
+    <operator>
+        <name>广义线性回归(Remote)</name>
+        <key>remote_generalized_linear_regression</key>
+        <synopsis>线性回归假设输出服从高斯分布,与之相比较,广义线性回归(GLMs)指定线性模型的变量Y_i服从一些从属于指数分布的分布.</synopsis>
+    </operator>
+
+    <operator>
+        <name>乔列斯基分解(Remote)</name>
+        <synopsis>乔列斯基分解是把一个对称正定的矩阵表示成一个上（下）三角矩阵L和其转置的乘积的分解。</synopsis>
+        <key>remote_cholesky_decomposition</key>
+    </operator>
+
+    <operator>
+        <name>逻辑回归(Remote)</name>
+        <synopsis>逻辑回归是一类分类算法.</synopsis>
+        <key>remote_logistic_regression</key>
+    </operator>
+
+    <operator>
+        <name>支持向量机(Remote)</name>
+        <synopsis>线性支持向量机是用于大规模分类的标准方法.</synopsis>
+        <key>remote_support_vector_machine</key>
+        <shortName>支持向量机(Remote)</shortName>
+    </operator>
+
+    <operator>
+        <name>K近邻分类(Remote)</name>
+        <synopsis>分布式K近邻算法用于分类.</synopsis>
+        <key>remote_k_nearest_neighbors</key>
+    </operator>
+
+    <!-- 聚类模型 -->
+    <operator>
+        <name>k均值(Remote)</name>
+        <synopsis>用k均值算法进行聚类</synopsis>
+        <key>remote_k_means</key>
+        <shortName>k均值</shortName>
+    </operator>
+
+    <operator>
+        <name>隐式狄利克雷分布(Remote)</name>
+        <key>remote_lda</key>
+        <synopsis>LDA是一个主题模型,用来发现数据中隐藏的主题. </synopsis>
+    </operator>
+
+    <operator>
+        <name>二分K均值(Remote)</name>
+        <key>remote_bisecting_k_means</key>
+        <synopsis>二分k-means是一种使用切分(或自顶向下)方法的层次聚类算法.二分k-means通常比传统的K-means算法快, 但是会产生不同的聚类.</synopsis>
+    </operator>
+
+    <operator>
+        <name>高斯混合(Remote)</name>
+        <key>remote_gaussian_mixture</key>
+        <synopsis>一个高斯混合模型表示k个高斯分布的组合</synopsis>
+    </operator>
+
+    <operator>
+        <name>交换最小二乘法(Remote)</name>
+        <key>remote_als</key>
+        <synopsis>协同过滤常用于推荐系统.这些技术的目的是填充用户-商品相关矩阵中的缺失项.这些操作支持基于模型的协同过滤,在基于模型的协同过滤中,用户和商品被描述成隐式因子的一个小集合,用来预测缺失项.交换最小二乘(ALS)算法用来学习这些隐式因子.</synopsis>
+    </operator>
+
+    <operator>
+        <name>因子分解机(Remote)</name>
+        <key>remote_factorization_machines</key>
+        <synopsis>因子分解机常用于推荐系统.可用于执行分类和回归任务。</synopsis>
+    </operator>
+
+    <!-- 关联规则 -->
+    <operator>
+        <name>FP-Growth算法(Remote)</name>
+        <synopsis>学习算法高效地用给定数据计算所有的频繁项集.</synopsis>
+        <key>remote_fp_growth</key>
+    </operator>
+
+    <operator>
+        <name>创建关联规则(Remote)</name>
+        <synopsis>此算子用给定的频繁项集生成一组关联规则.</synopsis>
+       <key>remote_create_association_rules</key>
+    </operator>
+
+    <operator>
+        <key>remote_prefix_span</key>
+        <name>PrefixSpan算法(Remote)</name>
+        <synopsis>此学习算法高效地用给定数据计算所有的频繁序列模式</synopsis>
+    </operator>
+
+    <operator>
+        <key>remote_apriori</key>
+        <name>Apriori算法(Remote)</name>
+        <synopsis>此学习算法高效地用给定数据计算所有的频繁项集.</synopsis>
+    </operator>
+
+    <operator>
+        <name>应用关联规则(Remote)</name>
+        <synopsis>学习算法高效地用给定数据计算所有的频繁项集.</synopsis>
+        <key>remote_apply_association_rules</key>
+    </operator>
+
+    <operator>
+        <name>转换事务数据集(Remote)</name>
+        <synopsis>学习算法高效地用给定数据计算所有的频繁项集.</synopsis>
+        <key>remote_reshape_data</key>
+    </operator>
+
+    <operator>
+        <name>计算权重(Remote)</name>
+        <synopsis>本算子通过计算输入样本集的每个属性关于类别属性的各类统计值,来计算相关性.
+        </synopsis>
+        <key>remote_calculate_weight</key>
+    </operator>
+
+    <operator>
+        <name>优化参数(网格搜索)(Remote)</name>
+        <synopsis>此算子搜索优化参数值.
+        </synopsis>
+        <key>remote_optimize_parameters_grid</key>
+    </operator>
+
+    <!-- 评分 operator -->
+
+    <operator>
+        <name>搜索阈值(Remote)</name>
+        <synopsis>给定预测置信度(软分类),成本和分布信息,搜索出一个阈值,使它转换为硬分类.该优化步骤是基于ROC分析.</synopsis>
+        <key>remote_find_thresholds</key>
+    </operator>
+
+    <operator>
+        <name>创建阈值(Remote)</name>
+        <synopsis>为给定的预测置信度(软预测)创建一个用户自定义的阈值,使它转换为硬分类.</synopsis>
+        <key>remote_create_thresholds</key>
+    </operator>
+
+    <operator>
+        <name>应用阈值(Remote)</name>
+        <synopsis>将阈值应用在软分类的数据上.</synopsis>
+
+        <key>remote_apply_threshold</key>
+    </operator>
+
+    <operator>
+        <name>应用模型(Remote)</name>
+        <synopsis>将模型应用到样本集.该模型可以是一个预测模型或者是一个数据转换模型.</synopsis>
+        <key>remote_apply_model</key>
+    </operator>
+
+    <!-- 验证 operator -->
+    <operator>
+        <name>性能（分类）(Remote)</name>
+        <synopsis>此算子根据一组选定的性能标准来为多分类任务提供包含性能值的性能矢量.</synopsis>
+        <key>remote_performance_classification</key>
+    </operator>
+
+    <operator>
+        <name>性能（二分类）(Remote)</name>
+        <synopsis>此算子根据一组选定的性能标准来为二分类任务提供包含性能值的性能矢量.</synopsis>
+        <key>remote_performance_binominal_classification</key>
+    </operator>
+
+    <operator>
+        <name>性能（回归）(Remote)</name>
+        <synopsis>此算子根据一列选定的性能标准来为回归任务提供包含性能值的性能矢量.</synopsis>
+        <key>remote_performance_regression</key>
+    </operator>
+
+    <operator>
+        <name>性能（聚类）(Remote)</name>
+        <synopsis>此算子根据一列选定的性能标准来为聚类任务提供性能矢量</synopsis>
+        <key>remote_performance_cluster</key>
+    </operator>
+
+    <operator>
+        <name>交叉验证(Remote)</name>
+        <synopsis>交叉验证用来评估一个学习算子的性能.</synopsis>
+        <key>remote_x_validation</key>
+        <shortName>验证模型</shortName>
+    </operator>
+
+    <!--控制-->
+    <operator>
+        <name>按列循环</name>
+        <key>remote_loop_by_columns</key>
+    </operator>
+    <operator>
+        <name>循环</name>
+        <key>remote_loop</key>
+    </operator>
+    <!-- 实用工具 operator -->
+    <operator>
+        <name>写模型(Remote)</name>
+        <key>remote_write_model</key>
+    </operator>
+
+    <operator>
+        <name>读模型(Remote)</name>
+        <key>remote_read_model</key>
+    </operator>
+
+    <operator>
+        <name>写模型PMML(Remote)</name>
+        <key>remote_write_model_pmml</key>
+    </operator>
+
+    <operator>
+        <name>读模型PMML(Remote)</name>
+        <key>remote_read_model_pmml</key>
+    </operator>
+
+    <operator>
+        <name>随机数生成(Remote)</name>
+        <key>remote_random_generate</key>
+    </operator>
+
+    <operator>
+        <name>Multiply(Remote)</name>
+        <synopsis>此算子对它的输入对象拷贝.</synopsis>
+        <key>remote_multiply</key>
+    </operator>
+
+    <!--macro-->
+    <operator>
+        <name>设置宏(remote)</name>
+        <key>remote_add_macro</key>
+    </operator>
+    <operator>
+        <name>取消宏(remote)</name>
+        <key>remote_remove_macro</key>
+    </operator>
+    <operator>
+        <name>提取宏(remote)</name>
+        <synopsis>从输入的数据集提取宏</synopsis>
+        <key>remote_extract_macro</key>
+    </operator>
+    <operator>
+        <name>生成宏(remote)</name>
+        <synopsis>通过表达式生成宏</synopsis>
+        <key>remote_generate_macro</key>
+    </operator>
+
+    <operator>
+        <name>子流程(Remote)</name>
+        <synopsis>随后被应用的一个算子链.
+        </synopsis>
+        <key>remote_subprocess</key>
+    </operator>
+
+    <operator>
+        <name>工作流节点(Remote)</name>
+        <synopsis>工作流中的节点, 包含一个流程
+        </synopsis>
+        <key>remote_workflow_node</key>
+    </operator>
+
+    <operator>
+        <name>自定义算子(Remote)</name>
+        <synopsis>使用用户定制的自定义算子实现</synopsis>
+        <key>remote_custom</key>
+    </operator>
+    <operator>
+        <name>Python脚本(Remote)</name>
+        <synopsis>执行python脚本</synopsis>
+        <key>remote_python</key>
+    </operator>
+
+    <operator>
+        <name>根算子</name>
+        <synopsis>根算子</synopsis>
+        <key>process</key>
+    </operator>>
+</operatorHelp>
